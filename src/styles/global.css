@@ -44,3 +44,108 @@ a {
   white-space: nowrap;
   border: 0;
 }
+
+/* ----- custom cursor (cursor.ts hydrates) ----- */
+
+#cursor-dot,
+#cursor-ring {
+  position: fixed;
+  pointer-events: none;
+  z-index: 9999;
+  top: 0;
+  left: 0;
+  transform: translate3d(0, 0, 0);
+  will-change: transform;
+}
+
+#cursor-dot {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--c-ink);
+  margin-left: -2.5px;
+  margin-top: -2.5px;
+  transition: opacity 120ms;
+}
+
+#cursor-ring {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  border: 1.5px solid var(--c-ink);
+  margin-left: -14px;
+  margin-top: -14px;
+  transition: width 220ms ease, height 220ms ease, border-color 180ms,
+    background-color 180ms, margin 220ms ease;
+}
+
+body.no-cursor,
+body.no-cursor * {
+  cursor: auto;
+}
+body.has-cursor,
+body.has-cursor * {
+  cursor: none;
+}
+body.no-cursor #cursor-dot,
+body.no-cursor #cursor-ring {
+  display: none;
+}
+
+/* ----- paint splash (splash.ts spawns elements) ----- */
+
+.splash-drop {
+  position: fixed;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 9998;
+  transform: translate(-50%, -50%);
+  animation: splash-fly var(--motion-splash-duration) cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+}
+
+@keyframes splash-fly {
+  0% {
+    transform: translate(-50%, -50%) rotate(0deg) scale(0.4);
+    opacity: 1;
+  }
+  100% {
+    transform: translate(calc(-50% + var(--dx)), calc(-50% + var(--dy))) rotate(180deg) scale(1.2);
+    opacity: 0;
+  }
+}
+
+/* ----- scroll reveals (reveal.ts toggles data-revealed) ----- */
+
+[data-reveal] {
+  opacity: 0;
+  transform: translateY(var(--motion-reveal-distance));
+  transition: opacity var(--motion-reveal-duration) var(--ease-standard),
+    transform var(--motion-reveal-duration) var(--ease-standard);
+}
+
+[data-reveal][data-revealed='true'] {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+[data-reveal-mask] {
+  display: inline-block;
+  clip-path: inset(0 100% 0 0);
+  transition: clip-path var(--motion-reveal-mask-duration) var(--ease-standard);
+}
+
+[data-reveal-mask][data-revealed='true'] {
+  clip-path: inset(0 0 0 0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  [data-reveal],
+  [data-reveal-mask] {
+    opacity: 1 !important;
+    transform: none !important;
+    clip-path: none !important;
+    transition: none !important;
+  }
+}
