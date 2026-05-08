@@ -1,0 +1,24 @@
+{
+  "name": "portfolio-web-app-ciruela",
+  "version": "0.1.0",
+  "type": "module",
+  "private": true,
+  "description": "Carolina M. Rivera — Graphic Designer & Visual Artist portfolio.",
+  "engines": {
+    "node": "24.15.0"
+  },
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "typecheck": "astro check",
+    "lint": "eslint --max-warnings=0 \"src/**/*.{ts,astro}\" \"*.{cjs,mjs}\""
+  },
+  "dependencies": {
+    "astro": "6.3.1"
+  },
+  "devDependencies": {
+    "@astrojs/check": "0.9.9",
+    "typescript": "6.0.3"
+  }
+}
