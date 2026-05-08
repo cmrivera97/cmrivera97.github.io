@@ -317,3 +317,103 @@ body.no-cursor #cursor-ring {
   text-transform: uppercase;
   color: rgba(255, 255, 255, 0.7);
 }
+
+/* ----- hero (Hero.astro) ----- */
+
+.hero-stage {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4rem 1.5rem;
+  overflow: hidden;
+  container-type: inline-size;
+}
+
+.hero-jellyfish-stage {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.jellyfish-slot {
+  width: clamp(240px, 30vw, 420px);
+}
+
+.jellyfish-slot.slot-1 { left: 8%;  top: 12%; }
+.jellyfish-slot.slot-2 { left: 42%; top: 4%;  }
+.jellyfish-slot.slot-3 { right: 6%; top: 18%; }
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.25rem;
+  text-align: center;
+  padding-top: 14vh;
+}
+
+.hero-wordmark {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  line-height: 0.95;
+  overflow: visible;
+}
+
+.hero-name-first {
+  font-family: var(--font-name);
+  font-weight: 500;
+  font-size: clamp(64px, 14cqw, 180px);
+  letter-spacing: -0.01em;
+  color: var(--c-ink);
+}
+
+.hero-name-last {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-weight: 300;
+  font-size: clamp(40px, 9cqw, 124px);
+  margin-top: -0.15em;
+  padding-bottom: 0.2em;
+  background: linear-gradient(135deg, var(--c-accent) 0%, #9F8CFF 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+}
+
+.hero-tagline {
+  font-family: var(--font-body);
+  font-weight: 400;
+  font-size: 0.95rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--c-ink-soft);
+}
+
+.hero-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  border-radius: var(--radius-pill);
+  background: var(--c-bg-elev);
+  border: 1px solid var(--c-line);
+  color: var(--c-ink);
+  font-family: var(--font-body);
+  font-weight: 500;
+  font-size: 0.9rem;
+  text-decoration: none;
+  margin-top: 1rem;
+  box-shadow: 0 0 0 4px var(--c-bg);
+  transition: transform 200ms var(--ease-standard);
+}
+
+.hero-cta:hover {
+  transform: translateY(-2px);
+}

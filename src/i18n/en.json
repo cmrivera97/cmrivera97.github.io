@@ -16,6 +16,9 @@
     },
     "tagline": "Graphic Designer & Visual Artist"
   },
+  "hero": {
+    "cta": "View work"
+  },
   "design": {
     "eyebrow": "Design Portfolio",
     "selected": "Selected"

@@ -16,6 +16,9 @@
     },
     "tagline": "Diseñadora Gráfica y Artista Visual"
   },
+  "hero": {
+    "cta": "Ver trabajo"
+  },
   "design": {
     "eyebrow": "Portafolio de Diseño",
     "selected": "Seleccionado"
