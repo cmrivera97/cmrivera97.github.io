@@ -63,5 +63,10 @@
     "role": "Rol",
     "sectors": "Sectores",
     "year": "Año"
+  },
+  "subpage": {
+    "back": "Volver a",
+    "pageOf": "Página",
+    "relatedCategories": "Categorías relacionadas"
   }
 }

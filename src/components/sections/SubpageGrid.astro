@@ -1,0 +1,94 @@
+---
+import { getCollection, type CollectionEntry } from 'astro:content';
+
+import { localizedHref } from '../../utils/localizedHref';
+import { mulberry32 } from '../../utils/mulberry32';
+import { hueFromSlug, seedFromSlug } from '../../utils/slug-hash';
+import CardPlaceholder from '../visual/CardPlaceholder.astro';
+import { getT, type Lang } from '../../i18n/getT';
+
+interface Props {
+  category: CollectionEntry<'categories'>;
+  lang: Lang;
+}
+
+const { category, lang } = Astro.props;
+const t = getT(lang);
+
+const projects = (await getCollection('projects', ({ data }) => (
+  data.kind === category.data.kind && data.category === category.data.slug
+))).slice(0, 8);
+
+const sisterCategories = await Promise.all(
+  category.data.sisterCategories.map(async (slug) => {
+    const all = await getCollection('categories', ({ data }) => data.slug === slug);
+    return all[0];
+  }),
+);
+const sisters = sisterCategories.filter((c): c is CollectionEntry<'categories'> => Boolean(c));
+
+const tiltFor = (slug: string): string => {
+  const rng = mulberry32(seedFromSlug(slug));
+  return `${(rng() * 6 - 3).toFixed(2)}deg`;
+};
+
+const kindLabel = category.data.kind === 'design' ? t('nav.design') : t('nav.artwork');
+const homeHref = localizedHref(lang, '/');
+const email = t('contact.email');
+const relatedLabelStyle = 'font-family: var(--font-body); font-size: 0.75rem; '
+  + 'letter-spacing: .12em; text-transform: uppercase; '
+  + 'color: var(--c-ink-soft); margin-top: 4rem;';
+---
+<section class="subpage">
+  <a class="subpage-back" href={homeHref} data-cursor="link">← {t('subpage.back')} {kindLabel}</a>
+  <h1 class="subpage-heading">{category.data.label[lang]}</h1>
+  <p class="subpage-blurb">{category.data.blurb[lang]}</p>
+
+  <div data-tilt-grid>
+    {projects.map((p) => {
+      const hue = hueFromSlug(p.data.slug);
+      const cover = p.data.cover.startsWith('placeholder:') ? p.data.cover : `placeholder:hue=${hue}`;
+      return (
+        <article class="tilt-card" data-slug={p.data.slug} style={`--tilt-rotate: ${tiltFor(p.data.slug)};`}>
+          <CardPlaceholder cover={cover} glyph="◆" />
+          <div class="tilt-card-meta">{p.data.title[lang]}</div>
+        </article>
+      );
+    })}
+  </div>
+
+  <div class="subpage-pagination">
+    {[1, 2, 3].map((page) => (
+      <button
+        type="button"
+        class="subpage-page-dot"
+        aria-label={`${t('subpage.pageOf')} ${page}`}
+        aria-current={page === 1 ? 'true' : 'false'}
+        data-cursor="link"
+      ></button>
+    ))}
+  </div>
+
+  <p style={relatedLabelStyle}>{t('subpage.relatedCategories')}</p>
+  <nav class="subpage-sister-bubbles">
+    {sisters.map((s) => {
+      const href = s.data.kind === 'design'
+        ? localizedHref(lang, `/design/${s.data.slug}`)
+        : localizedHref(lang, `/artwork/${s.data.slug}`);
+      return (
+        <a href={href} data-cursor="link">{s.data.label[lang]}</a>
+      );
+    })}
+  </nav>
+
+  <div class="subpage-footer-email">
+    <span>{email}</span>
+    <a href={`mailto:${email}`} data-cursor="link">{t('contact.ctaCopy')}</a>
+  </div>
+</section>
+
+<script>
+  import { initTiltGrid } from '../../scripts/carousel';
+
+  initTiltGrid();
+</script>

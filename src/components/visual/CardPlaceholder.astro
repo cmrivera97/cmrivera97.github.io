@@ -1,0 +1,35 @@
+---
+interface Props {
+  cover: string;
+  glyph?: string;
+}
+
+const { cover, glyph = '◆' } = Astro.props;
+
+const parseHue = (uri: string): number => {
+  const match = /^placeholder:hue=(\d+)$/.exec(uri);
+  return match ? Number.parseInt(match[1] ?? '240', 10) : 240;
+};
+
+const hue = parseHue(cover);
+const bg = `linear-gradient(135deg, oklch(78% 0.14 ${hue}) 0%, oklch(58% 0.17 ${(hue + 25) % 360}) 100%)`;
+---
+<div class="card-placeholder" style={`background: ${bg};`}>
+  <span class="card-placeholder-glyph">{glyph}</span>
+</div>
+
+<style>
+  .card-placeholder {
+    aspect-ratio: 4 / 5;
+    border-radius: var(--radius-sm);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .card-placeholder-glyph {
+    font-family: var(--font-display);
+    font-style: italic;
+    font-size: clamp(1.5rem, 3.5vw, 3rem);
+    color: rgba(255, 255, 255, 0.85);
+  }
+</style>
