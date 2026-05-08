@@ -53,6 +53,17 @@ The handoff bundle's prototype is React + Babel-standalone. The bundle's README 
 
 Each later phase will get its own design doc, plan, and PR cycle.
 
+### Hard requirement carried forward — asset metadata hygiene
+
+**No real photograph may land in the repo or in any deploy until its metadata has been stripped.** Phase 0 ships only stub assets so the requirement does not bind here, but every subsequent phase that introduces real imagery (Phases 1, 2, 3, 5) MUST run a metadata-strip step before commit. EXIF can leak GPS coordinates, camera serial numbers, original timestamps, and software fingerprints — none of which belong on a public-facing portfolio.
+
+Recommended tooling (to be locked into the implementation plan when the first real-asset phase begins):
+
+- `exiftool -all= -overwrite_original` for one-shot CLI cleanup, or
+- A repo-level `npm run prep:images` script wrapping `exiftool` (and optionally `sharp` for resize/strip-in-one) so the hygiene step is reproducible and runs against `src/assets/` or wherever real photos land.
+
+Definition of done for any asset-introducing phase: `exiftool <file>` shows no GPS, no `Make`/`Model` serials, no `OriginalDateTime`, no `Software`, no embedded thumbnails, no IPTC/XMP author or contact strings beyond what Carolina explicitly wants public.
+
 ## 3. Tech inventory
 
 | Concern | Choice | Reason |
