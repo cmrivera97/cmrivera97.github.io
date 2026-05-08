@@ -17,7 +17,7 @@ html[data-theme='dark'] {
 }
 
 body {
-  font-size: 16px;
+  font-size: 1rem;
   font-weight: 400;
   letter-spacing: 0.005em;
 }

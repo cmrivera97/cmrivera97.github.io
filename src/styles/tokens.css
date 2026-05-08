@@ -1,4 +1,9 @@
 :root {
+  /* --c-accent passes WCAG AA on dark backgrounds only (6.48:1 on #0c0e1c).
+     On light bg (#f4f6fc) contrast is 2.74:1 — do NOT use as text color
+     on light surfaces, and pair with a contrast-boundary technique
+     (e.g. an outer light box-shadow) when used for focus rings on
+     light cards. The hex is locked from the design handoff. */
   --c-accent: #7A8FF7;
   --c-ink: #34363f;
   --c-ink-soft: #5a5d6a;
