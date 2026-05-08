@@ -1,0 +1,31 @@
+:root {
+  --c-accent: #7A8FF7;
+  --c-ink: #34363f;
+  --c-ink-soft: #5a5d6a;
+  --c-bg: #f4f6fc;
+  --c-bg-elev: #ffffff;
+  --c-line: rgba(52, 54, 63, 0.12);
+
+  --font-body: 'Montserrat', system-ui, sans-serif;
+  --font-display: 'Fraunces', Georgia, serif;
+  --font-name: 'Jost', 'Montserrat', sans-serif;
+  --font-script: 'Caveat', cursive;
+
+  --radius-sm: 6px;
+  --radius-md: 14px;
+  --radius-lg: 24px;
+  --radius-pill: 999px;
+
+  --motion-fast: 180ms;
+  --motion-base: 280ms;
+  --motion-slow: 520ms;
+  --ease-standard: cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+:root[data-theme='dark'] {
+  --c-ink: #e6e7ee;
+  --c-ink-soft: #a3a6b8;
+  --c-bg: #0c0e1c;
+  --c-bg-elev: #14172a;
+  --c-line: rgba(230, 231, 238, 0.12);
+}
