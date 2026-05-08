@@ -11,7 +11,8 @@ if ! printf '%s' "$COMMIT_MSG" | grep -qE "$VERB_PATTERN"; then
   printf '           Fix null pointer in payment flow\n'
   printf '           Update Axios to version 1.7.0\n\n'
   printf '  Subject must start with a capitalized infinitive verb.\n'
-  printf '  See docs/superpowers/specs/2026-05-07-phase-0-scaffold-design.md\n'
-  printf '  and Jericho GIT.md for the approved-verb list.\n\n'
+  printf '  See Jericho GIT.md §Commit Message Standards for the approved-verb list.\n\n'
+  printf '  Note: fixup!/squash! prefixes are intentionally unsupported here\n'
+  printf '  (this project does not use git rebase — see global CLAUDE.md).\n\n'
   exit 1
 fi
