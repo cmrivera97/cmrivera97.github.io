@@ -235,3 +235,27 @@ body.no-cursor #cursor-ring {
     --hero-fade: 1 !important;
   }
 }
+
+/* ----- sparkles (Sparkles.astro) ----- */
+
+.sparkles {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.sparkles circle {
+  animation: sparkle-twinkle 4.5s ease-in-out infinite;
+}
+
+@keyframes sparkle-twinkle {
+  0%, 100% { opacity: var(--sparkle-base, 0.3); }
+  50%      { opacity: 0.95; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .sparkles circle {
+    animation: none !important;
+  }
+}
