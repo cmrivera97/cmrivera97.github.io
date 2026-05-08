@@ -1,3 +1,9 @@
+// Runtime locale-swap for the LangToggle island. Mirrors utils/localizedHref.ts
+// and assumes astro.config.mjs sets `trailingSlash: 'always'` — if that ever
+// changes, the click-time swap and the SSR-time href helper will diverge.
+// Lang is duplicated here (not imported from i18n/getT) to keep the island
+// bundle self-contained and free of the i18n dictionaries.
+
 type Lang = 'en' | 'es';
 
 const isLang = (value: unknown): value is Lang => value === 'en' || value === 'es';

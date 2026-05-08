@@ -1016,7 +1016,7 @@ EOF
 ### Task 7: Content collections, zod schemas, category JSONs, and stub projects
 
 **Files:**
-- Create: `src/content/config.ts`
+- Create: `src/content.config.ts` _(Astro 6 — note path; the plan's earlier draft listed `src/content/config.ts`, which Astro 6 rejects as `LegacyContentConfigError`)_
 - Create: `src/content/categories/design/branding.json`
 - Create: `src/content/categories/design/social-media.json`
 - Create: `src/content/categories/design/ai-designs.json`
@@ -1029,7 +1029,7 @@ EOF
 - Create: `src/content/projects/design/branding/sample.json`
 - Create: `src/content/projects/artwork/drawing/sample.json`
 
-- [ ] **Step 1: Write `src/content/config.ts`**
+- [ ] **Step 1: Write `src/content.config.ts`** _(Astro 6 location)_
 
 ```ts
 // packages

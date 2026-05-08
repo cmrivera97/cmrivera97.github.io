@@ -112,8 +112,8 @@ portfolio-web-app-ciruela/
 │  │     ├─ Footer.astro
 │  │     ├─ ThemeToggle.astro
 │  │     └─ LangToggle.astro
+│  ├─ content.config.ts                 # zod schemas + defineCollection (Astro 6 location)
 │  ├─ content/
-│  │  ├─ config.ts                      # zod schemas + defineCollection
 │  │  ├─ categories/
 │  │  │  ├─ design/branding.json
 │  │  │  ├─ design/social-media.json
@@ -148,8 +148,6 @@ portfolio-web-app-ciruela/
 │  │  ├─ tokens.css
 │  │  ├─ reset.css
 │  │  └─ global.css
-│  ├─ types/
-│  │  └─ content.d.ts
 │  └─ utils/
 │     └─ localizedHref.ts
 ├─ docs/superpowers/specs/
