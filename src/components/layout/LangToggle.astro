@@ -11,8 +11,8 @@ const t = getT(lang);
 const base = import.meta.env.BASE_URL;
 ---
 <div class="lang-toggle" role="group" aria-label={t('lang.toggle')} data-lang-current={lang} data-lang-base={base}>
-  <button type="button" data-lang-button="en" aria-pressed={lang === 'en'}>EN</button>
-  <button type="button" data-lang-button="es" aria-pressed={lang === 'es'}>ES</button>
+  <button type="button" data-lang-button="en" aria-pressed={lang === 'en'} data-cursor="link">EN</button>
+  <button type="button" data-lang-button="es" aria-pressed={lang === 'es'} data-cursor="link">ES</button>
 </div>
 
 <script>
