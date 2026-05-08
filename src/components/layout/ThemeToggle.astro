@@ -1,0 +1,46 @@
+---
+// i18n
+import { getT, type Lang } from '../../i18n/getT';
+
+interface Props {
+  lang: Lang;
+}
+
+const { lang } = Astro.props;
+const t = getT(lang);
+---
+<div class="theme-toggle" role="group" aria-label={t('theme.toggle')}>
+  <button type="button" data-theme-button="light" aria-pressed="false">{t('theme.light')}</button>
+  <button type="button" data-theme-button="dark" aria-pressed="false">{t('theme.dark')}</button>
+</div>
+
+<script>
+  import { initThemeToggle } from '../../scripts/theme';
+
+  document.querySelectorAll<HTMLElement>('.theme-toggle').forEach((root) => {
+    initThemeToggle(root);
+  });
+</script>
+
+<style>
+  .theme-toggle {
+    display: inline-flex;
+    gap: 1px;
+    background: var(--c-line);
+    border-radius: var(--radius-pill);
+    padding: 2px;
+  }
+  .theme-toggle button {
+    border: 0;
+    background: transparent;
+    padding: 0.25rem 0.625rem;
+    font-size: 0.75rem;
+    border-radius: var(--radius-pill);
+    color: var(--c-ink-soft);
+    cursor: pointer;
+  }
+  .theme-toggle button[aria-pressed='true'] {
+    background: var(--c-bg-elev);
+    color: var(--c-ink);
+  }
+</style>
