@@ -1,0 +1,41 @@
+{
+  "site": {
+    "title": "Carolina M. Rivera — Portfolio",
+    "description": "Carolina M. Rivera, Graphic Designer & Visual Artist."
+  },
+  "nav": {
+    "home": "Home",
+    "design": "Design",
+    "artwork": "Artwork",
+    "contact": "Contact"
+  },
+  "home": {
+    "name": {
+      "first": "Carolina",
+      "last": "Rivera"
+    },
+    "tagline": "Graphic Designer & Visual Artist"
+  },
+  "design": {
+    "eyebrow": "Design Portfolio",
+    "selected": "Selected"
+  },
+  "artwork": {
+    "eyebrow": "Personal Portfolio",
+    "studio": "Studio"
+  },
+  "contact": {
+    "heading": "Get in touch",
+    "ctaCopy": "Copy email"
+  },
+  "theme": {
+    "toggle": "Toggle theme",
+    "light": "Light",
+    "dark": "Dark"
+  },
+  "lang": {
+    "toggle": "Toggle language",
+    "en": "English",
+    "es": "Spanish"
+  }
+}

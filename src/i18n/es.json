@@ -1,0 +1,41 @@
+{
+  "site": {
+    "title": "Carolina M. Rivera — Portafolio",
+    "description": "Carolina M. Rivera, Diseñadora Gráfica y Artista Visual."
+  },
+  "nav": {
+    "home": "Inicio",
+    "design": "Diseño",
+    "artwork": "Obra",
+    "contact": "Contacto"
+  },
+  "home": {
+    "name": {
+      "first": "Carolina",
+      "last": "Rivera"
+    },
+    "tagline": "Diseñadora Gráfica y Artista Visual"
+  },
+  "design": {
+    "eyebrow": "Portafolio de Diseño",
+    "selected": "Seleccionado"
+  },
+  "artwork": {
+    "eyebrow": "Portafolio Personal",
+    "studio": "Estudio"
+  },
+  "contact": {
+    "heading": "Contáctame",
+    "ctaCopy": "Copiar correo"
+  },
+  "theme": {
+    "toggle": "Cambiar tema",
+    "light": "Claro",
+    "dark": "Oscuro"
+  },
+  "lang": {
+    "toggle": "Cambiar idioma",
+    "en": "Inglés",
+    "es": "Español"
+  }
+}
