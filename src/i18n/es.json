@@ -40,5 +40,9 @@
     "toggle": "Cambiar idioma",
     "en": "Inglés",
     "es": "Español"
+  },
+  "showcase": {
+    "prev": "Proyecto anterior",
+    "next": "Siguiente proyecto"
   }
 }
