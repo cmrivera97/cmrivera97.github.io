@@ -47,10 +47,36 @@ const { title, description, lang } = Astro.props;
         }
       })();
     </script>
+
+    <script is:inline>
+      // Body-level capability flags for motion modules.
+      // Inline so they're set before any deferred script reads them.
+      (function () {
+        try {
+          var coarse = window.matchMedia && window.matchMedia('(pointer: coarse)').matches;
+          var reduced = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+          if (coarse) document.documentElement.dataset.pointerCoarse = 'true';
+          if (reduced) document.documentElement.dataset.reducedMotion = 'true';
+          document.body && document.body.classList.add(coarse || reduced ? 'no-cursor' : 'has-cursor');
+        } catch (e) {
+          /* fall back silently */
+        }
+      })();
+    </script>
   </head>
   <body>
     <Header lang={lang} />
     <slot />
     <Footer lang={lang} />
+
+    <script>
+      import { initCursor } from '../scripts/cursor';
+      import { initSplash } from '../scripts/splash';
+      import { initReveal } from '../scripts/reveal';
+
+      initCursor();
+      initSplash('#7A8FF7');
+      initReveal();
+    </script>
   </body>
 </html>
