@@ -29,7 +29,19 @@
   },
   "contact": {
     "heading": "Contáctame",
-    "ctaCopy": "Copiar correo"
+    "line1": "Soy Carolina — diseñadora gráfica y artista visual.",
+    "line2": "Basada en México, trabajo en remoto a nivel mundial.",
+    "line3": "Abierta a encargos, residencias y colaboraciones.",
+    "ctaCopy": "Copiar correo",
+    "email": "hello@carolinariverart.com",
+    "form": {
+      "name": { "label": "Nombre", "placeholder": "Tu nombre completo" },
+      "email": { "label": "Correo", "placeholder": "tu@ejemplo.com" },
+      "message": { "label": "Cuéntame", "placeholder": "¿En qué estás trabajando?" },
+      "send": "Enviar mensaje",
+      "sent": "Enviado",
+      "copied": "Copiado"
+    }
   },
   "theme": {
     "toggle": "Cambiar tema",

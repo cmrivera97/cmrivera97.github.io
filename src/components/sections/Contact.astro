@@ -1,0 +1,106 @@
+---
+// i18n
+import { getT, type Lang } from '../../i18n/getT';
+
+interface Props {
+  lang: Lang;
+}
+
+const { lang } = Astro.props;
+const t = getT(lang);
+const email = t('contact.email');
+
+const socials: ReadonlyArray<{
+  key: string;
+  href: string;
+  icon: string;
+  label: string;
+}> = [
+  {
+    key: 'behance',
+    href: 'https://www.behance.net/',
+    icon: 'behance.svg',
+    label: 'Behance',
+  },
+  {
+    key: 'instagram',
+    href: 'https://www.instagram.com/',
+    icon: 'instagram.svg',
+    label: 'Instagram',
+  },
+  {
+    key: 'linkedin',
+    href: 'https://www.linkedin.com/',
+    icon: 'linkedin.svg',
+    label: 'LinkedIn',
+  },
+  {
+    key: 'whatsapp',
+    href: 'https://wa.me/',
+    icon: 'whatsapp.svg',
+    label: 'WhatsApp',
+  },
+];
+---
+<section id="contact" class="contact-section" data-reveal>
+  <div class="contact-left">
+    <h2 class="contact-heading">{t('contact.heading')}</h2>
+    <div class="contact-meta">
+      <span class="contact-meta-line">{t('contact.line1')}</span>
+      <span class="contact-meta-line subtle">{t('contact.line2')}</span>
+      <span class="contact-meta-line subtle">{t('contact.line3')}</span>
+    </div>
+    <div class="contact-email-card">
+      <span class="contact-email-address">{email}</span>
+      <button type="button" class="contact-copy-button" data-cursor="link" data-copy-target={email}>
+        {t('contact.ctaCopy')}
+      </button>
+    </div>
+  </div>
+
+  <form class="contact-form" action={`mailto:${email}`} method="post" enctype="text/plain">
+    <label>
+      {t('contact.form.name.label')}
+      <input type="text" name="name" required placeholder={t('contact.form.name.placeholder')} data-cursor="link" />
+    </label>
+    <label>
+      {t('contact.form.email.label')}
+      <input type="email" name="email" required placeholder={t('contact.form.email.placeholder')} data-cursor="link" />
+    </label>
+    <label>
+      {t('contact.form.message.label')}
+      <textarea name="message" required placeholder={t('contact.form.message.placeholder')} data-cursor="link"></textarea>
+    </label>
+    <button type="submit" class="contact-send" data-cursor="link">{t('contact.form.send')}</button>
+
+    <ul class="contact-socials" role="list">
+      {socials.map((s) => (
+        <li>
+          <a href={s.href} aria-label={s.label} target="_blank" rel="noopener noreferrer" data-cursor="link">
+            <img src={`${import.meta.env.BASE_URL}icons/${s.icon}`} alt="" width="20" height="20" />
+          </a>
+        </li>
+      ))}
+    </ul>
+  </form>
+</section>
+
+<script>
+  document.querySelectorAll<HTMLButtonElement>('.contact-copy-button').forEach((btn) => {
+    btn.addEventListener('click', async () => {
+      const target = btn.dataset.copyTarget;
+      if (!target) return;
+      try {
+        await navigator.clipboard.writeText(target);
+        const original = btn.textContent;
+        btn.textContent = btn.dataset.copiedLabel ?? 'Copied';
+        setTimeout(() => {
+          // eslint-disable-next-line no-param-reassign
+          if (original !== null) btn.textContent = original;
+        }, 1600);
+      } catch {
+        // clipboard blocked; no-op
+      }
+    });
+  });
+</script>
