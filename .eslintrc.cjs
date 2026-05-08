@@ -27,6 +27,7 @@ module.exports = {
     '@typescript-eslint/no-unused-vars': 'error',
     '@typescript-eslint/explicit-function-return-type': 'error',
     '@typescript-eslint/no-explicit-any': 'warn',
+    'import/no-unresolved': ['error', { ignore: ['^astro:', '^astro/loaders'] }],
     'import/no-cycle': 'error',
     'import/no-default-export': 'off',
     'import/prefer-default-export': 'off',

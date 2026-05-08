@@ -1,0 +1,13 @@
+{
+  "slug": "sample",
+  "kind": "design",
+  "category": "branding",
+  "title": { "en": "Sample Brand", "es": "Marca de Muestra" },
+  "subtitle": { "en": "Placeholder identity system", "es": "Sistema de identidad placeholder" },
+  "studio": "Independent",
+  "role": { "en": "Designer", "es": "Diseñadora" },
+  "sectors": ["placeholder"],
+  "year": 2026,
+  "cover": "/placeholder-cover.svg",
+  "gallery": []
+}

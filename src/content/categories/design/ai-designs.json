@@ -1,0 +1,10 @@
+{
+  "slug": "ai-designs",
+  "kind": "design",
+  "label": { "en": "AI Designs / Image Editing", "es": "Diseños IA / Edición" },
+  "blurb": {
+    "en": "Generative imagery and post-production paired with a designer's eye.",
+    "es": "Imagen generativa y postproducción con mirada de diseñadora."
+  },
+  "sisterCategories": ["illustration", "social-media", "print"]
+}
