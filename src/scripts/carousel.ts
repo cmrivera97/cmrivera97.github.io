@@ -75,6 +75,18 @@ export const initCarousel = (root?: ParentNode): void => {
 
     computeAndDispatch();
   });
+
+  window.addEventListener('bubble:change', () => {
+    // After a bubble swap, the formerly-hidden carousel is now visible.
+    // Re-run active-card detection on every track so the meta strip stays accurate.
+    tracks.forEach((track) => {
+      const result = findActiveCard(track);
+      if (!result) return;
+      setActive(track, result.index);
+      const slug = result.card.dataset.slug ?? '';
+      dispatchActive(track, { index: result.index, slug });
+    });
+  });
 };
 
 export const initTiltGrid = (root?: ParentNode): void => {

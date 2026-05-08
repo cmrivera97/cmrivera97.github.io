@@ -105,7 +105,7 @@ const initialProject = projectMetaByCategory.get(initial.data.slug)?.[0];
   </div>
 
   {Array.from(projectMetaByCategory.entries()).map(([slug, projects]) => (
-    <script type="application/json" data-projects={slug} set:html={JSON.stringify(projects)} />
+    <script type="application/json" is:inline data-projects={slug} set:html={JSON.stringify(projects).replace(/<\/script/giu, '<\\/script')} />
   ))}
 </section>
 

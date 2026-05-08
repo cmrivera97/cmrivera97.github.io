@@ -20,12 +20,10 @@
     "cta": "View work"
   },
   "design": {
-    "eyebrow": "Design Portfolio",
-    "selected": "Selected"
+    "eyebrow": "Design Portfolio"
   },
   "artwork": {
-    "eyebrow": "Personal Portfolio",
-    "studio": "Studio"
+    "eyebrow": "Personal Portfolio"
   },
   "contact": {
     "heading": "Get in touch",
@@ -39,7 +37,6 @@
       "email": { "label": "Email", "placeholder": "you@example.com" },
       "message": { "label": "Tell me about it", "placeholder": "What are you working on?" },
       "send": "Send message",
-      "sent": "Sent",
       "copied": "Copied"
     }
   },

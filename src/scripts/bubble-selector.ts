@@ -73,6 +73,24 @@ export const initBubbleSelector = (root?: ParentNode): void => {
       });
     });
 
+    bubbles.forEach((b, idx) => {
+      b.addEventListener('keydown', (e: KeyboardEvent) => {
+        let nextIdx = -1;
+        if (e.key === 'ArrowRight') nextIdx = Math.min(bubbles.length - 1, idx + 1);
+        else if (e.key === 'ArrowLeft') nextIdx = Math.max(0, idx - 1);
+        else if (e.key === 'Home') nextIdx = 0;
+        else if (e.key === 'End') nextIdx = bubbles.length - 1;
+        if (nextIdx === -1) return;
+        e.preventDefault();
+        const nextBubble = bubbles[nextIdx];
+        if (!nextBubble) return;
+        nextBubble.focus();
+        const cat = nextBubble.dataset.category;
+        const label = nextBubble.textContent ?? '';
+        if (cat) activate(cat, label);
+      });
+    });
+
     window.addEventListener('carousel:active', (e: Event) => {
       const { detail } = e as CustomEvent<CarouselActiveDetail>;
       if (!detail) return;
