@@ -3,6 +3,7 @@
 import { localizedHref } from '../../utils/localizedHref';
 import { getT, type Lang } from '../../i18n/getT';
 // components
+import LangToggle from './LangToggle.astro';
 import ThemeToggle from './ThemeToggle.astro';
 
 interface Props {
@@ -40,6 +41,7 @@ const artworkSlugs = ['drawing', 'painting', 'photography'] as const;
     </ul>
   </nav>
   <div class="header-controls">
+    <LangToggle lang={lang} />
     <ThemeToggle lang={lang} />
   </div>
 </header>
