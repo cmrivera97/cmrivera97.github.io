@@ -526,3 +526,94 @@ body.no-cursor #cursor-ring {
   align-items: center;
   justify-content: center;
 }
+
+/* ----- portfolio section (PortfolioSection.astro) ----- */
+
+.portfolio-section {
+  padding: 6rem 0 3rem;
+  position: relative;
+  scroll-margin-top: 80px;
+}
+
+.portfolio-eyebrow {
+  display: flex;
+  justify-content: center;
+  gap: 0.5em;
+  font-family: var(--font-body);
+  font-size: 0.8rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--c-ink-soft);
+  margin-bottom: 1.5rem;
+}
+
+.portfolio-eyebrow .accent {
+  color: var(--c-accent);
+}
+
+.portfolio-eyebrow .selected-category {
+  color: var(--c-ink);
+}
+
+.portfolio-bubbles {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-bottom: 2rem;
+  padding: 0 1.5rem;
+}
+
+.portfolio-bubble {
+  appearance: none;
+  border: 1px solid var(--c-line);
+  background: var(--c-bg-elev);
+  color: var(--c-ink);
+  border-radius: var(--radius-pill);
+  padding: 0.4rem 0.875rem;
+  font-family: var(--font-body);
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: background 200ms, color 200ms, transform 160ms var(--ease-standard);
+}
+
+.portfolio-bubble[aria-selected='true'] {
+  background: var(--c-ink);
+  color: var(--c-bg);
+}
+
+.portfolio-bubble:hover {
+  transform: translateY(-1px);
+}
+
+.portfolio-meta-strip {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+  padding: 2.5rem 12vw 0;
+  font-family: var(--font-body);
+  font-size: 0.8rem;
+}
+
+.portfolio-meta-strip > div {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.portfolio-meta-label {
+  font-size: 0.7rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--c-ink-soft);
+}
+
+.portfolio-meta-value {
+  color: var(--c-ink);
+}
+
+@media (max-width: 720px) {
+  .portfolio-meta-strip {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}

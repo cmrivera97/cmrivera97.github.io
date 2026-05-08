@@ -44,5 +44,12 @@
   "showcase": {
     "prev": "Proyecto anterior",
     "next": "Siguiente proyecto"
+  },
+  "bubble": { "label": "Seleccionado" },
+  "meta": {
+    "studio": "Estudio",
+    "role": "Rol",
+    "sectors": "Sectores",
+    "year": "Año"
   }
 }
