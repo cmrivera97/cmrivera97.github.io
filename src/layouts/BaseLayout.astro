@@ -16,7 +16,8 @@ const { title, description, lang } = Astro.props;
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
     <meta name="description" content={description} />
-    <meta name="theme-color" content="#7A8FF7" />
+    <meta name="theme-color" content="#7A8FF7" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#14172a" media="(prefers-color-scheme: dark)" />
     <title>{title}</title>
 
     <link rel="icon" type="image/svg+xml" href={`${import.meta.env.BASE_URL}favicon.svg`} />
@@ -29,6 +30,8 @@ const { title, description, lang } = Astro.props;
     />
 
     <script is:inline>
+      // is:inline runs verbatim before the bundler — var/try-catch are intentional
+      // for pre-ES6 safety and graceful localStorage failures (private mode, etc.).
       (function () {
         try {
           var stored = localStorage.getItem('theme');

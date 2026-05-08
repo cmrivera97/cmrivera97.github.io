@@ -40,6 +40,7 @@ module.exports = {
     'no-var': 'error',
     'no-shadow': 'off',
     '@typescript-eslint/no-shadow': 'warn',
+    'max-len': ['error', { code: 180, ignoreUrls: true, ignoreStrings: false }],
   },
   overrides: [
     {
@@ -51,7 +52,6 @@ module.exports = {
       },
       rules: {
         '@typescript-eslint/explicit-function-return-type': 'off',
-        'max-len': 'off',
       },
     },
     {
