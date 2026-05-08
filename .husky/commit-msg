@@ -1,0 +1,17 @@
+#!/usr/bin/env sh
+
+COMMIT_MSG=$(head -n 1 "$1")
+
+VERB_PATTERN="^(Add|Fix|Update|Create|Remove|Delete|Improve|Refactor|Move|Rename|Revert|Merge|Configure|Enable|Disable|Extract|Simplify|Optimize|Implement|Integrate|Replace|Resolve|Validate|Document|Init|Apply|Enforce|Extend|Handle|Introduce|Prepare|Release|Run|Skip|Split|Support|Use|Verify|Set|Clean|Correct|Lock|Reduce|Test) .+"
+
+if ! printf '%s' "$COMMIT_MSG" | grep -qE "$VERB_PATTERN"; then
+  printf '\n  ✗ Invalid commit message subject: "%s"\n\n' "$COMMIT_MSG"
+  printf '  Format : <Verb> <description>\n'
+  printf '  Example: Add user authentication middleware\n'
+  printf '           Fix null pointer in payment flow\n'
+  printf '           Update Axios to version 1.7.0\n\n'
+  printf '  Subject must start with a capitalized infinitive verb.\n'
+  printf '  See docs/superpowers/specs/2026-05-07-phase-0-scaffold-design.md\n'
+  printf '  and Jericho GIT.md for the approved-verb list.\n\n'
+  exit 1
+fi
