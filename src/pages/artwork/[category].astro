@@ -4,6 +4,8 @@ import { getCollection, getEntry } from 'astro:content';
 
 // layouts
 import BaseLayout from '../../layouts/BaseLayout.astro';
+// components
+import SubpageGrid from '../../components/sections/SubpageGrid.astro';
 // i18n
 import { getT } from '../../i18n/getT';
 
@@ -33,12 +35,5 @@ const blurb = category.data.blurb[lang];
 const pageTitle = `${label} · ${t('site.title')}`;
 ---
 <BaseLayout title={pageTitle} description={blurb} lang={lang}>
-  <main>
-    <p><small>{t('artwork.eyebrow')} · {t('artwork.studio')}</small></p>
-    <h1>{label}</h1>
-    <p>{blurb}</p>
-    <p>
-      <em>Phase 0 stub — full subpage template lands in Phase 5.</em>
-    </p>
-  </main>
+  <SubpageGrid category={category} lang={lang} />
 </BaseLayout>
