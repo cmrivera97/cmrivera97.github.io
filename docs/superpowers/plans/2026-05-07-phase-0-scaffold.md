@@ -334,6 +334,7 @@ module.exports = {
     '@typescript-eslint/no-explicit-any': 'warn',
     'import/no-cycle': 'error',
     'import/no-default-export': 'off',
+    'import/prefer-default-export': 'off',
     'import/extensions': 'off',
     'import/order': ['error', {
       groups: ['builtin', 'external', 'internal', ['parent', 'sibling'], 'index'],
@@ -342,7 +343,8 @@ module.exports = {
     'eqeqeq': ['error', 'always'],
     'prefer-const': 'error',
     'no-var': 'error',
-    'no-shadow': 'warn',
+    'no-shadow': 'off',
+    '@typescript-eslint/no-shadow': 'warn',
   },
   overrides: [
     {
