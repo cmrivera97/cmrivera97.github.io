@@ -1,0 +1,23 @@
+---
+interface Props {
+  items: string[];
+  sep?: string;
+  speedSec?: number;
+}
+
+const { items, sep = '✦', speedSec = 32 }: Props = Astro.props;
+const trackStyle = `--motion-marquee-default: ${speedSec}s;`;
+---
+<div class="marquee" data-marquee style={trackStyle}>
+  <div class="marquee-track" data-marquee-track>
+    {items.map((item) => (
+      <span class="marquee-item" data-marquee-item data-sep={sep}>{item}</span>
+    ))}
+  </div>
+</div>
+
+<script>
+  import { initMarquee } from '../../scripts/marquee';
+
+  initMarquee();
+</script>

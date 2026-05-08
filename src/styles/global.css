@@ -149,3 +149,55 @@ body.no-cursor #cursor-ring {
     transition: none !important;
   }
 }
+
+/* ----- marquee (Marquee.astro + marquee.ts) ----- */
+
+[data-marquee] {
+  display: flex;
+  overflow: hidden;
+  width: 100%;
+  gap: 1.5rem;
+  padding: 0.75rem 0;
+  border-top: 1px solid var(--c-line);
+  border-bottom: 1px solid var(--c-line);
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: clamp(1rem, 1.6vw, 1.25rem);
+  color: var(--c-ink-soft);
+}
+
+[data-marquee-track] {
+  display: flex;
+  gap: 1.5rem;
+  flex-shrink: 0;
+  animation: marquee-x var(--motion-marquee-default) linear infinite;
+  white-space: nowrap;
+}
+
+[data-marquee]:hover [data-marquee-track] {
+  animation-play-state: paused;
+}
+
+[data-marquee-item] {
+  display: inline-flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+[data-marquee-item]::after {
+  content: attr(data-sep);
+  color: var(--c-accent);
+  font-style: normal;
+}
+
+@keyframes marquee-x {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  [data-marquee-track] {
+    animation: none !important;
+    transform: none !important;
+  }
+}
