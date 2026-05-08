@@ -6,7 +6,7 @@
 
 **Architecture:** Astro static-output site with vanilla TypeScript islands. JSON files validated by zod via Astro content collections drive 9 category subpages × 2 locales (18) + 2 home pages = 20 routes. Theming is a single `data-theme` attribute on `<html>` with a no-FOUC inline bootstrap. Husky enforces Jericho commit-message verbs; `lint-staged` keeps `pre-commit` light. CI deploys `dist/` to GitHub Pages on push to `main`. Site/base read from env vars to support migration to Carolina's GitHub account later.
 
-**Tech Stack:** Astro 5.x, TypeScript 5.x (strict), zod, ESLint 8.x (legacy `.eslintrc.cjs`) + `airbnb-base` + `@typescript-eslint/strict` + `plugin:astro/recommended`, Husky 9.x, lint-staged 15.x, GitHub Actions (`actions/deploy-pages@v4`), Google Fonts CDN, npm only with exact pinning.
+**Tech Stack:** Astro 6.x, TypeScript 6.x (strict) + `@astrojs/check`, zod, ESLint 8.x (legacy `.eslintrc.cjs`) + `airbnb-base` + `@typescript-eslint/strict` + `plugin:astro/recommended`, Husky 9.x, lint-staged 15.x, GitHub Actions (`actions/deploy-pages@v4`), Google Fonts CDN, npm only with exact pinning. Actual versions captured per-task at install time via `npm view`.
 
 **Spec reference:** `docs/superpowers/specs/2026-05-07-phase-0-scaffold-design.md`
 
