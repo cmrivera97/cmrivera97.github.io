@@ -1,0 +1,25 @@
+{
+  "slug": "reflejos",
+  "kind": "artwork",
+  "category": "photography",
+  "title": {
+    "en": "Reflejos",
+    "es": "Reflejos"
+  },
+  "subtitle": {
+    "en": "Reflective surfaces series",
+    "es": "Serie de superficies reflectantes"
+  },
+  "studio": "Independent",
+  "role": {
+    "en": "Photographer",
+    "es": "Photographer"
+  },
+  "sectors": [
+    "abstract",
+    "experimental"
+  ],
+  "year": 2025,
+  "cover": "placeholder:hue=243",
+  "gallery": []
+}

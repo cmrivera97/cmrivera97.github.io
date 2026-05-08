@@ -1,0 +1,24 @@
+{
+  "slug": "manos",
+  "kind": "artwork",
+  "category": "drawing",
+  "title": {
+    "en": "Hands",
+    "es": "Manos"
+  },
+  "subtitle": {
+    "en": "Pencil portrait series",
+    "es": "Serie de retratos a lápiz"
+  },
+  "studio": "Independent",
+  "role": {
+    "en": "Artist",
+    "es": "Artist"
+  },
+  "sectors": [
+    "portrait"
+  ],
+  "year": 2024,
+  "cover": "placeholder:hue=320",
+  "gallery": []
+}

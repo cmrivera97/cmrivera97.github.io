@@ -1,0 +1,24 @@
+{
+  "slug": "almanaque-2025",
+  "kind": "design",
+  "category": "print",
+  "title": {
+    "en": "Almanaque 2025",
+    "es": "Almanaque 2025"
+  },
+  "subtitle": {
+    "en": "Yearly almanac design",
+    "es": "Diseño de almanaque anual"
+  },
+  "studio": "Independent",
+  "role": {
+    "en": "Designer",
+    "es": "Designer"
+  },
+  "sectors": [
+    "publishing"
+  ],
+  "year": 2025,
+  "cover": "placeholder:hue=304",
+  "gallery": []
+}

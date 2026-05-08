@@ -1,0 +1,25 @@
+{
+  "slug": "fauna",
+  "kind": "design",
+  "category": "illustration",
+  "title": {
+    "en": "Fauna",
+    "es": "Fauna"
+  },
+  "subtitle": {
+    "en": "Field guide illustrations",
+    "es": "Ilustraciones para guía de campo"
+  },
+  "studio": "Independent",
+  "role": {
+    "en": "Illustrator",
+    "es": "Illustrator"
+  },
+  "sectors": [
+    "publishing",
+    "science"
+  ],
+  "year": 2024,
+  "cover": "placeholder:hue=235",
+  "gallery": []
+}

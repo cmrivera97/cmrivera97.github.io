@@ -1,0 +1,25 @@
+{
+  "slug": "taller-papel",
+  "kind": "design",
+  "category": "print",
+  "title": {
+    "en": "Taller Papel",
+    "es": "Taller Papel"
+  },
+  "subtitle": {
+    "en": "Workshop printed collateral",
+    "es": "Material impreso de taller"
+  },
+  "studio": "Independent",
+  "role": {
+    "en": "Designer",
+    "es": "Designer"
+  },
+  "sectors": [
+    "craft",
+    "culture"
+  ],
+  "year": 2025,
+  "cover": "placeholder:hue=301",
+  "gallery": []
+}

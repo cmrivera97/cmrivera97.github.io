@@ -1,0 +1,25 @@
+{
+  "slug": "verbena",
+  "kind": "design",
+  "category": "branding",
+  "title": {
+    "en": "Verbena",
+    "es": "Verbena"
+  },
+  "subtitle": {
+    "en": "Wellness brand identity",
+    "es": "Identidad de marca de bienestar"
+  },
+  "studio": "Independent",
+  "role": {
+    "en": "Designer",
+    "es": "Designer"
+  },
+  "sectors": [
+    "wellness",
+    "lifestyle"
+  ],
+  "year": 2024,
+  "cover": "placeholder:hue=320",
+  "gallery": []
+}

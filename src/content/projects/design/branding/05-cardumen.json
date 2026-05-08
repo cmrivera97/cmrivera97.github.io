@@ -1,0 +1,25 @@
+{
+  "slug": "cardumen",
+  "kind": "design",
+  "category": "branding",
+  "title": {
+    "en": "Cardumen",
+    "es": "Cardumen"
+  },
+  "subtitle": {
+    "en": "Editorial collective brand",
+    "es": "Marca de colectivo editorial"
+  },
+  "studio": "Independent",
+  "role": {
+    "en": "Designer",
+    "es": "Designer"
+  },
+  "sectors": [
+    "publishing",
+    "culture"
+  ],
+  "year": 2025,
+  "cover": "placeholder:hue=302",
+  "gallery": []
+}

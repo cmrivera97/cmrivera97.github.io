@@ -1,0 +1,25 @@
+{
+  "slug": "caja-digital",
+  "kind": "design",
+  "category": "social-media",
+  "title": {
+    "en": "Caja Digital",
+    "es": "Caja Digital"
+  },
+  "subtitle": {
+    "en": "Boxed Reels series",
+    "es": "Serie de Reels en formato caja"
+  },
+  "studio": "Independent",
+  "role": {
+    "en": "Designer",
+    "es": "Designer"
+  },
+  "sectors": [
+    "social",
+    "experiments"
+  ],
+  "year": 2024,
+  "cover": "placeholder:hue=311",
+  "gallery": []
+}

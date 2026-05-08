@@ -1,0 +1,25 @@
+{
+  "slug": "cuaderno-azul",
+  "kind": "artwork",
+  "category": "drawing",
+  "title": {
+    "en": "Blue Notebook",
+    "es": "Cuaderno Azul"
+  },
+  "subtitle": {
+    "en": "Daily ink studies",
+    "es": "Estudios diarios a tinta"
+  },
+  "studio": "Independent",
+  "role": {
+    "en": "Artist",
+    "es": "Artist"
+  },
+  "sectors": [
+    "ink",
+    "study"
+  ],
+  "year": 2025,
+  "cover": "placeholder:hue=231",
+  "gallery": []
+}

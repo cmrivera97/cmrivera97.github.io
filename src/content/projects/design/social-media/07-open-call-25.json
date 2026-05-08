@@ -1,0 +1,25 @@
+{
+  "slug": "open-call-25",
+  "kind": "design",
+  "category": "social-media",
+  "title": {
+    "en": "Open Call 2025",
+    "es": "Convocatoria 2025"
+  },
+  "subtitle": {
+    "en": "Submission campaign suite",
+    "es": "Suite de campaña de envío"
+  },
+  "studio": "Independent",
+  "role": {
+    "en": "Designer",
+    "es": "Designer"
+  },
+  "sectors": [
+    "culture",
+    "events"
+  ],
+  "year": 2025,
+  "cover": "placeholder:hue=236",
+  "gallery": []
+}

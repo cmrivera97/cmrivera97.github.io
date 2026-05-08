@@ -1,0 +1,25 @@
+{
+  "slug": "galería-tres",
+  "kind": "design",
+  "category": "ui-design",
+  "title": {
+    "en": "Galería Tres",
+    "es": "Galería Tres"
+  },
+  "subtitle": {
+    "en": "Gallery website",
+    "es": "Sitio web de galería"
+  },
+  "studio": "Independent",
+  "role": {
+    "en": "Designer",
+    "es": "Designer"
+  },
+  "sectors": [
+    "web",
+    "culture"
+  ],
+  "year": 2024,
+  "cover": "placeholder:hue=281",
+  "gallery": []
+}

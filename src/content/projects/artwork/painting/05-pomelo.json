@@ -1,0 +1,24 @@
+{
+  "slug": "pomelo",
+  "kind": "artwork",
+  "category": "painting",
+  "title": {
+    "en": "Pomelo",
+    "es": "Pomelo"
+  },
+  "subtitle": {
+    "en": "Still-life pomelo studies",
+    "es": "Naturalezas muertas con pomelo"
+  },
+  "studio": "Independent",
+  "role": {
+    "en": "Artist",
+    "es": "Artist"
+  },
+  "sectors": [
+    "still-life"
+  ],
+  "year": 2024,
+  "cover": "placeholder:hue=318",
+  "gallery": []
+}

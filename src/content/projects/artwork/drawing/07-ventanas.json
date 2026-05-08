@@ -1,0 +1,24 @@
+{
+  "slug": "ventanas",
+  "kind": "artwork",
+  "category": "drawing",
+  "title": {
+    "en": "Ventanas",
+    "es": "Ventanas"
+  },
+  "subtitle": {
+    "en": "Window-light pencil studies",
+    "es": "Estudios de luz de ventana a lápiz"
+  },
+  "studio": "Independent",
+  "role": {
+    "en": "Artist",
+    "es": "Artist"
+  },
+  "sectors": [
+    "study"
+  ],
+  "year": 2025,
+  "cover": "placeholder:hue=219",
+  "gallery": []
+}

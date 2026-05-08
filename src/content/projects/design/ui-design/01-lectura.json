@@ -1,0 +1,25 @@
+{
+  "slug": "lectura",
+  "kind": "design",
+  "category": "ui-design",
+  "title": {
+    "en": "Lectura",
+    "es": "Lectura"
+  },
+  "subtitle": {
+    "en": "Reading app interface",
+    "es": "Interfaz de app de lectura"
+  },
+  "studio": "Independent",
+  "role": {
+    "en": "Designer",
+    "es": "Designer"
+  },
+  "sectors": [
+    "app",
+    "reading"
+  ],
+  "year": 2025,
+  "cover": "placeholder:hue=284",
+  "gallery": []
+}

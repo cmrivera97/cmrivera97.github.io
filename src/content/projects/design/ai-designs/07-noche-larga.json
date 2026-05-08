@@ -1,0 +1,24 @@
+{
+  "slug": "noche-larga",
+  "kind": "design",
+  "category": "ai-designs",
+  "title": {
+    "en": "Long Night",
+    "es": "Noche Larga"
+  },
+  "subtitle": {
+    "en": "Album artwork generation",
+    "es": "Generación de portada de álbum"
+  },
+  "studio": "Independent",
+  "role": {
+    "en": "Art Director",
+    "es": "Art Director"
+  },
+  "sectors": [
+    "music"
+  ],
+  "year": 2024,
+  "cover": "placeholder:hue=260",
+  "gallery": []
+}

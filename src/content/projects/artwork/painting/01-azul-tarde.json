@@ -1,0 +1,24 @@
+{
+  "slug": "azul-tarde",
+  "kind": "artwork",
+  "category": "painting",
+  "title": {
+    "en": "Tarde Azul",
+    "es": "Tarde Azul"
+  },
+  "subtitle": {
+    "en": "Watercolor afternoons",
+    "es": "Tardes en acuarela"
+  },
+  "studio": "Independent",
+  "role": {
+    "en": "Artist",
+    "es": "Artist"
+  },
+  "sectors": [
+    "watercolor"
+  ],
+  "year": 2025,
+  "cover": "placeholder:hue=212",
+  "gallery": []
+}

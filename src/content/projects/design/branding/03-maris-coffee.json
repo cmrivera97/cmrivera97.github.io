@@ -1,0 +1,25 @@
+{
+  "slug": "maris-coffee",
+  "kind": "design",
+  "category": "branding",
+  "title": {
+    "en": "Maris Coffee",
+    "es": "Café Maris"
+  },
+  "subtitle": {
+    "en": "Specialty coffee brand",
+    "es": "Marca de café de especialidad"
+  },
+  "studio": "Independent",
+  "role": {
+    "en": "Designer",
+    "es": "Designer"
+  },
+  "sectors": [
+    "food",
+    "hospitality"
+  ],
+  "year": 2024,
+  "cover": "placeholder:hue=290",
+  "gallery": []
+}

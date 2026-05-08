@@ -1,0 +1,25 @@
+{
+  "slug": "recetario",
+  "kind": "design",
+  "category": "illustration",
+  "title": {
+    "en": "Recetario",
+    "es": "Recetario"
+  },
+  "subtitle": {
+    "en": "Cookbook illustration set",
+    "es": "Set de ilustración para recetario"
+  },
+  "studio": "Independent",
+  "role": {
+    "en": "Illustrator",
+    "es": "Illustrator"
+  },
+  "sectors": [
+    "publishing",
+    "food"
+  ],
+  "year": 2025,
+  "cover": "placeholder:hue=287",
+  "gallery": []
+}

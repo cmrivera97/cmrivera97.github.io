@@ -1,0 +1,24 @@
+{
+  "slug": "familiar",
+  "kind": "artwork",
+  "category": "photography",
+  "title": {
+    "en": "Familiar",
+    "es": "Familiar"
+  },
+  "subtitle": {
+    "en": "Portrait of close friends",
+    "es": "Retrato de amistades cercanas"
+  },
+  "studio": "Independent",
+  "role": {
+    "en": "Photographer",
+    "es": "Photographer"
+  },
+  "sectors": [
+    "portrait"
+  ],
+  "year": 2025,
+  "cover": "placeholder:hue=210",
+  "gallery": []
+}

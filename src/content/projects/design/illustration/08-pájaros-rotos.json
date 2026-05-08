@@ -1,0 +1,24 @@
+{
+  "slug": "pájaros-rotos",
+  "kind": "design",
+  "category": "illustration",
+  "title": {
+    "en": "Broken Birds",
+    "es": "Pájaros Rotos"
+  },
+  "subtitle": {
+    "en": "Personal illustration series",
+    "es": "Serie de ilustración personal"
+  },
+  "studio": "Independent",
+  "role": {
+    "en": "Illustrator",
+    "es": "Illustrator"
+  },
+  "sectors": [
+    "personal"
+  ],
+  "year": 2025,
+  "cover": "placeholder:hue=234",
+  "gallery": []
+}

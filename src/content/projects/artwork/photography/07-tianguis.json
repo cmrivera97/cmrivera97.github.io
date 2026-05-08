@@ -1,0 +1,24 @@
+{
+  "slug": "tianguis",
+  "kind": "artwork",
+  "category": "photography",
+  "title": {
+    "en": "Tianguis",
+    "es": "Tianguis"
+  },
+  "subtitle": {
+    "en": "Open-market photo essay",
+    "es": "Ensayo fotográfico de tianguis"
+  },
+  "studio": "Independent",
+  "role": {
+    "en": "Photographer",
+    "es": "Photographer"
+  },
+  "sectors": [
+    "documentary"
+  ],
+  "year": 2024,
+  "cover": "placeholder:hue=294",
+  "gallery": []
+}

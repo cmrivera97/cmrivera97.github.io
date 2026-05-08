@@ -17,7 +17,7 @@
   },
   "lint-staged": {
     "*.{ts,astro}": "eslint --max-warnings=0",
-    "*.{js,cjs,mjs}": "eslint --max-warnings=0"
+    "./*.{js,cjs,mjs}": "eslint --max-warnings=0"
   },
   "dependencies": {
     "astro": "6.3.1",

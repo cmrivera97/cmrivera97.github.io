@@ -1,0 +1,25 @@
+{
+  "slug": "studio-portal",
+  "kind": "design",
+  "category": "ui-design",
+  "title": {
+    "en": "Studio Portal",
+    "es": "Studio Portal"
+  },
+  "subtitle": {
+    "en": "Creative-studio extranet",
+    "es": "Extranet de estudio creativo"
+  },
+  "studio": "Independent",
+  "role": {
+    "en": "Designer",
+    "es": "Designer"
+  },
+  "sectors": [
+    "web",
+    "b2b"
+  ],
+  "year": 2025,
+  "cover": "placeholder:hue=204",
+  "gallery": []
+}

@@ -1,0 +1,24 @@
+{
+  "slug": "patio",
+  "kind": "artwork",
+  "category": "painting",
+  "title": {
+    "en": "Patio",
+    "es": "Patio"
+  },
+  "subtitle": {
+    "en": "Domestic interior paintings",
+    "es": "Pinturas de interiores domésticos"
+  },
+  "studio": "Independent",
+  "role": {
+    "en": "Artist",
+    "es": "Artist"
+  },
+  "sectors": [
+    "interior"
+  ],
+  "year": 2025,
+  "cover": "placeholder:hue=244",
+  "gallery": []
+}

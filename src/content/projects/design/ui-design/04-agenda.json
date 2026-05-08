@@ -1,0 +1,25 @@
+{
+  "slug": "agenda",
+  "kind": "design",
+  "category": "ui-design",
+  "title": {
+    "en": "Agenda",
+    "es": "Agenda"
+  },
+  "subtitle": {
+    "en": "Personal scheduling redesign",
+    "es": "Rediseño de agenda personal"
+  },
+  "studio": "Independent",
+  "role": {
+    "en": "Designer",
+    "es": "Designer"
+  },
+  "sectors": [
+    "app",
+    "productivity"
+  ],
+  "year": 2024,
+  "cover": "placeholder:hue=253",
+  "gallery": []
+}

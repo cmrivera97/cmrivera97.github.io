@@ -1,0 +1,25 @@
+{
+  "slug": "paloma-ceramics",
+  "kind": "design",
+  "category": "branding",
+  "title": {
+    "en": "Paloma Ceramics",
+    "es": "Cerámica Paloma"
+  },
+  "subtitle": {
+    "en": "Studio identity & packaging",
+    "es": "Identidad y empaque del estudio"
+  },
+  "studio": "Independent",
+  "role": {
+    "en": "Designer",
+    "es": "Designer"
+  },
+  "sectors": [
+    "craft",
+    "product"
+  ],
+  "year": 2025,
+  "cover": "placeholder:hue=242",
+  "gallery": []
+}

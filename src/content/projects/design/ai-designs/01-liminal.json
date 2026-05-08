@@ -1,0 +1,25 @@
+{
+  "slug": "liminal",
+  "kind": "design",
+  "category": "ai-designs",
+  "title": {
+    "en": "Liminal",
+    "es": "Liminal"
+  },
+  "subtitle": {
+    "en": "AI-assisted editorial covers",
+    "es": "Portadas editoriales asistidas por IA"
+  },
+  "studio": "Independent",
+  "role": {
+    "en": "Art Director",
+    "es": "Art Director"
+  },
+  "sectors": [
+    "publishing",
+    "experimental"
+  ],
+  "year": 2025,
+  "cover": "placeholder:hue=302",
+  "gallery": []
+}
