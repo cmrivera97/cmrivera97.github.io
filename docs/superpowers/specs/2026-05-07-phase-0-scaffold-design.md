@@ -62,7 +62,7 @@ Each later phase will get its own design doc, plan, and PR cycle.
 | Interactivity | Vanilla TS islands via `<script>` blocks | No React/Vue/Svelte integrations — keeps it simple, ships less JS |
 | Styling | Plain CSS + CSS custom properties | No Tailwind, no CSS-in-JS — Jericho standards prefer this for small projects |
 | Linting | ESLint legacy config (`.eslintrc.cjs`), no Prettier | Jericho non-negotiable; legacy chosen because `airbnb-base` + `plugin:astro` flat-config support has historically been patchy |
-| Git hooks | Husky `pre-commit` (ESLint) and `commit-msg` (Jericho verb validator) | Jericho non-negotiable per `GIT.md` |
+| Git hooks | Husky `commit-msg` (Jericho verb validator) + light `pre-commit` running `lint-staged` on changed files only | Per Jose: enforce commit convention; keep pre-commit fast — no full lint sweep, no tests |
 | Commit message style | Capitalized infinitive verb (`Add`, `Configure`, `Create`, `Fix`, `Update`, `Remove`, …); no conventional-commit prefixes | Jericho `GIT.md` |
 | Package manager | npm with exact pinning (`save-exact=true`) | Jericho non-negotiable; lock at `package.json`, no `^`/`~` |
 | Node version | LTS via `.nvmrc` | CI parity |
@@ -76,7 +76,7 @@ Each later phase will get its own design doc, plan, and PR cycle.
 portfolio-web-app-ciruela/
 ├─ .github/workflows/deploy.yml
 ├─ .husky/
-│  ├─ pre-commit                         # runs `npm run lint`
+│  ├─ pre-commit                         # runs `npx lint-staged` (light, changed files only)
 │  └─ commit-msg                         # validates Jericho verb format
 ├─ .nvmrc
 ├─ .npmrc
@@ -88,7 +88,6 @@ portfolio-web-app-ciruela/
 ├─ package.json
 ├─ package-lock.json
 ├─ public/
-│  ├─ fonts/                            # self-hosted Jost subset (.woff2)
 │  ├─ icons/
 │  │  ├─ behance.svg
 │  │  ├─ instagram.svg
@@ -267,7 +266,7 @@ Single `data-theme` attribute on `<html>`. No second class, no body-level toggle
 
 **No-FOUC bootstrap.** Inline `<script>` in `BaseLayout.astro`'s `<head>` (~25 lines, no imports) reads `localStorage.theme` then `prefers-color-scheme` and sets `documentElement.dataset.theme` before paint. Same pattern for `lang` if user has explicitly chosen one.
 
-Fonts load via Astro's `<link rel="preload">` for the two critical weights (Montserrat 400, Jost 500) plus `font-display: swap` for the rest. Jost is **self-hosted** under `public/fonts/` (the prototype's chat noted Kollektif isn't on a reliable CDN; Jost is the agreed visual fallback and self-hosting removes a third-party dependency).
+Fonts load from **Google Fonts CDN** (chosen by Jose to keep complexity down) with a `<link rel="preconnect">` to `fonts.googleapis.com` and `fonts.gstatic.com` (the latter `crossorigin`). Each family pulls only the weights actually used to keep payload tight: Montserrat 300/400/500/600, Fraunces ital/opsz/wght (300, 400, 500), Jost 400/500/600, Caveat 400. `font-display: swap` is set so text renders in fallback before the webfont arrives. Kollektif isn't on a reliable public CDN — Jost is the documented visual stand-in (carried over from the prototype's chat decision).
 
 ## 8. Tooling configuration
 
@@ -339,14 +338,27 @@ Latest Node LTS at the time of scaffolding (record exact version in the spec imp
 
 ### Husky hooks
 
-Per Jericho `GIT.md` (non-negotiable):
+Two hooks, both intentionally light:
 
-- `npm install --save-dev --save-exact husky` and `npx husky init`
+- `commit-msg` validates the subject line matches the approved-verb regex from Jericho `GIT.md` §Commit Message Standards. The validator uses the exact verb list from that document so future updates can be ported by copying the script.
+- `pre-commit` runs `npx lint-staged` and nothing else. No full lint sweep, no typecheck, no tests — those live in CI.
+
+`lint-staged` is configured in `package.json`:
+
+```json
+{
+  "lint-staged": {
+    "*.{ts,astro}": "eslint --max-warnings=0",
+    "*.{js,cjs,mjs}": "eslint --max-warnings=0"
+  }
+}
+```
+
+Setup:
+
+- `npm install --save-dev --save-exact husky lint-staged`
+- `npx husky init`
 - `package.json` adds `"prepare": "husky"`
-- `.husky/pre-commit` runs `npm run lint`
-- `.husky/commit-msg` validates the subject line matches the approved-verb regex from `GIT.md` §Commit Message Standards
-
-The validator uses the exact verb list from `GIT.md` so any future updates to the standards repo can be ported by copying the script.
 
 ### Branching for this project
 
@@ -398,7 +410,7 @@ All of the following must be true before Phase 0 is considered done:
 |---|---|
 | GH Pages base path bakes in everywhere | Centralise via `astro.config.mjs` env-driven `site`/`base` + `localizedHref()` helper (§10) |
 | ESLint flat-config support across `airbnb-base` and `plugin:astro` is patchy in some versions | Spec uses legacy `.eslintrc.cjs` (chosen in §3/§8 for stability); plan will pin known-working plugin versions |
-| Self-hosted Jost adds repo weight | Subset to Latin extended only, weight 400/500/600; expect total ≤ 60 KB woff2 |
+| Google Fonts CDN is a third-party dependency on a critical render path | Use `<link rel="preconnect">` to both `fonts.googleapis.com` and `fonts.gstatic.com`; only request the weights actually used; `font-display: swap` so text never blocks; revisit self-hosting in a later phase if real-world performance demands it |
 | Phase 0 ships an empty public site under Jose's account before migration | Acceptable — Jose confirmed; placeholder URL won't be promoted anywhere |
 
 No blocking open questions at spec time.
