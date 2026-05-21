@@ -54,12 +54,22 @@ export const initBubbleSelector = (root?: ParentNode): void => {
   sections.forEach((section) => {
     const bubbles = section.querySelectorAll<HTMLButtonElement>('.portfolio-bubble');
 
-    const activate = (categorySlug: string, label: string): void => {
+    const activate = (categorySlug: string, label: string, blurb: string): void => {
       bubbles.forEach((b) => {
         b.setAttribute('aria-selected', b.dataset.category === categorySlug ? 'true' : 'false');
+        b.classList.toggle('active', b.dataset.category === categorySlug);
       });
       filterShowcaseCards(section, categorySlug);
       setEyebrow(section, label);
+      const blurbEl = section.querySelector<HTMLElement>('[data-selected-blurb]');
+      if (blurbEl) blurbEl.textContent = blurb;
+      const explore = section.querySelector<HTMLAnchorElement>('[data-explore]');
+      if (explore) {
+        const href = explore.getAttribute('href') ?? '';
+        explore.setAttribute('href', href.replace(/[^/]+\/$/, `${categorySlug}/`));
+        const exploreLabel = section.querySelector<HTMLElement>('[data-explore-label]');
+        if (exploreLabel) exploreLabel.textContent = label;
+      }
       const projects = readProjects(section, categorySlug);
       setMeta(section, projects[0]);
       window.dispatchEvent(new CustomEvent('bubble:change', { detail: { categorySlug } }));
@@ -68,8 +78,9 @@ export const initBubbleSelector = (root?: ParentNode): void => {
     bubbles.forEach((b) => {
       b.addEventListener('click', () => {
         const cat = b.dataset.category;
-        const label = b.textContent ?? '';
-        if (cat) activate(cat, label);
+        const label = b.textContent?.trim() ?? '';
+        const blurb = b.dataset.blurb ?? '';
+        if (cat) activate(cat, label, blurb);
       });
     });
 
@@ -86,8 +97,9 @@ export const initBubbleSelector = (root?: ParentNode): void => {
         if (!nextBubble) return;
         nextBubble.focus();
         const cat = nextBubble.dataset.category;
-        const label = nextBubble.textContent ?? '';
-        if (cat) activate(cat, label);
+        const label = nextBubble.textContent?.trim() ?? '';
+        const blurb = nextBubble.dataset.blurb ?? '';
+        if (cat) activate(cat, label, blurb);
       });
     });
 

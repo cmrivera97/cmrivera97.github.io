@@ -1,14 +1,14 @@
 export const initMarquee = (root?: ParentNode): void => {
   if (typeof document === 'undefined') return;
 
-  const containers = (root ?? document).querySelectorAll<HTMLElement>('[data-marquee]');
-  containers.forEach((container) => {
-    const track = container.querySelector<HTMLElement>('[data-marquee-track]');
-    if (!track) return;
+  (root ?? document).querySelectorAll<HTMLElement>('[data-marquee-track]').forEach((track) => {
     if (track.dataset.marqueeHydrated === 'true') return;
-    const clone = track.cloneNode(true) as HTMLElement;
-    clone.setAttribute('aria-hidden', 'true');
-    container.appendChild(clone);
+    Array.from(track.children).forEach((item) => {
+      const clone = item.cloneNode(true) as HTMLElement;
+      clone.setAttribute('aria-hidden', 'true');
+      track.appendChild(clone);
+    });
+    // eslint-disable-next-line no-param-reassign
     track.dataset.marqueeHydrated = 'true';
   });
 };

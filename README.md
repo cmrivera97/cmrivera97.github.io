@@ -68,6 +68,33 @@ Open the dev server (`npm run dev`) and verify:
 11. **Touch device smoke:** Open the deployed URL on a phone. Verify: no custom cursor (system cursor only); every other motion item still runs.
 12. **Both locales:** Navigate to `/es/`. Confirm Spanish strings render (Inicio, Diseño, Obra, Contacto). LangToggle swaps EN ↔ ES on the same path.
 
+## Phase 2 — Design fidelity, video hero & project detail pages
+
+`feature/phase-2-design-fidelity` resolves every note in Carolina's `feedback.pdf` (#1–#21). The Phase 1 build had drifted from the original Claude Design prototype; this phase restores faithful fidelity to `docs/design-reference/dreamy.jsx`, swaps the hero to Carolina's supplied video, and adds per-project detail pages. Plan: `docs/superpowers/plans/2026-05-21-phase-2-design-fidelity.md`.
+
+- **Video hero (#1, #3, #19):** the SVG jellyfish are retired; the hero is a theme- and orientation-aware background `<video>` (horizontal/desktop + vertical/mobile × light/dark, transcoded to ~2 MB cuts under Git LFS in `public/video/`, with first-frame posters and metadata stripped). Soft entrance animation, gradient "Rivera", two CTAs ("See the work" / "Say hello"). Pauses to the poster on `prefers-reduced-motion`.
+- **Navigation (#2, #4, #5):** floating glass-pill nav + full-width mega-menu (3-col numbered `01–06` grid with italic labels + blurbs), fully clickable with no hover dead-zone.
+- **Portfolio sections (#8–#11, #16–#21):** section intro banner ("Things made *for the screen and the page*" / "*by hand*"), left-aligned, gradient active bubble, glassy carousel with the title *inside* the frame over a dark→transparent gradient, circular nav + dot indicators, first project centered/active at rest, cursor shows the category label on hover, and an "Explore the case" button to the category subpage.
+- **Project detail pages (#7, #12):** new reusable `ProjectDetail` template (title + meta + overview + image carousel + prev/next + back), generated for every project in both locales. Showcase cards, mega-menu, explore button, sister bubbles, and subpage cards all route correctly.
+- **Contact (#13):** "Let's make *something*", three weighted lines, glass email card (Based in **Bogotá** — corrected from "Mexico"), original-style glass form, four large 60 px social bubbles.
+- **Motion (#14, #15, #20):** painterly splash (irregular scatter + blob shapes, slower, flatter), seamless big-italic marquee, cursor label.
+- **Responsive (#6):** breakpoints at 980 / 768 / 480 px across every section; vertical hero video on mobile.
+
+All feedback items were verified present in the built `dist/` output; full `lint` + `typecheck` + `build` (168 pages) pass.
+
+### Phase 2 smoke checklist
+
+Run `npm run dev -- --host` and verify:
+
+1. **Hero video:** plays muted/looping; toggle theme → video swaps light/dark; narrow the window → vertical cut loads; reduced-motion → poster shown, paused.
+2. **Nav + mega:** hovering Design/Artwork opens the numbered grid; moving the cursor down into the panel keeps it open; items navigate; Escape closes.
+3. **Sections:** intro banner + left alignment; click bubbles → gradient active state, blurb + explore button update, carousel resets to the **first** project (centered).
+4. **Cards:** title sits inside the frame over a gradient; hovering shows the category in the cursor; clicking opens the project detail page (not the top of the site).
+5. **Detail page:** image carousel, meta, overview, prev/next, back-to-category all work; check an `/es/` detail page too.
+6. **Contact:** "Let's make something"; Copy email works; four large social bubbles visible in both themes.
+7. **Motion:** clicking scatters irregular paint blobs (not a clean ring); marquee loops with no seam.
+8. **Responsive:** at 360 px there's no horizontal overflow; header stacks; sub-grid is single-column.
+
 ## Contributing
 
 This repo follows **Jericho Digital** TypeScript and Git standards.

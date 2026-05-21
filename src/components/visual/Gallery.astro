@@ -1,0 +1,96 @@
+---
+import type { CollectionEntry } from 'astro:content';
+
+import { getT, type Lang } from '../../i18n/getT';
+import { hueFromSlug } from '../../utils/slug-hash';
+import Placeholder from './Placeholder.astro';
+
+interface Props {
+  project: CollectionEntry<'projects'>;
+  lang: Lang;
+}
+
+const { project, lang } = Astro.props;
+const t = getT(lang);
+const hue = hueFromSlug(project.data.slug);
+
+type Slide =
+  | { kind: 'image'; key: string; src: string; alt: string }
+  | { kind: 'placeholder'; key: string; hue: number };
+
+let slides: Slide[];
+if (project.data.gallery.length > 0) {
+  slides = project.data.gallery.map((item, i) => ({
+    kind: 'image' as const,
+    key: `${project.data.slug}-${i}`,
+    src: item.src,
+    alt: item.alt[lang],
+  }));
+} else {
+  slides = Array.from({ length: 5 }, (_, i) => ({
+    kind: 'placeholder' as const,
+    key: `${project.data.slug}-${i}`,
+    hue: (hue + i * 24) % 360,
+  }));
+}
+---
+<div class="showcase gallery">
+  <div
+    class="showcase-track"
+    data-carousel
+    role="region"
+    aria-roledescription="carousel"
+    tabindex="0"
+  >
+    {slides.map((s) => (
+      <div class="showcase-card" data-slug={s.key}>
+        <div class="showcase-frame">
+          <div class="showcase-screen">
+            {s.kind === 'image'
+              ? <img src={s.src} alt={s.alt} loading="lazy" decoding="async" />
+              : <Placeholder cover={`placeholder:hue=${s.hue}`} glyph="◆" />
+            }
+          </div>
+        </div>
+      </div>
+    ))}
+  </div>
+
+  <div class="showcase-nav">
+    <button
+      type="button"
+      class="btn btn-glass showcase-arrow"
+      data-carousel-arrow="prev"
+      data-no-splash
+      data-cursor="link"
+      aria-label={t('detail.prev')}
+    >←</button>
+    <div class="showcase-dots" role="tablist" aria-label="Image">
+      {slides.map((_, i) => (
+        <button
+          type="button"
+          class:list={['showcase-dot', { active: i === 0 }]}
+          data-dot
+          data-index={i}
+          data-no-splash
+          data-cursor="link"
+          aria-label={`${i + 1}`}
+        ></button>
+      ))}
+    </div>
+    <button
+      type="button"
+      class="btn btn-glass showcase-arrow"
+      data-carousel-arrow="next"
+      data-no-splash
+      data-cursor="link"
+      aria-label={t('detail.next')}
+    >→</button>
+  </div>
+</div>
+
+<script>
+  import { initCarousel } from '../../scripts/carousel';
+
+  initCarousel();
+</script>

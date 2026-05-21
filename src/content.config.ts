@@ -37,6 +37,7 @@ const projects = defineCollection({
     category: z.string(),
     title: langString,
     subtitle: langString,
+    overview: langString.optional(),
     studio: z.string(),
     role: langString,
     sectors: z.array(z.string()),

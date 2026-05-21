@@ -2,11 +2,26 @@
   "slug": "sample",
   "kind": "design",
   "category": "branding",
-  "title": { "en": "Sample Brand", "es": "Marca de Muestra" },
-  "subtitle": { "en": "Placeholder identity system", "es": "Sistema de identidad placeholder" },
+  "title": {
+    "en": "Sample Brand",
+    "es": "Marca de Muestra"
+  },
+  "subtitle": {
+    "en": "Placeholder identity system",
+    "es": "Sistema de identidad placeholder"
+  },
+  "overview": {
+    "en": "Sample Brand — Placeholder identity system. This case study walks through the brief, the process, and the final outcome of the work.",
+    "es": "Marca de Muestra — Sistema de identidad placeholder. Este caso recorre el encargo, el proceso y el resultado final del trabajo."
+  },
   "studio": "Independent",
-  "role": { "en": "Designer", "es": "Diseñadora" },
-  "sectors": ["placeholder"],
+  "role": {
+    "en": "Designer",
+    "es": "Diseñadora"
+  },
+  "sectors": [
+    "placeholder"
+  ],
   "year": 2026,
   "cover": "/placeholder-cover.svg",
   "gallery": []

@@ -1,39 +1,46 @@
 ---
-// utils + components + i18n
 import { localizedHref } from '../../utils/localizedHref';
-import Jellyfish from '../visual/Jellyfish.astro';
-import Sparkles from '../visual/Sparkles.astro';
 import { getT, type Lang } from '../../i18n/getT';
 
-interface Props {
-  lang: Lang;
-}
-
-const { lang }: Props = Astro.props;
+interface Props { lang: Lang; }
+const { lang } = Astro.props;
 const t = getT(lang);
 ---
 <section class="hero-stage">
-  <div class="hero-jellyfish-stage" data-jellyfish-stage>
-    <div class="jellyfish-slot slot-1"><Jellyfish seed={3} hue={235} /></div>
-    <div class="jellyfish-slot slot-2"><Jellyfish seed={11} hue={252} /></div>
-    <div class="jellyfish-slot slot-3"><Jellyfish seed={29} hue={278} /></div>
-    <Sparkles count={28} seed={7} />
-  </div>
+  <video
+    class="hero-video"
+    data-hero-video
+    autoplay muted loop playsinline preload="metadata"
+    poster={`${import.meta.env.BASE_URL}video/hero-h-dark-poster.jpg`}
+  ></video>
+  <div class="hero-scrim" aria-hidden="true"></div>
 
   <div class="hero-content">
-    <h1 class="hero-wordmark" aria-label="Carolina Rivera">
-      <span class="hero-name-first" data-reveal>{t('home.name.first')}</span>
-      <span class="hero-name-last" data-reveal data-reveal-delay="120">{t('home.name.last')}</span>
+    <div class="hero-toprow">
+      <span class="hero-since" data-reveal>{t('hero.since')}</span>
+      <span class="eyebrow hero-eyebrow" data-reveal data-reveal-delay="80">{t('hero.eyebrow')}</span>
+      <span class="hero-location" data-reveal data-reveal-delay="160">{t('hero.location')}</span>
+    </div>
+
+    <h1 class="hero-title" aria-label={`${t('home.name.first')} ${t('home.name.last')}`}>
+      <span class="hero-first hero-letters">{t('home.name.first')}</span>
+      <span class="hero-rivera-wrap"><span class="hero-last">{t('home.name.last')}</span></span>
     </h1>
-    <p class="hero-tagline" data-reveal data-reveal-delay="240">{t('home.tagline')}</p>
-    <a class="hero-cta" href={`${localizedHref(lang, '/')}#design`} data-cursor="link" data-reveal data-reveal-delay="360">
-      {t('hero.cta')}
-    </a>
+
+    <p class="hero-lede" data-reveal data-reveal-delay="650">{t('hero.lede')}</p>
+
+    <div class="hero-ctas" data-reveal data-reveal-delay="800">
+      <a class="btn btn-primary" href={`${localizedHref(lang, '/')}#design`} data-cursor="link">{t('hero.cta1')} →</a>
+      <a class="btn btn-glass" href={`${localizedHref(lang, '/')}#contact`} data-cursor="link">{t('hero.cta2')}</a>
+    </div>
+  </div>
+
+  <div class="hero-scrollhint" aria-hidden="true">
+    <span class="hero-scrollhint-line"></span>{t('hero.scrollHint')}
   </div>
 </section>
 
 <script>
-  import { initJellyfishDrift } from '../../scripts/jellyfish-drift';
-
-  initJellyfishDrift();
+  import { initHeroVideo } from '../../scripts/hero-video';
+  initHeroVideo();
 </script>

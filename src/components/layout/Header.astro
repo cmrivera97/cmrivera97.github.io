@@ -1,4 +1,7 @@
 ---
+// packages
+import { getCollection } from 'astro:content';
+
 // utils + i18n
 import { localizedHref } from '../../utils/localizedHref';
 import { getT, type Lang } from '../../i18n/getT';
@@ -13,77 +16,93 @@ interface Props {
 const { lang } = Astro.props;
 const t = getT(lang);
 
-const designSlugs = ['social-media', 'branding', 'ai-designs', 'print', 'illustration', 'ui-design'] as const;
-const artworkSlugs = ['drawing', 'painting', 'photography'] as const;
+const DESIGN_ORDER = ['ui-design', 'social-media', 'branding', 'ai-designs', 'print', 'illustration'];
+const ART_ORDER = ['drawing', 'painting', 'photography'];
+
+const allCategories = await getCollection('categories');
+const catMap = new Map(allCategories.map((c) => [c.data.slug, c.data]));
+
+const designCats = DESIGN_ORDER.map((slug) => catMap.get(slug)).filter((c): c is NonNullable<typeof c> => c !== undefined);
+const artCats = ART_ORDER.map((slug) => catMap.get(slug)).filter((c): c is NonNullable<typeof c> => c !== undefined);
+
+const { pathname } = Astro.url;
+const homeActive = pathname === localizedHref(lang, '/');
+const designActive = pathname.includes('/design');
+const artworkActive = pathname.includes('/artwork');
 ---
+
 <header class="site-header">
-  <a class="brand" href={localizedHref(lang, '/')} data-cursor="link">Carolina Rivera</a>
-  <nav aria-label={t('nav.home')}>
-    <ul role="list" class="nav-primary">
-      <li><a href={localizedHref(lang, '/')} data-cursor="link">{t('nav.home')}</a></li>
-      <li class="has-submenu">
-        <a href={`${localizedHref(lang, '/')}#design`} data-cursor="link">{t('nav.design')}</a>
-        <ul role="list" class="nav-submenu">
-          {designSlugs.map((slug) => (
-            <li><a href={localizedHref(lang, `/design/${slug}`)} data-cursor="link">{slug}</a></li>
-          ))}
-        </ul>
-      </li>
-      <li class="has-submenu">
-        <a href={`${localizedHref(lang, '/')}#artwork`} data-cursor="link">{t('nav.artwork')}</a>
-        <ul role="list" class="nav-submenu">
-          {artworkSlugs.map((slug) => (
-            <li><a href={localizedHref(lang, `/artwork/${slug}`)} data-cursor="link">{slug}</a></li>
-          ))}
-        </ul>
-      </li>
-      <li><a href={`${localizedHref(lang, '/')}#contact`} data-cursor="link">{t('nav.contact')}</a></li>
-    </ul>
+  <a class="brand" href={localizedHref(lang, '/')} data-cursor="link">
+    <span>Carolina</span>
+    <span class="brand-last">Rivera</span>
+    <span class="dot"></span>
+  </a>
+
+  <nav class="nav-center" aria-label={t('nav.home')}>
+    <a
+      class:list={['nav-link', { active: homeActive }]}
+      href={localizedHref(lang, '/')}
+      data-cursor="link"
+    >{t('nav.home')}</a>
+
+    <a
+      class:list={['nav-link', { active: designActive }]}
+      href={`${localizedHref(lang, '/')}#design`}
+      data-mega="design"
+      aria-haspopup="true"
+      aria-expanded="false"
+      aria-controls="mega-design"
+      data-cursor="link"
+    >{t('nav.design')}<span aria-hidden="true">▾</span></a>
+
+    <a
+      class:list={['nav-link', { active: artworkActive }]}
+      href={`${localizedHref(lang, '/')}#artwork`}
+      data-mega="artwork"
+      aria-haspopup="true"
+      aria-expanded="false"
+      aria-controls="mega-artwork"
+      data-cursor="link"
+    >{t('nav.artwork')}<span aria-hidden="true">▾</span></a>
+
+    <a
+      class="nav-link"
+      href={`${localizedHref(lang, '/')}#contact`}
+      data-cursor="link"
+    >{t('nav.contact')}</a>
   </nav>
-  <div class="header-controls">
+
+  <div class="nav-right">
     <LangToggle lang={lang} />
     <ThemeToggle lang={lang} />
   </div>
 </header>
 
-<style>
-  .site-header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 1rem 1.5rem;
-    border-bottom: 1px solid var(--c-line);
-  }
-  .brand {
-    font-family: var(--font-name);
-    font-weight: 500;
-    font-size: 1.125rem;
-  }
-  .nav-primary {
-    display: flex;
-    gap: 1.5rem;
-    margin: 0;
-  }
-  .has-submenu .nav-submenu {
-    display: none;
-    position: absolute;
-    background: var(--c-bg-elev);
-    padding: 0.5rem 0.75rem;
-    border: 1px solid var(--c-line);
-    border-radius: var(--radius-md);
-    margin-top: 0.5rem;
-  }
-  .has-submenu:hover .nav-submenu,
-  .has-submenu:focus-within .nav-submenu {
-    display: block;
-  }
-  .nav-submenu li {
-    padding: 0.25rem 0;
-    text-transform: capitalize;
-  }
-  .header-controls {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-  }
-</style>
+<div class="mega" id="mega-design" data-mega-panel="design">
+  <div class="mega-grid">
+    {designCats.map((c, i) => (
+      <a class="mega-item" href={localizedHref(lang, `/design/${c.slug}/`)} data-cursor="link">
+        <span class="mega-num">{String(i + 1).padStart(2, '0')}</span>
+        <span class="mega-label"><span class="num">{String(i + 1).padStart(2, '0')}</span>{c.label[lang]}</span>
+        <span class="mega-blurb">{c.blurb[lang]}</span>
+      </a>
+    ))}
+  </div>
+</div>
+
+<div class="mega" id="mega-artwork" data-mega-panel="artwork">
+  <div class="mega-grid">
+    {artCats.map((c, i) => (
+      <a class="mega-item" href={localizedHref(lang, `/artwork/${c.slug}/`)} data-cursor="link">
+        <span class="mega-num">{String(i + 1).padStart(2, '0')}</span>
+        <span class="mega-label"><span class="num">{String(i + 1).padStart(2, '0')}</span>{c.label[lang]}</span>
+        <span class="mega-blurb">{c.blurb[lang]}</span>
+      </a>
+    ))}
+  </div>
+</div>
+
+<script>
+  import { initMegaMenu } from '../../scripts/mega-menu';
+  initMegaMenu();
+</script>

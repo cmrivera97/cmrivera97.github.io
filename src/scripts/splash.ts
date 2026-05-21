@@ -11,38 +11,40 @@ const SHOULD_DISABLE = (): boolean => {
   return window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 };
 
-const spawnDrop = (x: number, y: number, angleDeg: number, distance: number, color: string): void => {
-  const drop = document.createElement('span');
-  drop.className = 'splash-drop';
-  const radians = (angleDeg * Math.PI) / 180;
-  const dx = Math.cos(radians) * distance;
-  const dy = Math.sin(radians) * distance;
-  drop.style.left = `${x}px`;
-  drop.style.top = `${y}px`;
-  drop.style.background = `radial-gradient(circle at 30% 30%, ${color} 0%, transparent 70%)`;
-  drop.style.setProperty('--dx', `${dx}px`);
-  drop.style.setProperty('--dy', `${dy}px`);
-  drop.addEventListener('animationend', () => {
-    drop.remove();
-  }, { once: true });
-  document.body.appendChild(drop);
-};
-
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 export const initSplash = (_accent: string = '#7A8FF7'): void => {
   if (typeof document === 'undefined') return;
   if (SHOULD_DISABLE()) return;
 
   document.addEventListener('click', (e: MouseEvent) => {
+    if ((e.target as Element).closest('input,textarea,select,[data-no-splash]')) return;
+
     const x = e.clientX;
     const y = e.clientY;
     const drops = 8;
-    const baseDistance = 60;
+
     for (let i = 0; i < drops; i += 1) {
-      const angle = (360 / drops) * i + (Math.random() - 0.5) * 20;
-      const distance = baseDistance + Math.random() * 40;
+      const dx = (Math.random() - 0.5) * 140;
+      const dy = (Math.random() - 0.5) * 140 - 30;
+      const size = 4 + Math.random() * 8;
       const color = PALETTE[i % PALETTE.length] ?? PALETTE[0];
-      spawnDrop(x, y, angle, distance, color);
+      const rot = Math.random() * 90 - 45;
+      const isBlob = Math.random() < 0.5;
+      const borderRadius = isBlob ? '30% 70% 70% 30% / 30% 30% 70% 70%' : '50%';
+
+      const drop = document.createElement('span');
+      drop.className = 'splash-drop';
+      drop.style.left = `${x}px`;
+      drop.style.top = `${y}px`;
+      drop.style.width = `${size}px`;
+      drop.style.height = `${size}px`;
+      drop.style.background = color;
+      drop.style.borderRadius = borderRadius;
+      drop.style.setProperty('--dx', `${dx}px`);
+      drop.style.setProperty('--dy', `${dy}px`);
+      drop.style.setProperty('--rot', `${rot}deg`);
+      drop.addEventListener('animationend', () => { drop.remove(); }, { once: true });
+      document.body.appendChild(drop);
     }
   });
 };

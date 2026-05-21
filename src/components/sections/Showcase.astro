@@ -3,6 +3,7 @@ import type { CollectionEntry } from 'astro:content';
 
 import { getT, type Lang } from '../../i18n/getT';
 import { hueFromSlug } from '../../utils/slug-hash';
+import { localizedHref } from '../../utils/localizedHref';
 import Placeholder from '../visual/Placeholder.astro';
 
 interface Props {
@@ -10,36 +11,76 @@ interface Props {
   lang: Lang;
   category: string;
   categoryLabel: string;
+  kind: 'design' | 'artwork';
 }
 
 const {
-  items, lang, category, categoryLabel,
+  items, lang, category, categoryLabel, kind,
 } = Astro.props;
 const t = getT(lang);
 ---
 <div class="showcase" data-showcase data-category={category}>
-  <div class="showcase-tag">{categoryLabel}</div>
 
-  <div data-carousel role="region" aria-roledescription="carousel" tabindex="0">
+  <div class="showcase-track" data-carousel role="region" aria-roledescription="carousel" tabindex="0">
     {items.map((item) => {
       const hue = hueFromSlug(item.data.slug);
       const cover = item.data.cover.startsWith('placeholder:') ? item.data.cover : `placeholder:hue=${hue}`;
       return (
-        <a class="showcase-card" data-slug={item.data.slug} data-category={category} href="#" data-cursor="media">
-          <Placeholder cover={cover} glyph="◆" label={item.data.studio} />
-          <div class="showcase-card-meta">
-            <span class="showcase-card-title">{item.data.title[lang]}</span>
-            <span class="showcase-card-subtitle">{item.data.subtitle[lang]}</span>
+        <a
+          class="showcase-card"
+          data-slug={item.data.slug}
+          data-category={category}
+          href={localizedHref(lang, `/${kind}/${category}/${item.data.slug}/`)}
+          data-cursor="media"
+          data-cursor-label={categoryLabel}
+        >
+          <div class="showcase-frame">
+            <div class="showcase-tag">{categoryLabel}</div>
+            <div class="showcase-screen"><Placeholder cover={cover} glyph="◆" label={item.data.studio} /></div>
+            <div class="showcase-meta">
+              <div class="showcase-meta-grad">
+                <span class="showcase-card-title">{item.data.title[lang]}</span>
+                <span class="showcase-card-sub">{item.data.studio} · {item.data.role[lang]}</span>
+              </div>
+            </div>
           </div>
         </a>
       );
     })}
   </div>
 
-  <div class="showcase-arrows">
-    <button type="button" class="showcase-arrow" data-carousel-arrow="prev" aria-label={t('showcase.prev')}>‹</button>
-    <button type="button" class="showcase-arrow" data-carousel-arrow="next" aria-label={t('showcase.next')}>›</button>
+  <div class="showcase-nav">
+    <button
+      type="button"
+      class="btn btn-glass showcase-arrow"
+      data-carousel-arrow="prev"
+      data-no-splash
+      data-cursor="link"
+      aria-label={t('showcase.prev')}
+    >←</button>
+    <div class="showcase-dots" role="tablist" aria-label="Project">
+      {items.map((_, i) => (
+        <button
+          type="button"
+          class:list={['showcase-dot', { active: i === 0 }]}
+          data-dot
+          data-index={i}
+          data-no-splash
+          data-cursor="link"
+          aria-label={`${i + 1}`}
+        ></button>
+      ))}
+    </div>
+    <button
+      type="button"
+      class="btn btn-glass showcase-arrow"
+      data-carousel-arrow="next"
+      data-no-splash
+      data-cursor="link"
+      aria-label={t('showcase.next')}
+    >→</button>
   </div>
+
 </div>
 
 <script>

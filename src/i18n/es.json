@@ -6,7 +6,7 @@
   "nav": {
     "home": "Inicio",
     "design": "Diseño",
-    "artwork": "Obra",
+    "artwork": "Arte",
     "contact": "Contacto"
   },
   "home": {
@@ -17,19 +17,43 @@
     "tagline": "Diseñadora Gráfica y Artista Visual"
   },
   "hero": {
-    "cta": "Ver trabajo"
+    "cta1": "Ver el trabajo",
+    "cta2": "Saludar",
+    "since": "Práctica independiente — desde 2019",
+    "eyebrow": "Diseñadora Gráfica · Artista Visual",
+    "location": "Bogotá · COL",
+    "lede": "Creando marcas, identidades y objetos silenciosos — entre la página, la pantalla y el lienzo.",
+    "scrollHint": "desliza"
   },
   "design": {
-    "eyebrow": "Portafolio de Diseño"
+    "eyebrow": "Portafolio de Diseño",
+    "title1": "Cosas hechas",
+    "title2": "para la pantalla y la página"
   },
   "artwork": {
-    "eyebrow": "Portafolio Personal"
+    "eyebrow": "Portafolio Personal",
+    "title1": "Cosas hechas",
+    "title2": "a mano"
   },
+  "explore": "Explorar el caso",
   "contact": {
     "heading": "Contáctame",
     "line1": "Soy Carolina — diseñadora gráfica y artista visual.",
     "line2": "Basada en México, trabajo en remoto a nivel mundial.",
     "line3": "Abierta a encargos, residencias y colaboraciones.",
+    "eyebrow": "Contacto",
+    "title": "Hagamos",
+    "titleIt": "algo",
+    "l1": "Disponible para encargos, colaboraciones y la ocasional idea imposible.",
+    "l2": "Trabajo con estudios, fundadores y artistas en identidad, editorial y producto digital.",
+    "l3": "Disponible desde mayo 2026 — escribe antes de que se llene el calendario.",
+    "emailLabel": "Email",
+    "copy": "Copiar",
+    "based": "Basada en",
+    "basedCity": "Bogotá, COL",
+    "replyLabel": "Respuesta",
+    "reply": "Respondo en 48h",
+    "send": "Envía un mensaje",
     "ctaCopy": "Copiar correo",
     "email": "hello@carolinariverart.com",
     "form": {
@@ -65,5 +89,11 @@
     "back": "Volver a",
     "pageOf": "Página",
     "relatedCategories": "Categorías relacionadas"
+  },
+  "detail": {
+    "back": "Volver a",
+    "overview": "Resumen",
+    "prev": "Anterior",
+    "next": "Siguiente"
   }
 }

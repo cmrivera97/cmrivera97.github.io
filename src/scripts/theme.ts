@@ -23,6 +23,7 @@ const writeStored = (theme: Theme): void => {
 
 const apply = (theme: Theme): void => {
   document.documentElement.setAttribute('data-theme', theme);
+  document.dispatchEvent(new Event('themechange'));
 };
 
 export const initThemeToggle = (root: HTMLElement): void => {

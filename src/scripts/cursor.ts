@@ -23,7 +23,7 @@ const ensureNodes = (): { dot: HTMLDivElement; ring: HTMLDivElement } => {
   return { dot, ring };
 };
 
-const applyMode = (ringEl: HTMLDivElement, dotEl: HTMLDivElement, mode: CursorMode, accent: string): void => {
+const applyMode = (ringEl: HTMLDivElement, dotEl: HTMLDivElement, mode: CursorMode, label: string, accent: string): void => {
   const sizes: Record<Exclude<CursorMode, null>, number> = { link: 56, media: 96, drag: 72 };
   const ringSize = mode === null ? 28 : sizes[mode];
   const half = ringSize / 2;
@@ -42,6 +42,8 @@ const applyMode = (ringEl: HTMLDivElement, dotEl: HTMLDivElement, mode: CursorMo
     rs.background = 'transparent';
     rs.border = '1.5px solid var(--c-ink)';
   }
+  // eslint-disable-next-line no-param-reassign
+  ringEl.textContent = (mode === 'media' && label) ? label : '';
   const ds = dotEl.style;
   ds.opacity = mode === null ? '1' : '0';
 };
@@ -64,11 +66,13 @@ export const initCursor = (accent: string = '#7A8FF7'): void => {
   const ringPos = { x: -100, y: -100 };
   const lerp = 0.18;
   let mode: CursorMode = null;
+  let label = '';
 
-  const updateMode = (next: CursorMode): void => {
-    if (next !== mode) {
-      mode = next;
-      applyMode(ring, dot, mode, accent);
+  const updateMode = (nextMode: CursorMode, nextLabel: string): void => {
+    if (nextMode !== mode || nextLabel !== label) {
+      mode = nextMode;
+      label = nextLabel;
+      applyMode(ring, dot, mode, label, accent);
     }
   };
 
@@ -76,8 +80,9 @@ export const initCursor = (accent: string = '#7A8FF7'): void => {
     target.x = e.clientX;
     target.y = e.clientY;
     const el = (e.target as Element | null)?.closest?.('[data-cursor]') as HTMLElement | null;
-    const next = (el?.dataset.cursor as CursorMode) ?? null;
-    updateMode(next);
+    const nextMode = (el?.dataset.cursor as CursorMode) ?? null;
+    const nextLabel = el?.dataset.cursorLabel ?? '';
+    updateMode(nextMode, nextLabel);
   };
 
   window.addEventListener('pointermove', onMove, { passive: true });
