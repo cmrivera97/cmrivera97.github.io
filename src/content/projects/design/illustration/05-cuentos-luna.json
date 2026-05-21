@@ -1,0 +1,25 @@
+{
+  "slug": "cuentos-luna",
+  "kind": "design",
+  "category": "illustration",
+  "title": {
+    "en": "Cuentos Luna",
+    "es": "Cuentos Luna"
+  },
+  "subtitle": {
+    "en": "Bedtime story art direction",
+    "es": "Dirección de arte para cuentos"
+  },
+  "studio": "Independent",
+  "role": {
+    "en": "Illustrator",
+    "es": "Illustrator"
+  },
+  "sectors": [
+    "publishing",
+    "children"
+  ],
+  "year": 2024,
+  "cover": "placeholder:hue=275",
+  "gallery": []
+}

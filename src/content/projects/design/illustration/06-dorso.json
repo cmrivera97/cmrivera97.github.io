@@ -1,0 +1,24 @@
+{
+  "slug": "dorso",
+  "kind": "design",
+  "category": "illustration",
+  "title": {
+    "en": "Dorso",
+    "es": "Dorso"
+  },
+  "subtitle": {
+    "en": "Magazine spread illustrations",
+    "es": "Ilustraciones para revista"
+  },
+  "studio": "Independent",
+  "role": {
+    "en": "Illustrator",
+    "es": "Illustrator"
+  },
+  "sectors": [
+    "editorial"
+  ],
+  "year": 2025,
+  "cover": "placeholder:hue=246",
+  "gallery": []
+}

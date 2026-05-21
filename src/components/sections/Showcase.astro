@@ -1,0 +1,49 @@
+---
+import type { CollectionEntry } from 'astro:content';
+
+import { getT, type Lang } from '../../i18n/getT';
+import { hueFromSlug } from '../../utils/slug-hash';
+import Placeholder from '../visual/Placeholder.astro';
+
+interface Props {
+  items: CollectionEntry<'projects'>[];
+  lang: Lang;
+  category: string;
+  categoryLabel: string;
+}
+
+const {
+  items, lang, category, categoryLabel,
+} = Astro.props;
+const t = getT(lang);
+---
+<div class="showcase" data-showcase data-category={category}>
+  <div class="showcase-tag">{categoryLabel}</div>
+
+  <div data-carousel role="region" aria-roledescription="carousel" tabindex="0">
+    {items.map((item) => {
+      const hue = hueFromSlug(item.data.slug);
+      const cover = item.data.cover.startsWith('placeholder:') ? item.data.cover : `placeholder:hue=${hue}`;
+      return (
+        <a class="showcase-card" data-slug={item.data.slug} data-category={category} href="#" data-cursor="media">
+          <Placeholder cover={cover} glyph="◆" label={item.data.studio} />
+          <div class="showcase-card-meta">
+            <span class="showcase-card-title">{item.data.title[lang]}</span>
+            <span class="showcase-card-subtitle">{item.data.subtitle[lang]}</span>
+          </div>
+        </a>
+      );
+    })}
+  </div>
+
+  <div class="showcase-arrows">
+    <button type="button" class="showcase-arrow" data-carousel-arrow="prev" aria-label={t('showcase.prev')}>‹</button>
+    <button type="button" class="showcase-arrow" data-carousel-arrow="next" aria-label={t('showcase.next')}>›</button>
+  </div>
+</div>
+
+<script>
+  import { initCarousel } from '../../scripts/carousel';
+
+  initCarousel();
+</script>

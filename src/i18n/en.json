@@ -16,17 +16,29 @@
     },
     "tagline": "Graphic Designer & Visual Artist"
   },
+  "hero": {
+    "cta": "View work"
+  },
   "design": {
-    "eyebrow": "Design Portfolio",
-    "selected": "Selected"
+    "eyebrow": "Design Portfolio"
   },
   "artwork": {
-    "eyebrow": "Personal Portfolio",
-    "studio": "Studio"
+    "eyebrow": "Personal Portfolio"
   },
   "contact": {
     "heading": "Get in touch",
-    "ctaCopy": "Copy email"
+    "line1": "I'm Carolina — graphic designer and visual artist.",
+    "line2": "Currently based in Mexico, working remotely worldwide.",
+    "line3": "Open to commissions, residencies, and collaborations.",
+    "ctaCopy": "Copy email",
+    "email": "hello@carolinariverart.com",
+    "form": {
+      "name": { "label": "Name", "placeholder": "Your full name" },
+      "email": { "label": "Email", "placeholder": "you@example.com" },
+      "message": { "label": "Tell me about it", "placeholder": "What are you working on?" },
+      "send": "Send message",
+      "copied": "Copied"
+    }
   },
   "theme": {
     "toggle": "Toggle theme",
@@ -37,5 +49,21 @@
     "toggle": "Toggle language",
     "en": "English",
     "es": "Spanish"
+  },
+  "showcase": {
+    "prev": "Previous project",
+    "next": "Next project"
+  },
+  "bubble": { "label": "Selected" },
+  "meta": {
+    "studio": "Studio",
+    "role": "Role",
+    "sectors": "Sectors",
+    "year": "Year"
+  },
+  "subpage": {
+    "back": "Back to",
+    "pageOf": "Page",
+    "relatedCategories": "Related categories"
   }
 }

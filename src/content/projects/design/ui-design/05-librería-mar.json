@@ -1,0 +1,25 @@
+{
+  "slug": "librería-mar",
+  "kind": "design",
+  "category": "ui-design",
+  "title": {
+    "en": "Librería Mar",
+    "es": "Librería Mar"
+  },
+  "subtitle": {
+    "en": "Indie bookshop e-commerce",
+    "es": "E-commerce de librería indie"
+  },
+  "studio": "Independent",
+  "role": {
+    "en": "Designer",
+    "es": "Designer"
+  },
+  "sectors": [
+    "web",
+    "retail"
+  ],
+  "year": 2025,
+  "cover": "placeholder:hue=310",
+  "gallery": []
+}

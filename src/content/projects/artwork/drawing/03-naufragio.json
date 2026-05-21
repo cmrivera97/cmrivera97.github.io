@@ -1,0 +1,24 @@
+{
+  "slug": "naufragio",
+  "kind": "artwork",
+  "category": "drawing",
+  "title": {
+    "en": "Naufragio",
+    "es": "Naufragio"
+  },
+  "subtitle": {
+    "en": "Mixed-media seascapes",
+    "es": "Marinas en técnica mixta"
+  },
+  "studio": "Independent",
+  "role": {
+    "en": "Artist",
+    "es": "Artist"
+  },
+  "sectors": [
+    "mixed-media"
+  ],
+  "year": 2025,
+  "cover": "placeholder:hue=295",
+  "gallery": []
+}

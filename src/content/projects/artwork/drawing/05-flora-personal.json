@@ -1,0 +1,24 @@
+{
+  "slug": "flora-personal",
+  "kind": "artwork",
+  "category": "drawing",
+  "title": {
+    "en": "Personal Flora",
+    "es": "Flora Personal"
+  },
+  "subtitle": {
+    "en": "Botanical pencil sketches",
+    "es": "Bocetos botánicos a lápiz"
+  },
+  "studio": "Independent",
+  "role": {
+    "en": "Artist",
+    "es": "Artist"
+  },
+  "sectors": [
+    "botanical"
+  ],
+  "year": 2025,
+  "cover": "placeholder:hue=300",
+  "gallery": []
+}

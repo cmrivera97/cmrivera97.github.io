@@ -1,0 +1,116 @@
+---
+// packages
+import { getCollection } from 'astro:content';
+
+// components + i18n
+import Showcase from './Showcase.astro';
+import { getT, type Lang } from '../../i18n/getT';
+
+interface Props {
+  kind: 'design' | 'artwork';
+  lang: Lang;
+}
+
+const { kind, lang } = Astro.props;
+const t = getT(lang);
+const sectionId = kind === 'design' ? 'design' : 'artwork';
+
+const allCategories = await getCollection('categories', ({ data }) => data.kind === kind);
+const allProjects = await getCollection('projects', ({ data }) => data.kind === kind);
+
+const initial = allCategories[0];
+if (!initial) throw new Error(`No categories found for kind=${kind}`);
+
+const projectsByCategory = new Map<string, typeof allProjects>();
+allCategories.forEach((cat) => {
+  projectsByCategory.set(cat.data.slug, allProjects.filter((p) => p.data.category === cat.data.slug));
+});
+
+interface ProjectMeta {
+  slug: string;
+  studio: string;
+  role: string;
+  sectors: string;
+  year: number;
+}
+
+const projectMetaByCategory = new Map<string, ProjectMeta[]>();
+projectsByCategory.forEach((projects, slug) => {
+  projectMetaByCategory.set(slug, projects.map((p) => ({
+    slug: p.data.slug,
+    studio: p.data.studio,
+    role: p.data.role[lang],
+    sectors: p.data.sectors.join(' · '),
+    year: p.data.year,
+  })));
+});
+
+const eyebrowKey = kind === 'design' ? 'design.eyebrow' : 'artwork.eyebrow';
+const eyebrowLabel = t(eyebrowKey as 'design.eyebrow' | 'artwork.eyebrow');
+const initialProject = projectMetaByCategory.get(initial.data.slug)?.[0];
+---
+<section id={sectionId} class="portfolio-section" data-bubble-selector>
+  <p class="portfolio-eyebrow">
+    <span>—{eyebrowLabel.toUpperCase()}.</span>
+    <span class="accent">{t('bubble.label').toUpperCase()}.</span>
+    <span class="selected-category" data-selected-category>{initial.data.label[lang]}</span>
+  </p>
+
+  <div class="portfolio-bubbles" role="tablist">
+    {allCategories.map((cat) => (
+      <button
+        type="button"
+        class="portfolio-bubble"
+        role="tab"
+        data-category={cat.data.slug}
+        aria-selected={cat.data.slug === initial.data.slug ? 'true' : 'false'}
+        data-cursor="link"
+      >
+        {cat.data.label[lang]}
+      </button>
+    ))}
+  </div>
+
+  {allCategories.map((cat) => {
+    const items = projectsByCategory.get(cat.data.slug) ?? [];
+    const isInitial = cat.data.slug === initial.data.slug;
+    return (
+      <div
+        data-showcase-wrapper={cat.data.slug}
+        data-category={cat.data.slug}
+        style={isInitial ? '' : 'display: none;'}
+      >
+        <Showcase items={items} lang={lang} category={cat.data.slug} categoryLabel={cat.data.label[lang]} />
+      </div>
+    );
+  })}
+
+  <div class="portfolio-meta-strip" data-meta-strip aria-live="polite">
+    <div>
+      <span class="portfolio-meta-label">{t('meta.studio')}</span>
+      <span class="portfolio-meta-value" data-meta="studio">{initialProject?.studio ?? ''}</span>
+    </div>
+    <div>
+      <span class="portfolio-meta-label">{t('meta.role')}</span>
+      <span class="portfolio-meta-value" data-meta="role">{initialProject?.role ?? ''}</span>
+    </div>
+    <div>
+      <span class="portfolio-meta-label">{t('meta.sectors')}</span>
+      <span class="portfolio-meta-value" data-meta="sectors">{initialProject?.sectors ?? ''}</span>
+    </div>
+    <div>
+      <span class="portfolio-meta-label">{t('meta.year')}</span>
+      <span class="portfolio-meta-value" data-meta="year">{initialProject?.year ?? ''}</span>
+    </div>
+  </div>
+
+  {Array.from(projectMetaByCategory.entries()).map(([slug, projects]) => (
+    <script type="application/json" is:inline data-projects={slug} set:html={JSON.stringify(projects).replace(/<\/script/giu, '<\\/script')} />
+  ))}
+</section>
+
+<script>
+  import { initBubbleSelector } from '../../scripts/bubble-selector';
+
+  initBubbleSelector();
+</script>

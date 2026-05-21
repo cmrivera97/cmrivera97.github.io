@@ -34,3 +34,20 @@
   --c-bg-elev: #14172a;
   --c-line: rgba(230, 231, 238, 0.12);
 }
+
+/* motion */
+:root {
+  --motion-cursor-lerp: 0.18;
+  --motion-splash-duration: 620ms;
+  --motion-reveal-duration: 480ms;
+  --motion-reveal-distance: 24px;
+  --motion-reveal-mask-duration: 700ms;
+  --motion-marquee-default: 32s;
+  --motion-drift-baseline: 14s;
+
+  --c-splash-1: var(--c-accent);
+  --c-splash-2: #A8B5FA;
+  --c-splash-3: #D4DCFF;
+  --c-splash-4: #C5B8FF;
+  --c-splash-5: #9F8CFF;
+}

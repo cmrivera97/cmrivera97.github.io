@@ -1,0 +1,25 @@
+{
+  "slug": "arroyo",
+  "kind": "design",
+  "category": "illustration",
+  "title": {
+    "en": "Arroyo",
+    "es": "Arroyo"
+  },
+  "subtitle": {
+    "en": "Children’s book illustrations",
+    "es": "Ilustraciones para libro infantil"
+  },
+  "studio": "Independent",
+  "role": {
+    "en": "Illustrator",
+    "es": "Illustrator"
+  },
+  "sectors": [
+    "publishing",
+    "children"
+  ],
+  "year": 2025,
+  "cover": "placeholder:hue=315",
+  "gallery": []
+}

@@ -1,0 +1,25 @@
+{
+  "slug": "mar-adentro",
+  "kind": "artwork",
+  "category": "painting",
+  "title": {
+    "en": "Mar Adentro",
+    "es": "Mar Adentro"
+  },
+  "subtitle": {
+    "en": "Seascape oils",
+    "es": "Marinas en óleo"
+  },
+  "studio": "Independent",
+  "role": {
+    "en": "Artist",
+    "es": "Artist"
+  },
+  "sectors": [
+    "oil",
+    "seascape"
+  ],
+  "year": 2025,
+  "cover": "placeholder:hue=264",
+  "gallery": []
+}

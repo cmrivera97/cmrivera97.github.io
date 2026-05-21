@@ -1,0 +1,24 @@
+{
+  "slug": "estanque",
+  "kind": "design",
+  "category": "ai-designs",
+  "title": {
+    "en": "Estanque",
+    "es": "Estanque"
+  },
+  "subtitle": {
+    "en": "Brand story keyframes",
+    "es": "Keyframes de relato de marca"
+  },
+  "studio": "Independent",
+  "role": {
+    "en": "Art Director",
+    "es": "Art Director"
+  },
+  "sectors": [
+    "advertising"
+  ],
+  "year": 2025,
+  "cover": "placeholder:hue=211",
+  "gallery": []
+}

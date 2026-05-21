@@ -1,0 +1,25 @@
+{
+  "slug": "reels-fall",
+  "kind": "design",
+  "category": "social-media",
+  "title": {
+    "en": "Reels: Fall",
+    "es": "Reels: Otoño"
+  },
+  "subtitle": {
+    "en": "Seasonal short-form content",
+    "es": "Contenido corto de temporada"
+  },
+  "studio": "Independent",
+  "role": {
+    "en": "Designer",
+    "es": "Designer"
+  },
+  "sectors": [
+    "fashion",
+    "social"
+  ],
+  "year": 2024,
+  "cover": "placeholder:hue=230",
+  "gallery": []
+}

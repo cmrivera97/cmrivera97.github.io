@@ -1,0 +1,25 @@
+{
+  "slug": "voces-digitales",
+  "kind": "design",
+  "category": "social-media",
+  "title": {
+    "en": "Voces Digitales",
+    "es": "Voces Digitales"
+  },
+  "subtitle": {
+    "en": "Podcast launch series",
+    "es": "Serie de lanzamiento de podcast"
+  },
+  "studio": "Independent",
+  "role": {
+    "en": "Designer",
+    "es": "Designer"
+  },
+  "sectors": [
+    "media",
+    "culture"
+  ],
+  "year": 2025,
+  "cover": "placeholder:hue=260",
+  "gallery": []
+}

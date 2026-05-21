@@ -1,0 +1,25 @@
+{
+  "slug": "florería-núcleo",
+  "kind": "design",
+  "category": "branding",
+  "title": {
+    "en": "Florería Núcleo",
+    "es": "Florería Núcleo"
+  },
+  "subtitle": {
+    "en": "Local florist rebrand",
+    "es": "Rediseño para una florería local"
+  },
+  "studio": "Independent",
+  "role": {
+    "en": "Designer",
+    "es": "Designer"
+  },
+  "sectors": [
+    "retail",
+    "lifestyle"
+  ],
+  "year": 2024,
+  "cover": "placeholder:hue=218",
+  "gallery": []
+}

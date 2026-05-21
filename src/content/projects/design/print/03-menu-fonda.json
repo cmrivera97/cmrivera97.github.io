@@ -1,0 +1,24 @@
+{
+  "slug": "menu-fonda",
+  "kind": "design",
+  "category": "print",
+  "title": {
+    "en": "Fonda Menu",
+    "es": "Menú Fonda"
+  },
+  "subtitle": {
+    "en": "Restaurant menu system",
+    "es": "Sistema de menús de restaurante"
+  },
+  "studio": "Independent",
+  "role": {
+    "en": "Designer",
+    "es": "Designer"
+  },
+  "sectors": [
+    "food"
+  ],
+  "year": 2024,
+  "cover": "placeholder:hue=259",
+  "gallery": []
+}

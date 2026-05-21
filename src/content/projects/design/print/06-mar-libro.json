@@ -1,0 +1,25 @@
+{
+  "slug": "mar-libro",
+  "kind": "design",
+  "category": "print",
+  "title": {
+    "en": "Mar Libro",
+    "es": "Mar Libro"
+  },
+  "subtitle": {
+    "en": "Photo book design",
+    "es": "Diseño de fotolibro"
+  },
+  "studio": "Independent",
+  "role": {
+    "en": "Designer",
+    "es": "Designer"
+  },
+  "sectors": [
+    "publishing",
+    "photography"
+  ],
+  "year": 2024,
+  "cover": "placeholder:hue=289",
+  "gallery": []
+}

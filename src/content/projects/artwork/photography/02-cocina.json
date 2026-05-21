@@ -1,0 +1,25 @@
+{
+  "slug": "cocina",
+  "kind": "artwork",
+  "category": "photography",
+  "title": {
+    "en": "Cocina",
+    "es": "Cocina"
+  },
+  "subtitle": {
+    "en": "Quiet kitchen still-lifes",
+    "es": "Naturalezas muertas tranquilas de cocina"
+  },
+  "studio": "Independent",
+  "role": {
+    "en": "Photographer",
+    "es": "Photographer"
+  },
+  "sectors": [
+    "still-life",
+    "domestic"
+  ],
+  "year": 2025,
+  "cover": "placeholder:hue=254",
+  "gallery": []
+}

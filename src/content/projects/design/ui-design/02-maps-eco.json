@@ -1,0 +1,25 @@
+{
+  "slug": "maps-eco",
+  "kind": "design",
+  "category": "ui-design",
+  "title": {
+    "en": "Maps Eco",
+    "es": "Maps Eco"
+  },
+  "subtitle": {
+    "en": "Sustainable maps redesign",
+    "es": "Rediseño de mapas sostenibles"
+  },
+  "studio": "Independent",
+  "role": {
+    "en": "Designer",
+    "es": "Designer"
+  },
+  "sectors": [
+    "app",
+    "sustainability"
+  ],
+  "year": 2024,
+  "cover": "placeholder:hue=201",
+  "gallery": []
+}

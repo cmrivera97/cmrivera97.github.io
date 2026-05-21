@@ -1,0 +1,25 @@
+{
+  "slug": "poster-veladas",
+  "kind": "design",
+  "category": "print",
+  "title": {
+    "en": "Veladas Poster",
+    "es": "Cartel Veladas"
+  },
+  "subtitle": {
+    "en": "Concert poster series",
+    "es": "Serie de carteles de concierto"
+  },
+  "studio": "Independent",
+  "role": {
+    "en": "Designer",
+    "es": "Designer"
+  },
+  "sectors": [
+    "music",
+    "culture"
+  ],
+  "year": 2025,
+  "cover": "placeholder:hue=308",
+  "gallery": []
+}

@@ -1,0 +1,25 @@
+{
+  "slug": "puente",
+  "kind": "design",
+  "category": "ai-designs",
+  "title": {
+    "en": "Puente",
+    "es": "Puente"
+  },
+  "subtitle": {
+    "en": "Hybrid AI + photo work",
+    "es": "Trabajo híbrido IA + foto"
+  },
+  "studio": "Independent",
+  "role": {
+    "en": "Art Director",
+    "es": "Art Director"
+  },
+  "sectors": [
+    "hybrid",
+    "experimental"
+  ],
+  "year": 2025,
+  "cover": "placeholder:hue=300",
+  "gallery": []
+}

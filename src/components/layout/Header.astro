@@ -17,27 +17,27 @@ const designSlugs = ['social-media', 'branding', 'ai-designs', 'print', 'illustr
 const artworkSlugs = ['drawing', 'painting', 'photography'] as const;
 ---
 <header class="site-header">
-  <a class="brand" href={localizedHref(lang, '/')}>Carolina Rivera</a>
+  <a class="brand" href={localizedHref(lang, '/')} data-cursor="link">Carolina Rivera</a>
   <nav aria-label={t('nav.home')}>
     <ul role="list" class="nav-primary">
-      <li><a href={localizedHref(lang, '/')}>{t('nav.home')}</a></li>
+      <li><a href={localizedHref(lang, '/')} data-cursor="link">{t('nav.home')}</a></li>
       <li class="has-submenu">
-        <a href={`${localizedHref(lang, '/')}#design`}>{t('nav.design')}</a>
+        <a href={`${localizedHref(lang, '/')}#design`} data-cursor="link">{t('nav.design')}</a>
         <ul role="list" class="nav-submenu">
           {designSlugs.map((slug) => (
-            <li><a href={localizedHref(lang, `/design/${slug}`)}>{slug}</a></li>
+            <li><a href={localizedHref(lang, `/design/${slug}`)} data-cursor="link">{slug}</a></li>
           ))}
         </ul>
       </li>
       <li class="has-submenu">
-        <a href={`${localizedHref(lang, '/')}#artwork`}>{t('nav.artwork')}</a>
+        <a href={`${localizedHref(lang, '/')}#artwork`} data-cursor="link">{t('nav.artwork')}</a>
         <ul role="list" class="nav-submenu">
           {artworkSlugs.map((slug) => (
-            <li><a href={localizedHref(lang, `/artwork/${slug}`)}>{slug}</a></li>
+            <li><a href={localizedHref(lang, `/artwork/${slug}`)} data-cursor="link">{slug}</a></li>
           ))}
         </ul>
       </li>
-      <li><a href={`${localizedHref(lang, '/')}#contact`}>{t('nav.contact')}</a></li>
+      <li><a href={`${localizedHref(lang, '/')}#contact`} data-cursor="link">{t('nav.contact')}</a></li>
     </ul>
   </nav>
   <div class="header-controls">

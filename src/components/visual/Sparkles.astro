@@ -1,0 +1,42 @@
+---
+// utils
+import { mulberry32 } from '../../utils/mulberry32';
+
+interface Props {
+  count?: number;
+  seed?: number;
+}
+
+const { count = 28, seed = 0 } = Astro.props;
+const rng = mulberry32(seed * 31 + 11);
+
+interface Sparkle {
+  cx: number;
+  cy: number;
+  r: number;
+  base: number;
+  delay: number;
+}
+
+const sparkles: Sparkle[] = [];
+for (let i = 0; i < count; i += 1) {
+  sparkles.push({
+    cx: rng() * 100,
+    cy: rng() * 100,
+    r: 0.3 + rng() * 0.9,
+    base: 0.15 + rng() * 0.4,
+    delay: rng() * -4.5,
+  });
+}
+---
+<svg class="sparkles" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">
+  {sparkles.map((s) => (
+    <circle
+      cx={s.cx}
+      cy={s.cy}
+      r={s.r}
+      fill="white"
+      style={`--sparkle-base: ${s.base}; animation-delay: ${s.delay}s;`}
+    />
+  ))}
+</svg>

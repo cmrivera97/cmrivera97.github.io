@@ -1,0 +1,24 @@
+{
+  "slug": "ediciones-pera",
+  "kind": "design",
+  "category": "print",
+  "title": {
+    "en": "Ediciones Pera",
+    "es": "Ediciones Pera"
+  },
+  "subtitle": {
+    "en": "Catalog series",
+    "es": "Serie de catálogos"
+  },
+  "studio": "Independent",
+  "role": {
+    "en": "Designer",
+    "es": "Designer"
+  },
+  "sectors": [
+    "publishing"
+  ],
+  "year": 2024,
+  "cover": "placeholder:hue=308",
+  "gallery": []
+}

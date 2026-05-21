@@ -71,6 +71,14 @@ module.exports = {
         '@typescript-eslint/triple-slash-reference': 'off',
       },
     },
+    {
+      // mulberry32 PRNG and slug-hash use bitwise ops by design;
+      // these are pure math utilities with no DOM / security surface.
+      files: ['src/utils/mulberry32.ts', 'src/utils/slug-hash.ts'],
+      rules: {
+        'no-bitwise': 'off',
+      },
+    },
   ],
   settings: {
     'import/resolver': {

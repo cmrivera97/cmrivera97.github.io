@@ -1,0 +1,25 @@
+{
+  "slug": "campos",
+  "kind": "design",
+  "category": "ai-designs",
+  "title": {
+    "en": "Campos",
+    "es": "Campos"
+  },
+  "subtitle": {
+    "en": "Generative landscape series",
+    "es": "Serie generativa de paisajes"
+  },
+  "studio": "Independent",
+  "role": {
+    "en": "Art Director",
+    "es": "Art Director"
+  },
+  "sectors": [
+    "landscape",
+    "experimental"
+  ],
+  "year": 2025,
+  "cover": "placeholder:hue=226",
+  "gallery": []
+}

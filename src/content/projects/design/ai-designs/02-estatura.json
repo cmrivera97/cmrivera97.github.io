@@ -1,0 +1,25 @@
+{
+  "slug": "estatura",
+  "kind": "design",
+  "category": "ai-designs",
+  "title": {
+    "en": "Estatura",
+    "es": "Estatura"
+  },
+  "subtitle": {
+    "en": "Generative campaign keyframes",
+    "es": "Keyframes generativos de campaña"
+  },
+  "studio": "Independent",
+  "role": {
+    "en": "Art Director",
+    "es": "Art Director"
+  },
+  "sectors": [
+    "advertising",
+    "experimental"
+  ],
+  "year": 2025,
+  "cover": "placeholder:hue=265",
+  "gallery": []
+}

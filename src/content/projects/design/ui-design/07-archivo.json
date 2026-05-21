@@ -1,0 +1,25 @@
+{
+  "slug": "archivo",
+  "kind": "design",
+  "category": "ui-design",
+  "title": {
+    "en": "Archivo",
+    "es": "Archivo"
+  },
+  "subtitle": {
+    "en": "Personal archive interface",
+    "es": "Interfaz de archivo personal"
+  },
+  "studio": "Independent",
+  "role": {
+    "en": "Designer",
+    "es": "Designer"
+  },
+  "sectors": [
+    "app",
+    "personal"
+  ],
+  "year": 2025,
+  "cover": "placeholder:hue=257",
+  "gallery": []
+}

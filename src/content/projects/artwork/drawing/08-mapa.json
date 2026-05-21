@@ -1,0 +1,24 @@
+{
+  "slug": "mapa",
+  "kind": "artwork",
+  "category": "drawing",
+  "title": {
+    "en": "Mapa",
+    "es": "Mapa"
+  },
+  "subtitle": {
+    "en": "Imaginary cartography",
+    "es": "Cartografía imaginaria"
+  },
+  "studio": "Independent",
+  "role": {
+    "en": "Artist",
+    "es": "Artist"
+  },
+  "sectors": [
+    "cartography"
+  ],
+  "year": 2024,
+  "cover": "placeholder:hue=283",
+  "gallery": []
+}

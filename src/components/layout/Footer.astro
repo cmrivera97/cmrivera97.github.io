@@ -41,7 +41,7 @@ const socials: ReadonlyArray<{ key: string; href: string; icon: string; label: s
   <ul role="list" class="socials">
     {socials.map((item) => (
       <li>
-        <a href={item.href} aria-label={item.label} rel="noopener noreferrer" target="_blank">
+        <a href={item.href} aria-label={item.label} rel="noopener noreferrer" target="_blank" data-cursor="link">
           <img src={`${import.meta.env.BASE_URL}icons/${item.icon}`} alt="" width="20" height="20" />
         </a>
       </li>

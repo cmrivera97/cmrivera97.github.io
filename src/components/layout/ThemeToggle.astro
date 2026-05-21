@@ -10,8 +10,8 @@ const { lang } = Astro.props;
 const t = getT(lang);
 ---
 <div class="theme-toggle" role="group" aria-label={t('theme.toggle')}>
-  <button type="button" data-theme-button="light" aria-pressed="false">{t('theme.light')}</button>
-  <button type="button" data-theme-button="dark" aria-pressed="false">{t('theme.dark')}</button>
+  <button type="button" data-theme-button="light" aria-pressed="false" data-cursor="link">{t('theme.light')}</button>
+  <button type="button" data-theme-button="dark" aria-pressed="false" data-cursor="link">{t('theme.dark')}</button>
 </div>
 
 <script>

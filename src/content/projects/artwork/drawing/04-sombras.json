@@ -1,0 +1,25 @@
+{
+  "slug": "sombras",
+  "kind": "artwork",
+  "category": "drawing",
+  "title": {
+    "en": "Sombras",
+    "es": "Sombras"
+  },
+  "subtitle": {
+    "en": "Charcoal interior studies",
+    "es": "Estudios de interiores a carbón"
+  },
+  "studio": "Independent",
+  "role": {
+    "en": "Artist",
+    "es": "Artist"
+  },
+  "sectors": [
+    "charcoal",
+    "interior"
+  ],
+  "year": 2024,
+  "cover": "placeholder:hue=208",
+  "gallery": []
+}

@@ -1,0 +1,25 @@
+{
+  "slug": "volcan-records",
+  "kind": "design",
+  "category": "branding",
+  "title": {
+    "en": "Volcán Records",
+    "es": "Volcán Records"
+  },
+  "subtitle": {
+    "en": "Independent label identity",
+    "es": "Identidad de sello independiente"
+  },
+  "studio": "Independent",
+  "role": {
+    "en": "Designer",
+    "es": "Designer"
+  },
+  "sectors": [
+    "music",
+    "culture"
+  ],
+  "year": 2024,
+  "cover": "placeholder:hue=289",
+  "gallery": []
+}

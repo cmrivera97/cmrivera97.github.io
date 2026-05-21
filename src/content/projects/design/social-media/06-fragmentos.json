@@ -1,0 +1,25 @@
+{
+  "slug": "fragmentos",
+  "kind": "design",
+  "category": "social-media",
+  "title": {
+    "en": "Fragmentos",
+    "es": "Fragmentos"
+  },
+  "subtitle": {
+    "en": "Editorial micro-stories",
+    "es": "Micro-historias editoriales"
+  },
+  "studio": "Independent",
+  "role": {
+    "en": "Designer",
+    "es": "Designer"
+  },
+  "sectors": [
+    "publishing",
+    "social"
+  ],
+  "year": 2024,
+  "cover": "placeholder:hue=228",
+  "gallery": []
+}

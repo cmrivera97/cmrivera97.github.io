@@ -1,0 +1,25 @@
+{
+  "slug": "la-feria",
+  "kind": "design",
+  "category": "social-media",
+  "title": {
+    "en": "La Feria",
+    "es": "La Feria"
+  },
+  "subtitle": {
+    "en": "Weekly market posts",
+    "es": "Posts semanales de mercado"
+  },
+  "studio": "Independent",
+  "role": {
+    "en": "Designer",
+    "es": "Designer"
+  },
+  "sectors": [
+    "retail",
+    "community"
+  ],
+  "year": 2024,
+  "cover": "placeholder:hue=224",
+  "gallery": []
+}

@@ -1,0 +1,25 @@
+{
+  "slug": "ojo-de-agua",
+  "kind": "design",
+  "category": "branding",
+  "title": {
+    "en": "Ojo de Agua",
+    "es": "Ojo de Agua"
+  },
+  "subtitle": {
+    "en": "Sustainable water bottling",
+    "es": "Embotellado de agua sostenible"
+  },
+  "studio": "Independent",
+  "role": {
+    "en": "Designer",
+    "es": "Designer"
+  },
+  "sectors": [
+    "sustainability",
+    "product"
+  ],
+  "year": 2025,
+  "cover": "placeholder:hue=229",
+  "gallery": []
+}

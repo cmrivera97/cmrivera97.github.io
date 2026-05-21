@@ -1,0 +1,25 @@
+{
+  "slug": "arboleda",
+  "kind": "artwork",
+  "category": "painting",
+  "title": {
+    "en": "Arboleda",
+    "es": "Arboleda"
+  },
+  "subtitle": {
+    "en": "Acrylic forest series",
+    "es": "Serie de bosques en acrílico"
+  },
+  "studio": "Independent",
+  "role": {
+    "en": "Artist",
+    "es": "Artist"
+  },
+  "sectors": [
+    "acrylic",
+    "landscape"
+  ],
+  "year": 2024,
+  "cover": "placeholder:hue=242",
+  "gallery": []
+}

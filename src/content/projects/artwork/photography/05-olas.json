@@ -1,0 +1,24 @@
+{
+  "slug": "olas",
+  "kind": "artwork",
+  "category": "photography",
+  "title": {
+    "en": "Olas",
+    "es": "Olas"
+  },
+  "subtitle": {
+    "en": "Ocean studies",
+    "es": "Estudios oceánicos"
+  },
+  "studio": "Independent",
+  "role": {
+    "en": "Photographer",
+    "es": "Photographer"
+  },
+  "sectors": [
+    "nature"
+  ],
+  "year": 2024,
+  "cover": "placeholder:hue=293",
+  "gallery": []
+}

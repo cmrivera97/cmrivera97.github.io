@@ -1,0 +1,25 @@
+{
+  "slug": "foro-abierto",
+  "kind": "design",
+  "category": "ui-design",
+  "title": {
+    "en": "Open Forum",
+    "es": "Foro Abierto"
+  },
+  "subtitle": {
+    "en": "Community forum design",
+    "es": "Diseño de foro comunitario"
+  },
+  "studio": "Independent",
+  "role": {
+    "en": "Designer",
+    "es": "Designer"
+  },
+  "sectors": [
+    "web",
+    "community"
+  ],
+  "year": 2024,
+  "cover": "placeholder:hue=314",
+  "gallery": []
+}

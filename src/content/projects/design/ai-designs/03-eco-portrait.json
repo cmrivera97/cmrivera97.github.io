@@ -1,0 +1,25 @@
+{
+  "slug": "eco-portrait",
+  "kind": "design",
+  "category": "ai-designs",
+  "title": {
+    "en": "Eco Portrait",
+    "es": "Eco Retrato"
+  },
+  "subtitle": {
+    "en": "AI portraiture commission",
+    "es": "Encargo de retrato con IA"
+  },
+  "studio": "Independent",
+  "role": {
+    "en": "Art Director",
+    "es": "Art Director"
+  },
+  "sectors": [
+    "portraiture",
+    "experimental"
+  ],
+  "year": 2024,
+  "cover": "placeholder:hue=312",
+  "gallery": []
+}

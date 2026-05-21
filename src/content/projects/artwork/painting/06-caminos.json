@@ -1,0 +1,25 @@
+{
+  "slug": "caminos",
+  "kind": "artwork",
+  "category": "painting",
+  "title": {
+    "en": "Caminos",
+    "es": "Caminos"
+  },
+  "subtitle": {
+    "en": "Landscape oil series",
+    "es": "Serie de paisajes en óleo"
+  },
+  "studio": "Independent",
+  "role": {
+    "en": "Artist",
+    "es": "Artist"
+  },
+  "sectors": [
+    "oil",
+    "landscape"
+  ],
+  "year": 2025,
+  "cover": "placeholder:hue=252",
+  "gallery": []
+}
