@@ -2,8 +2,7 @@
 import { getCollection, type CollectionEntry } from 'astro:content';
 
 import { localizedHref } from '../../utils/localizedHref';
-import { mulberry32 } from '../../utils/mulberry32';
-import { hueFromSlug, seedFromSlug } from '../../utils/slug-hash';
+import { hueFromSlug } from '../../utils/slug-hash';
 import CardPlaceholder from '../visual/CardPlaceholder.astro';
 import { getT, type Lang } from '../../i18n/getT';
 
@@ -27,11 +26,6 @@ const sisterCategories = await Promise.all(
 );
 const sisters = sisterCategories.filter((c): c is CollectionEntry<'categories'> => Boolean(c));
 
-const tiltFor = (slug: string): string => {
-  const rng = mulberry32(seedFromSlug(slug));
-  return `${(rng() * 6 - 3).toFixed(2)}deg`;
-};
-
 const kindLabel = category.data.kind === 'design' ? t('nav.design') : t('nav.artwork');
 const homeHref = localizedHref(lang, '/');
 const email = t('contact.email');
@@ -41,18 +35,25 @@ const relatedLabelStyle = 'font-family: var(--font-body); font-size: 0.75rem; '
 ---
 <section class="subpage">
   <a class="subpage-back" href={homeHref} data-cursor="link">← {t('subpage.back')} {kindLabel}</a>
-  <h1 class="subpage-heading">{category.data.label[lang]}</h1>
-  <p class="subpage-blurb">{category.data.blurb[lang]}</p>
 
-  <div data-tilt-grid>
+  <div class="subpage-head">
+    <h1 class="subpage-heading">{category.data.label[lang]}</h1>
+    <div class="subpage-rule-1"></div>
+    <div class="subpage-rule-2"></div>
+    <p class="subpage-blurb">{category.data.blurb[lang]}</p>
+  </div>
+
+  <div class="sub-grid">
     {projects.map((p) => {
       const hue = hueFromSlug(p.data.slug);
       const cover = p.data.cover.startsWith('placeholder:') ? p.data.cover : `placeholder:hue=${hue}`;
       return (
-        <article class="tilt-card" data-slug={p.data.slug} style={`--tilt-rotate: ${tiltFor(p.data.slug)};`}>
+        <a class="sub-card"
+           href={localizedHref(lang, `/${category.data.kind}/${category.data.slug}/${p.data.slug}/`)}
+           data-cursor="media" data-cursor-label={category.data.label[lang]}>
           <CardPlaceholder cover={cover} glyph="◆" />
-          <div class="tilt-card-meta">{p.data.title[lang]}</div>
-        </article>
+          <span class="sub-tag">{p.data.title[lang]}</span>
+        </a>
       );
     })}
   </div>
@@ -76,7 +77,7 @@ const relatedLabelStyle = 'font-family: var(--font-body); font-size: 0.75rem; '
         ? localizedHref(lang, `/design/${s.data.slug}`)
         : localizedHref(lang, `/artwork/${s.data.slug}`);
       return (
-        <a href={href} data-cursor="link">{s.data.label[lang]}</a>
+        <a class="bubble" href={href} data-cursor="link">{s.data.label[lang]}</a>
       );
     })}
   </nav>
@@ -86,9 +87,3 @@ const relatedLabelStyle = 'font-family: var(--font-body); font-size: 0.75rem; '
     <a href={`mailto:${email}`} data-cursor="link">{t('contact.ctaCopy')}</a>
   </div>
 </section>
-
-<script>
-  import { initTiltGrid } from '../../scripts/carousel';
-
-  initTiltGrid();
-</script>
