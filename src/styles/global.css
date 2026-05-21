@@ -216,64 +216,6 @@ body.no-cursor #cursor-ring {
   }
 }
 
-/* ----- jellyfish drift (jellyfish-drift.ts hydrates) ----- */
-
-[data-jellyfish-stage] {
-  position: relative;
-  --hero-fade: 1;
-}
-
-[data-jellyfish-stage] .jellyfish-slot {
-  position: absolute;
-  --drift-x: 12px;
-  --drift-y: 18px;
-  --drift-rot: 4deg;
-  --drift-duration: 14s;
-  animation: jellyfish-drift var(--drift-duration) ease-in-out infinite alternate;
-  opacity: var(--hero-fade);
-  will-change: transform, opacity;
-}
-
-@keyframes jellyfish-drift {
-  0%   { transform: translate3d(0, 0, 0) rotate(0deg); }
-  50%  { transform: translate3d(var(--drift-x), var(--drift-y), 0) rotate(var(--drift-rot)); }
-  100% { transform: translate3d(calc(var(--drift-x) * -0.5), calc(var(--drift-y) * 0.6), 0) rotate(calc(var(--drift-rot) * -0.7)); }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  [data-jellyfish-stage] .jellyfish-slot {
-    animation: none !important;
-    transform: none !important;
-  }
-  [data-jellyfish-stage] {
-    --hero-fade: 1 !important;
-  }
-}
-
-/* ----- sparkles (Sparkles.astro) ----- */
-
-.sparkles {
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
-  z-index: 1;
-}
-
-.sparkles circle {
-  animation: sparkle-twinkle 4.5s ease-in-out infinite;
-}
-
-@keyframes sparkle-twinkle {
-  0%, 100% { opacity: var(--sparkle-base, 0.3); }
-  50%      { opacity: 0.95; }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .sparkles circle {
-    animation: none !important;
-  }
-}
-
 /* ----- placeholder (Placeholder.astro) ----- */
 
 .placeholder-cover {
