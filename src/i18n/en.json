@@ -17,7 +17,13 @@
     "tagline": "Graphic Designer & Visual Artist"
   },
   "hero": {
-    "cta": "View work"
+    "cta1": "See the work",
+    "cta2": "Say hello",
+    "since": "Independent practice — since 2019",
+    "eyebrow": "Graphic Designer · Visual Artist",
+    "location": "Bogotá · COL",
+    "lede": "Crafting brands, identities, and quiet objects — somewhere between the page, the screen, and the canvas.",
+    "scrollHint": "scroll"
   },
   "design": {
     "eyebrow": "Design Portfolio"

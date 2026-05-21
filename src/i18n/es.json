@@ -17,7 +17,13 @@
     "tagline": "Diseñadora Gráfica y Artista Visual"
   },
   "hero": {
-    "cta": "Ver trabajo"
+    "cta1": "Ver el trabajo",
+    "cta2": "Saludar",
+    "since": "Práctica independiente — desde 2019",
+    "eyebrow": "Diseñadora Gráfica · Artista Visual",
+    "location": "Bogotá · COL",
+    "lede": "Creando marcas, identidades y objetos silenciosos — entre la página, la pantalla y el lienzo.",
+    "scrollHint": "desliza"
   },
   "design": {
     "eyebrow": "Portafolio de Diseño"
