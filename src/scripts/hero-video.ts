@@ -1,6 +1,7 @@
+const BASE = import.meta.env.BASE_URL;
 const SRC = {
-  h: { dark: '/video/hero-h-dark.mp4', light: '/video/hero-h-light.mp4' },
-  v: { dark: '/video/hero-v-dark.mp4', light: '/video/hero-v-light.mp4' },
+  h: { dark: `${BASE}video/hero-h-dark.mp4`, light: `${BASE}video/hero-h-light.mp4` },
+  v: { dark: `${BASE}video/hero-v-dark.mp4`, light: `${BASE}video/hero-v-light.mp4` },
 };
 
 export const initHeroVideo = (): void => {
