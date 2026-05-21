@@ -26,11 +26,16 @@
     "scrollHint": "scroll"
   },
   "design": {
-    "eyebrow": "Design Portfolio"
+    "eyebrow": "Design Portfolio",
+    "title1": "Things made",
+    "title2": "for the screen and the page"
   },
   "artwork": {
-    "eyebrow": "Personal Portfolio"
+    "eyebrow": "Personal Portfolio",
+    "title1": "Things made",
+    "title2": "by hand"
   },
+  "explore": "Explore the case",
   "contact": {
     "heading": "Get in touch",
     "line1": "I'm Carolina — graphic designer and visual artist.",

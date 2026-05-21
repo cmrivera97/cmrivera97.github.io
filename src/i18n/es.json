@@ -26,11 +26,16 @@
     "scrollHint": "desliza"
   },
   "design": {
-    "eyebrow": "Portafolio de Diseño"
+    "eyebrow": "Portafolio de Diseño",
+    "title1": "Cosas hechas",
+    "title2": "para la pantalla y la página"
   },
   "artwork": {
-    "eyebrow": "Portafolio Personal"
+    "eyebrow": "Portafolio Personal",
+    "title1": "Cosas hechas",
+    "title2": "a mano"
   },
+  "explore": "Explorar el caso",
   "contact": {
     "heading": "Contáctame",
     "line1": "Soy Carolina — diseñadora gráfica y artista visual.",

@@ -5,6 +5,7 @@ import { getCollection } from 'astro:content';
 // components + i18n
 import Showcase from './Showcase.astro';
 import { getT, type Lang } from '../../i18n/getT';
+import { localizedHref } from '../../utils/localizedHref';
 
 interface Props {
   kind: 'design' | 'artwork';
@@ -48,21 +49,30 @@ projectsByCategory.forEach((projects, slug) => {
 const eyebrowKey = kind === 'design' ? 'design.eyebrow' : 'artwork.eyebrow';
 const eyebrowLabel = t(eyebrowKey as 'design.eyebrow' | 'artwork.eyebrow');
 const initialProject = projectMetaByCategory.get(initial.data.slug)?.[0];
+
+const title1 = kind === 'design' ? t('design.title1') : t('artwork.title1');
+const title2 = kind === 'design' ? t('design.title2') : t('artwork.title2');
 ---
 <section id={sectionId} class="portfolio-section" data-bubble-selector>
-  <p class="portfolio-eyebrow">
-    <span>—{eyebrowLabel.toUpperCase()}.</span>
-    <span class="accent">{t('bubble.label').toUpperCase()}.</span>
-    <span class="selected-category" data-selected-category>{initial.data.label[lang]}</span>
-  </p>
+
+  <div class="portfolio-head">
+    <p class="portfolio-eyebrow">
+      <span>—{eyebrowLabel.toUpperCase()}.</span>
+      <span class="accent">{t('bubble.label').toUpperCase()}.</span>
+      <span class="selected-category" data-selected-category>{initial.data.label[lang]}</span>
+    </p>
+    <h2 class="sec-title" data-reveal data-reveal-delay="120">{title1} <span class="it">{title2}</span></h2>
+    <p class="portfolio-blurb" data-selected-blurb data-reveal data-reveal-delay="300">{initial.data.blurb[lang]}</p>
+  </div>
 
   <div class="portfolio-bubbles" role="tablist">
     {allCategories.map((cat) => (
       <button
         type="button"
-        class="portfolio-bubble"
+        class:list={['bubble', 'portfolio-bubble', { active: cat.data.slug === initial.data.slug }]}
         role="tab"
         data-category={cat.data.slug}
+        data-blurb={cat.data.blurb[lang]}
         aria-selected={cat.data.slug === initial.data.slug ? 'true' : 'false'}
         data-cursor="link"
       >
@@ -80,7 +90,7 @@ const initialProject = projectMetaByCategory.get(initial.data.slug)?.[0];
         data-category={cat.data.slug}
         style={isInitial ? '' : 'display: none;'}
       >
-        <Showcase items={items} lang={lang} category={cat.data.slug} categoryLabel={cat.data.label[lang]} />
+        <Showcase items={items} lang={lang} category={cat.data.slug} categoryLabel={cat.data.label[lang]} kind={kind} />
       </div>
     );
   })}
@@ -102,6 +112,17 @@ const initialProject = projectMetaByCategory.get(initial.data.slug)?.[0];
       <span class="portfolio-meta-label">{t('meta.year')}</span>
       <span class="portfolio-meta-value" data-meta="year">{initialProject?.year ?? ''}</span>
     </div>
+  </div>
+
+  <div class="portfolio-explore">
+    <a
+      class="btn btn-glass"
+      data-explore
+      data-cursor="link"
+      href={localizedHref(lang, `/${kind}/${initial.data.slug}/`)}
+    >
+      {t('explore')} — <span data-explore-label>{initial.data.label[lang]}</span> →
+    </a>
   </div>
 
   {Array.from(projectMetaByCategory.entries()).map(([slug, projects]) => (
