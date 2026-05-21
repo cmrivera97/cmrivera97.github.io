@@ -1,0 +1,18 @@
+---
+// layouts
+import BaseLayout from '../../layouts/BaseLayout.astro';
+// i18n
+import { getT } from '../../i18n/getT';
+
+const lang = 'es' as const;
+const t = getT(lang);
+---
+<BaseLayout title={t('site.title')} description={t('site.description')} lang={lang}>
+  <main>
+    <h1>{t('home.name.first')} {t('home.name.last')}</h1>
+    <p>{t('home.tagline')}</p>
+    <p>
+      <em>Phase 0 stub — el diseño llega en la Fase 1.</em>
+    </p>
+  </main>
+</BaseLayout>

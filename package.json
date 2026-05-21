@@ -1,0 +1,40 @@
+{
+  "name": "portfolio-web-app-ciruela",
+  "version": "0.1.0",
+  "type": "module",
+  "private": true,
+  "description": "Carolina M. Rivera — Graphic Designer & Visual Artist portfolio.",
+  "engines": {
+    "node": "24.15.0"
+  },
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "typecheck": "astro check",
+    "lint": "eslint --max-warnings=0 \"src/**/*.{ts,astro}\" \"*.{cjs,mjs}\"",
+    "prepare": "husky"
+  },
+  "lint-staged": {
+    "*.{ts,astro}": "eslint --max-warnings=0",
+    "*.{js,cjs,mjs}": "eslint --max-warnings=0"
+  },
+  "dependencies": {
+    "astro": "6.3.1",
+    "zod": "4.4.3"
+  },
+  "devDependencies": {
+    "@astrojs/check": "0.9.9",
+    "@typescript-eslint/eslint-plugin": "8.59.2",
+    "@typescript-eslint/parser": "8.59.2",
+    "astro-eslint-parser": "1.4.0",
+    "eslint": "8.57.1",
+    "eslint-config-airbnb-base": "15.0.0",
+    "eslint-import-resolver-typescript": "4.4.4",
+    "eslint-plugin-astro": "1.7.0",
+    "eslint-plugin-import": "2.32.0",
+    "husky": "9.1.7",
+    "lint-staged": "17.0.2",
+    "typescript": "6.0.3"
+  }
+}

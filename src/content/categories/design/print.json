@@ -1,0 +1,10 @@
+{
+  "slug": "print",
+  "kind": "design",
+  "label": { "en": "Print", "es": "Impresión" },
+  "blurb": {
+    "en": "Editorial layouts, packaging, and tactile print pieces.",
+    "es": "Maquetación editorial, packaging y piezas impresas con presencia."
+  },
+  "sisterCategories": ["branding", "illustration", "ui-design"]
+}

@@ -1,0 +1,10 @@
+{
+  "slug": "painting",
+  "kind": "artwork",
+  "label": { "en": "Painting", "es": "Pintura" },
+  "blurb": {
+    "en": "Watercolor and acrylic work — figurative pieces and abstract studies.",
+    "es": "Acuarela y acrílico — piezas figurativas y estudios abstractos."
+  },
+  "sisterCategories": ["drawing", "photography"]
+}

@@ -1,0 +1,89 @@
+---
+// utils + i18n
+import { localizedHref } from '../../utils/localizedHref';
+import { getT, type Lang } from '../../i18n/getT';
+// components
+import LangToggle from './LangToggle.astro';
+import ThemeToggle from './ThemeToggle.astro';
+
+interface Props {
+  lang: Lang;
+}
+
+const { lang } = Astro.props;
+const t = getT(lang);
+
+const designSlugs = ['social-media', 'branding', 'ai-designs', 'print', 'illustration', 'ui-design'] as const;
+const artworkSlugs = ['drawing', 'painting', 'photography'] as const;
+---
+<header class="site-header">
+  <a class="brand" href={localizedHref(lang, '/')}>Carolina Rivera</a>
+  <nav aria-label={t('nav.home')}>
+    <ul role="list" class="nav-primary">
+      <li><a href={localizedHref(lang, '/')}>{t('nav.home')}</a></li>
+      <li class="has-submenu">
+        <a href={`${localizedHref(lang, '/')}#design`}>{t('nav.design')}</a>
+        <ul role="list" class="nav-submenu">
+          {designSlugs.map((slug) => (
+            <li><a href={localizedHref(lang, `/design/${slug}`)}>{slug}</a></li>
+          ))}
+        </ul>
+      </li>
+      <li class="has-submenu">
+        <a href={`${localizedHref(lang, '/')}#artwork`}>{t('nav.artwork')}</a>
+        <ul role="list" class="nav-submenu">
+          {artworkSlugs.map((slug) => (
+            <li><a href={localizedHref(lang, `/artwork/${slug}`)}>{slug}</a></li>
+          ))}
+        </ul>
+      </li>
+      <li><a href={`${localizedHref(lang, '/')}#contact`}>{t('nav.contact')}</a></li>
+    </ul>
+  </nav>
+  <div class="header-controls">
+    <LangToggle lang={lang} />
+    <ThemeToggle lang={lang} />
+  </div>
+</header>
+
+<style>
+  .site-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem 1.5rem;
+    border-bottom: 1px solid var(--c-line);
+  }
+  .brand {
+    font-family: var(--font-name);
+    font-weight: 500;
+    font-size: 1.125rem;
+  }
+  .nav-primary {
+    display: flex;
+    gap: 1.5rem;
+    margin: 0;
+  }
+  .has-submenu .nav-submenu {
+    display: none;
+    position: absolute;
+    background: var(--c-bg-elev);
+    padding: 0.5rem 0.75rem;
+    border: 1px solid var(--c-line);
+    border-radius: var(--radius-md);
+    margin-top: 0.5rem;
+  }
+  .has-submenu:hover .nav-submenu,
+  .has-submenu:focus-within .nav-submenu {
+    display: block;
+  }
+  .nav-submenu li {
+    padding: 0.25rem 0;
+    text-transform: capitalize;
+  }
+  .header-controls {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+</style>

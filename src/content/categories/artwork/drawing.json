@@ -1,0 +1,10 @@
+{
+  "slug": "drawing",
+  "kind": "artwork",
+  "label": { "en": "Drawing", "es": "Dibujo" },
+  "blurb": {
+    "en": "Pencil, ink, and mixed-media studies from the personal sketchbook.",
+    "es": "Estudios a lápiz, tinta y técnica mixta desde el cuaderno personal."
+  },
+  "sisterCategories": ["painting", "photography"]
+}

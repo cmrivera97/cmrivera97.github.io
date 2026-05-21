@@ -1,0 +1,13 @@
+{
+  "slug": "sample",
+  "kind": "artwork",
+  "category": "drawing",
+  "title": { "en": "Sample Drawing", "es": "Dibujo de Muestra" },
+  "subtitle": { "en": "Placeholder sketch", "es": "Boceto placeholder" },
+  "studio": "Independent",
+  "role": { "en": "Artist", "es": "Artista" },
+  "sectors": ["placeholder"],
+  "year": 2026,
+  "cover": "/placeholder-cover.svg",
+  "gallery": []
+}

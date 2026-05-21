@@ -1,0 +1,10 @@
+{
+  "slug": "branding",
+  "kind": "design",
+  "label": { "en": "Branding", "es": "Branding" },
+  "blurb": {
+    "en": "Identity systems and visual languages for studios, products, and people.",
+    "es": "Sistemas de identidad y lenguajes visuales para estudios, productos y personas."
+  },
+  "sisterCategories": ["social-media", "print", "ui-design"]
+}
