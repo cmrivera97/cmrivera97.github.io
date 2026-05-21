@@ -1,0 +1,67 @@
+---
+import type { CollectionEntry } from 'astro:content';
+
+import { getT, type Lang } from '../../i18n/getT';
+import { localizedHref } from '../../utils/localizedHref';
+import Gallery from '../visual/Gallery.astro';
+
+interface Props {
+  project: CollectionEntry<'projects'>;
+  category: CollectionEntry<'categories'>;
+  prev: CollectionEntry<'projects'> | null;
+  next: CollectionEntry<'projects'> | null;
+  lang: Lang;
+}
+
+const {
+  project, category, prev, next, lang,
+} = Astro.props;
+const t = getT(lang);
+---
+<section class="detail">
+  <a
+    class="btn btn-glass detail-back"
+    href={localizedHref(lang, `/${project.data.kind}/${category.data.slug}/`)}
+    data-cursor="link"
+  >← {t('detail.back')} {category.data.label[lang]}</a>
+
+  <div class="detail-head">
+    <span class="showcase-tag detail-tag">{category.data.label[lang]}</span>
+    <h1 class="detail-title">{project.data.title[lang]}</h1>
+    <p class="detail-sub">{project.data.subtitle[lang]}</p>
+  </div>
+
+  <div class="detail-meta glass-card">
+    {[
+      [t('meta.studio'), project.data.studio],
+      [t('meta.role'), project.data.role[lang]],
+      [t('meta.sectors'), project.data.sectors.join(' · ')],
+      [t('meta.year'), String(project.data.year)],
+    ].map(([k, v]) => (
+      <div>
+        <div class="detail-meta-label">{k}</div>
+        <div class="detail-meta-value">{v}</div>
+      </div>
+    ))}
+  </div>
+
+  <Gallery project={project} lang={lang} />
+
+  {project.data.overview && (
+    <div class="detail-overview">
+      <h2 class="sec-sub-italic">{t('detail.overview')}</h2>
+      <p>{project.data.overview[lang]}</p>
+    </div>
+  )}
+
+  <nav class="detail-prevnext">
+    {prev
+      ? <a class="btn btn-glass" href={localizedHref(lang, `/${prev.data.kind}/${prev.data.category}/${prev.data.slug}/`)} data-cursor="link">← {prev.data.title[lang]}</a>
+      : <span></span>
+    }
+    {next
+      ? <a class="btn btn-glass" href={localizedHref(lang, `/${next.data.kind}/${next.data.category}/${next.data.slug}/`)} data-cursor="link">{next.data.title[lang]} →</a>
+      : <span></span>
+    }
+  </nav>
+</section>

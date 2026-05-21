@@ -76,5 +76,11 @@
     "back": "Volver a",
     "pageOf": "Página",
     "relatedCategories": "Categorías relacionadas"
+  },
+  "detail": {
+    "back": "Volver a",
+    "overview": "Resumen",
+    "prev": "Anterior",
+    "next": "Siguiente"
   }
 }

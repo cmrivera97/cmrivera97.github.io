@@ -76,5 +76,11 @@
     "back": "Back to",
     "pageOf": "Page",
     "relatedCategories": "Related categories"
+  },
+  "detail": {
+    "back": "Back to",
+    "overview": "Overview",
+    "prev": "Previous",
+    "next": "Next"
   }
 }
