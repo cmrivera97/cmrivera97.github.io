@@ -430,9 +430,23 @@ body.no-cursor #cursor-ring {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 1.5rem;
-  padding: 2.5rem 12vw 0;
+  margin: 2.5rem auto 0;
+  max-width: min(880px, 88vw);
+  padding: 22px clamp(20px, 3vw, 32px);
   font-family: var(--font-body);
   font-size: 0.8rem;
+  background: var(--c-glass);
+  backdrop-filter: blur(28px) saturate(160%);
+  -webkit-backdrop-filter: blur(28px) saturate(160%);
+  border: .5px solid var(--c-glass-border);
+  border-radius: 22px;
+  box-shadow: var(--shadow-glass);
+}
+
+:root[data-theme='dark'] .portfolio-meta-strip {
+  background: rgba(255, 255, 255, .05);
+  border-color: rgba(255, 255, 255, .1);
+  box-shadow: 0 1px 0 rgba(255, 255, 255, .08) inset, 0 18px 50px -12px rgba(0, 0, 0, .5);
 }
 
 .portfolio-meta-strip > div {
