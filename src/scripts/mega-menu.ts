@@ -1,5 +1,8 @@
 export const initMegaMenu = (): void => {
   if (typeof document === 'undefined') return;
+  const CLOSE_DELAY_MS = 180;
+  const SCROLL_SUPPRESS_MS = 800;
+  const isMobile = (): boolean => window.matchMedia('(max-width: 768px)').matches;
   const triggers = Array.from(document.querySelectorAll<HTMLElement>('[data-mega]'));
   const panels = new Map<string, HTMLElement>();
   document.querySelectorAll<HTMLElement>('[data-mega-panel]').forEach((p) => {
@@ -36,7 +39,7 @@ export const initMegaMenu = (): void => {
   const scheduleClose = (): void => {
     if (pinned) return;
     if (closeTimer) clearTimeout(closeTimer);
-    closeTimer = setTimeout(() => open(null), 180);
+    closeTimer = setTimeout(() => open(null), CLOSE_DELAY_MS);
   };
 
   const insideChrome = (node: Node | null): boolean => {
@@ -57,11 +60,15 @@ export const initMegaMenu = (): void => {
       const target = hash.length > 1 ? document.querySelector(hash) : null;
       if (!target) return;
       e.preventDefault();
-      if (openKey === key && pinned) { open(null); return; }
-      open(key, { pin: true });
+      // Toggle a pinned desktop panel closed; on mobile never pin (the slide-out nav owns the UI).
+      if (!isMobile() && openKey === key && pinned) { open(null); return; }
+      if (isMobile()) open(null);
+      else open(key, { pin: true });
       suppressScrollClose = true;
+      const clearSuppress = (): void => { suppressScrollClose = false; };
+      window.addEventListener('scrollend', clearSuppress, { once: true });
+      window.setTimeout(clearSuppress, SCROLL_SUPPRESS_MS);
       target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-      window.setTimeout(() => { suppressScrollClose = false; }, 800);
     });
   });
 

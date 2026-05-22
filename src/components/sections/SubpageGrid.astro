@@ -32,9 +32,6 @@ const sisters = sisterCategories.filter((c): c is CollectionEntry<'categories'> 
 const kindLabel = category.data.kind === 'design' ? t('nav.design') : t('nav.artwork');
 const homeHref = localizedHref(lang, '/');
 const email = t('contact.email');
-const relatedLabelStyle = 'font-family: var(--font-body); font-size: 0.75rem; '
-  + 'letter-spacing: .12em; text-transform: uppercase; '
-  + 'color: var(--c-ink-soft); margin-top: 4rem; text-align: center;';
 ---
 <section class="subpage">
   <a class="subpage-back" href={homeHref} data-cursor="link">← {t('subpage.back')} {kindLabel}</a>
@@ -69,7 +66,7 @@ const relatedLabelStyle = 'font-family: var(--font-body); font-size: 0.75rem; '
     </div>
   )}
 
-  <p style={relatedLabelStyle}>{t('subpage.relatedCategories')}</p>
+  <p class="subpage-related-label">{t('subpage.relatedCategories')}</p>
   <nav class="subpage-sister-bubbles">
     {sisters.map((s) => {
       const href = s.data.kind === 'design'
