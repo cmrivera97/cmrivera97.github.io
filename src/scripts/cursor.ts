@@ -42,8 +42,16 @@ const applyMode = (ringEl: HTMLDivElement, dotEl: HTMLDivElement, mode: CursorMo
     rs.background = 'transparent';
     rs.border = '1.5px solid var(--c-ink)';
   }
-  // eslint-disable-next-line no-param-reassign
-  ringEl.textContent = (mode === 'media' && label) ? label : '';
+  if (mode === 'media' && label) {
+    // eslint-disable-next-line no-param-reassign
+    ringEl.textContent = label;
+    // long labels get a smaller type size so they never reach the ring edge
+    rs.fontSize = label.length > 10 ? '8px' : '9.5px';
+  } else {
+    // eslint-disable-next-line no-param-reassign
+    ringEl.textContent = '';
+    rs.fontSize = '';
+  }
   const ds = dotEl.style;
   ds.opacity = mode === null ? '1' : '0';
 };
