@@ -375,7 +375,7 @@ body.no-cursor #cursor-ring {
 
 /* === Portfolio section head === */
 .portfolio-head{ padding: 0 6vw; text-align: left; }
-.portfolio-blurb{ font-size: 15px; line-height: 1.55; color: var(--c-ink-soft); max-width: 540px; margin-top: 16px; }
+.portfolio-blurb{ font-size: 15px; line-height: 1.55; color: var(--c-ink-soft); max-width: 540px; margin-top: 20px; }
 .portfolio-explore{ display: flex; justify-content: center; margin-top: 24px; }
 
 .portfolio-eyebrow {
@@ -403,6 +403,7 @@ body.no-cursor #cursor-ring {
   flex-wrap: wrap;
   justify-content: flex-start;
   gap: 0.5rem;
+  margin-top: 2rem;
   margin-bottom: 2rem;
   padding: 0 6vw;
 }
