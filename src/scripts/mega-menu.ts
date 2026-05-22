@@ -6,20 +6,77 @@ export const initMegaMenu = (): void => {
     const key = p.dataset.megaPanel;
     if (key) panels.set(key, p);
   });
+  const header = document.querySelector<HTMLElement>('.site-header');
+
   let openKey: string | null = null;
-  const open = (key: string | null): void => {
-    openKey = key;
-    panels.forEach((panel, k) => { if (k === key) panel.setAttribute('data-open', ''); else panel.removeAttribute('data-open'); });
-    triggers.forEach((trigger) => trigger.setAttribute('aria-expanded', String(trigger.dataset.mega === key)));
+  let pinned = false;
+  let closeTimer: ReturnType<typeof setTimeout> | null = null;
+  let suppressScrollClose = false;
+
+  const render = (): void => {
+    panels.forEach((panel, k) => {
+      if (k === openKey) panel.setAttribute('data-open', '');
+      else panel.removeAttribute('data-open');
+    });
+    triggers.forEach((trigger) => {
+      const isOpen = trigger.dataset.mega === openKey;
+      trigger.setAttribute('aria-expanded', String(isOpen));
+      trigger.classList.toggle('is-open', isOpen);
+    });
   };
+
+  const open = (key: string | null, opts: { pin?: boolean } = {}): void => {
+    if (closeTimer) { clearTimeout(closeTimer); closeTimer = null; }
+    openKey = key;
+    if (key === null) pinned = false;
+    else if (opts.pin) pinned = true;
+    render();
+  };
+
+  const scheduleClose = (): void => {
+    if (pinned) return;
+    if (closeTimer) clearTimeout(closeTimer);
+    closeTimer = setTimeout(() => open(null), 180);
+  };
+
+  const insideChrome = (node: Node | null): boolean => {
+    if (!node) return false;
+    if (header?.contains(node)) return true;
+    return Array.from(panels.values()).some((p) => p.contains(node));
+  };
+
   triggers.forEach((trigger) => {
     const key = trigger.dataset.mega;
     if (!key) return;
     trigger.addEventListener('mouseenter', () => open(key));
+    trigger.addEventListener('mouseleave', scheduleClose);
     trigger.addEventListener('focus', () => open(key));
+    trigger.addEventListener('click', (e) => {
+      const href = trigger.getAttribute('href') ?? '';
+      const hash = href.includes('#') ? `#${href.split('#')[1] ?? ''}` : '';
+      const target = hash.length > 1 ? document.querySelector(hash) : null;
+      if (!target) return;
+      e.preventDefault();
+      if (openKey === key && pinned) { open(null); return; }
+      open(key, { pin: true });
+      suppressScrollClose = true;
+      target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      window.setTimeout(() => { suppressScrollClose = false; }, 800);
+    });
   });
-  panels.forEach((panel) => panel.addEventListener('mouseleave', () => open(null)));
-  const header = document.querySelector('.site-header');
-  header?.addEventListener('mouseleave', () => open(null));
+
+  panels.forEach((panel) => {
+    panel.addEventListener('mouseenter', () => {
+      if (closeTimer) { clearTimeout(closeTimer); closeTimer = null; }
+    });
+    panel.addEventListener('mouseleave', scheduleClose);
+  });
+
   document.addEventListener('keydown', (e) => { if (e.key === 'Escape' && openKey) open(null); });
+  document.addEventListener('click', (e) => { if (openKey && !insideChrome(e.target as Node)) open(null); });
+  document.addEventListener('focusin', (e) => { if (openKey && !insideChrome(e.target as Node)) open(null); });
+  window.addEventListener('scroll', () => {
+    if (!openKey || suppressScrollClose) return;
+    open(null);
+  }, { passive: true });
 };

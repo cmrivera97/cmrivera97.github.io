@@ -895,6 +895,8 @@ body.no-cursor #cursor-ring {
   text-decoration: none; display: inline-flex; align-items: center; gap: 6px; }
 .nav-link:hover{ color: var(--c-ink); }
 .nav-link.active{ background: var(--c-ink); color: var(--c-bg); }
+.nav-link.is-open{ color: var(--c-ink); background: rgba(255,255,255,.5); }
+:root[data-theme='dark'] .nav-link.is-open{ background: rgba(255,255,255,.08); }
 .nav-right{ justify-self: end; display: flex; gap: 8px; align-items: center; }
 
 /* --- Mega menu (ported dreamy.jsx :67-87) --- */
