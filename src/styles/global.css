@@ -164,7 +164,7 @@ body.no-cursor #cursor-ring {
 .marquee {
   overflow: hidden;
   white-space: nowrap;
-  padding: 28px 0;
+  padding: 16px 0;
   border-top: 0.5px solid var(--c-line);
   border-bottom: 0.5px solid var(--c-line);
   background: rgba(255, 255, 255, 0.3);
@@ -189,11 +189,12 @@ body.no-cursor #cursor-ring {
 .marquee-item {
   display: inline-flex;
   align-items: center;
-  padding: 0 28px;
-  font-family: var(--font-display);
-  font-style: italic;
-  font-weight: 300;
-  font-size: clamp(40px, 7cqw, 110px);
+  padding: 0 18px;
+  font-family: var(--font-body);
+  font-style: normal;
+  font-weight: 500;
+  font-size: clamp(13px, 1.4cqw, 20px);
+  letter-spacing: 0.04em;
   line-height: 1;
   color: var(--c-ink);
 }
@@ -202,7 +203,7 @@ body.no-cursor #cursor-ring {
   content: attr(data-sep);
   color: var(--c-accent);
   font-style: normal;
-  margin-left: 56px;
+  margin-left: 30px;
 }
 
 @keyframes marquee-x {
