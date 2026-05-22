@@ -285,8 +285,9 @@ body.no-cursor #cursor-ring {
 .hero-video{ position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover;
   z-index: 0; opacity: var(--hero-fade, 1); }
 .hero-scrim{ position: absolute; inset: 0; z-index: 1; pointer-events: none;
-  background: radial-gradient(ellipse 75% 55% at 50% 48%,
-    color-mix(in srgb, var(--c-bg) 30%, transparent), transparent 72%); }
+  background:
+    radial-gradient(ellipse 75% 55% at 50% 48%, rgba(8, 10, 20, .35), transparent 72%),
+    linear-gradient(180deg, rgba(8, 10, 20, .35) 0%, rgba(8, 10, 20, .45) 100%); }
 .hero-content{ position: relative; z-index: 2; width: 100%; text-align: center;
   transform: translateY(var(--hero-shift, 0)); }
 .hero-toprow{ display: grid; grid-template-columns: 1fr 1fr 1fr; align-items: center; margin-bottom: 30px; }
