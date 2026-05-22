@@ -530,8 +530,13 @@ body.no-cursor #cursor-ring {
   align-items: center;
   justify-content: center;
   color: var(--c-ink);
+  background: rgba(255, 255, 255, .14);
+  transition: background .2s, transform .2s;
 }
-.contact-social img { width: 24px; height: 24px; }
+.contact-social:hover { background: rgba(255, 255, 255, .24); transform: translateY(-2px); }
+:root[data-theme='dark'] .contact-social { background: rgba(255, 255, 255, .12); }
+:root[data-theme='dark'] .contact-social:hover { background: rgba(255, 255, 255, .2); }
+.contact-social img { width: 24px; height: 24px; filter: brightness(0) invert(1); opacity: .92; }
 .sr-only {
   position: absolute;
   width: 1px;
