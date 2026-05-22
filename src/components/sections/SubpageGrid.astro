@@ -14,9 +14,12 @@ interface Props {
 const { category, lang } = Astro.props;
 const t = getT(lang);
 
-const projects = (await getCollection('projects', ({ data }) => (
+const PAGE_SIZE = 8;
+const allCategoryProjects = await getCollection('projects', ({ data }) => (
   data.kind === category.data.kind && data.category === category.data.slug
-))).slice(0, 8);
+));
+const projects = allCategoryProjects.slice(0, PAGE_SIZE);
+const pageCount = Math.ceil(allCategoryProjects.length / PAGE_SIZE);
 
 const sisterCategories = await Promise.all(
   category.data.sisterCategories.map(async (slug) => {
@@ -31,7 +34,7 @@ const homeHref = localizedHref(lang, '/');
 const email = t('contact.email');
 const relatedLabelStyle = 'font-family: var(--font-body); font-size: 0.75rem; '
   + 'letter-spacing: .12em; text-transform: uppercase; '
-  + 'color: var(--c-ink-soft); margin-top: 4rem;';
+  + 'color: var(--c-ink-soft); margin-top: 4rem; text-align: center;';
 ---
 <section class="subpage">
   <a class="subpage-back" href={homeHref} data-cursor="link">← {t('subpage.back')} {kindLabel}</a>
@@ -58,17 +61,13 @@ const relatedLabelStyle = 'font-family: var(--font-body); font-size: 0.75rem; '
     })}
   </div>
 
-  <div class="subpage-pagination">
-    {[1, 2, 3].map((page) => (
-      <button
-        type="button"
-        class="subpage-page-dot"
-        aria-label={`${t('subpage.pageOf')} ${page}`}
-        aria-current={page === 1 ? 'true' : 'false'}
-        data-cursor="link"
-      ></button>
-    ))}
-  </div>
+  {pageCount > 1 && (
+    <div class="subpage-pagination">
+      <button type="button" class="btn btn-glass subpage-page-arrow" aria-label={t('detail.prev')} data-no-splash data-cursor="link">←</button>
+      <span class="subpage-page-count">1 · · · {pageCount}</span>
+      <button type="button" class="btn btn-glass subpage-page-arrow" aria-label={t('detail.next')} data-no-splash data-cursor="link">→</button>
+    </div>
+  )}
 
   <p style={relatedLabelStyle}>{t('subpage.relatedCategories')}</p>
   <nav class="subpage-sister-bubbles">
