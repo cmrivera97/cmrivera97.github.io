@@ -32,13 +32,17 @@ const artworkActive = pathname.includes('/artwork');
 ---
 
 <header class="site-header">
+  <button class="nav-burger" type="button" aria-label="Menu" aria-expanded="false"
+    aria-controls="nav-center" data-nav-burger data-cursor="link">
+    <span></span><span></span><span></span>
+  </button>
   <a class="brand" href={localizedHref(lang, '/')} data-cursor="link">
     <span>Carolina</span>
     <span class="brand-last">Rivera</span>
     <span class="dot"></span>
   </a>
 
-  <nav class="nav-center" aria-label={t('nav.home')}>
+  <nav class="nav-center" id="nav-center" aria-label={t('nav.home')}>
     <a
       class:list={['nav-link', { active: homeActive }]}
       href={localizedHref(lang, '/')}
