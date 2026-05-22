@@ -96,19 +96,18 @@ export const initCarousel = (root?: ParentNode): void => {
     });
 
     centerOn(track, 0);
-    computeAndDispatch();
+    setActive(track, 0);
+    dispatchActive(track, { index: 0, slug: track.querySelector<HTMLElement>('.showcase-card')?.dataset.slug ?? '' });
   });
 
   window.addEventListener('bubble:change', () => {
     // After a bubble swap, the formerly-hidden carousel is now visible.
-    // Center on card 0 first, then re-run active-card detection so the meta strip stays accurate.
+    // Feature the FIRST card so the meta strip + active styling start at index 0.
     tracks.forEach((track) => {
       centerOn(track, 0);
-      const result = findActiveCard(track);
-      if (!result) return;
-      setActive(track, result.index);
-      const slug = result.card.dataset.slug ?? '';
-      dispatchActive(track, { index: result.index, slug });
+      setActive(track, 0);
+      const slug = track.querySelector<HTMLElement>('.showcase-card')?.dataset.slug ?? '';
+      dispatchActive(track, { index: 0, slug });
     });
   });
 };
