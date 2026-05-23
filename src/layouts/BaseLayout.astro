@@ -74,12 +74,14 @@ const { title, description, lang } = Astro.props;
       import { initSplash } from '../scripts/splash';
       import { initReveal } from '../scripts/reveal';
       import { initSmoothScroll } from '../scripts/smooth-scroll';
+      import { initParallax } from '../scripts/parallax';
       import { initMobileNav } from '../scripts/mobile-nav';
 
       initCursor();
       initSplash('#7A8FF7');
       initReveal();
       initSmoothScroll();
+      initParallax();
       initMobileNav();
     </script>
   </body>

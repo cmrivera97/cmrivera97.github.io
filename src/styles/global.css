@@ -16,6 +16,26 @@ html[data-theme='dark'] {
   color-scheme: dark;
 }
 
+/* ===== Gentle section scroll-snap =====
+   Proximity (not mandatory) eases the page to a section when you settle near one,
+   without hijacking a deliberate scroll. Hero is intentionally not a snap target so
+   the full-bleed video never leaves a header-sized gap above it. Parallax depth is
+   layered on top by parallax.ts. Disabled under reduced-motion. */
+html {
+  scroll-snap-type: y proximity;
+  scroll-padding-top: 80px;
+}
+.portfolio-section,
+.contact-section {
+  scroll-snap-align: start;
+}
+@media (max-width: 768px) {
+  html { scroll-padding-top: 64px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-snap-type: none; }
+}
+
 body {
   font-size: 1rem;
   font-weight: 400;
@@ -167,7 +187,7 @@ body.no-cursor #cursor-ring {
 .marquee {
   overflow: hidden;
   white-space: nowrap;
-  padding: 16px 0;
+  padding: 8px 0;
   border-top: 0.5px solid var(--c-line);
   border-bottom: 0.5px solid var(--c-line);
   background: rgba(255, 255, 255, 0.3);
@@ -192,11 +212,11 @@ body.no-cursor #cursor-ring {
 .marquee-item {
   display: inline-flex;
   align-items: center;
-  padding: 0 18px;
+  padding: 0 12px;
   font-family: var(--font-body);
   font-style: normal;
   font-weight: 500;
-  font-size: clamp(13px, 1.4cqw, 20px);
+  font-size: clamp(10px, 1cqw, 13px);
   letter-spacing: 0.04em;
   line-height: 1;
   color: var(--c-ink);
@@ -206,7 +226,7 @@ body.no-cursor #cursor-ring {
   content: attr(data-sep);
   color: var(--c-accent);
   font-style: normal;
-  margin-left: 30px;
+  margin-left: 20px;
 }
 
 @keyframes marquee-x {
@@ -283,7 +303,7 @@ body.no-cursor #cursor-ring {
   padding: 120px clamp(20px,5vw,70px) 60px; overflow: hidden; background: var(--c-bg);
   container-type: inline-size; }
 .hero-video{ position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover;
-  z-index: 0; opacity: var(--hero-fade, 1); }
+  z-index: 0; opacity: var(--hero-fade, 1); transform: scale(1.16); will-change: transform; }
 .hero-scrim{ position: absolute; inset: 0; z-index: 1; pointer-events: none;
   background:
     radial-gradient(ellipse 75% 55% at 50% 48%, rgba(8, 10, 20, .35), transparent 72%),
@@ -344,7 +364,33 @@ body.no-cursor #cursor-ring {
 :root[data-theme='dark'] .showcase-frame{ background: rgba(255,255,255,.06); border-color: rgba(255,255,255,.12);
   box-shadow: 0 1px 0 rgba(255,255,255,.08) inset, 0 28px 60px -18px rgba(0,0,0,.6); }
 .showcase-card:hover .showcase-frame{ transform: translateY(-6px); }
-.showcase-screen{ position: absolute; inset: 14px; border-radius: 18px; overflow: hidden; }
+
+/* ----- Home showcase: infinite coverflow (carousel.ts → initLoopTrack) -----
+   Cards are absolutely stacked and positioned by JS (centre highlighted, neighbours peek,
+   wraps endlessly). The gallery keeps the native-scroll rules above. Track height mirrors a
+   card's height (width × 11/16); clip horizontally so neighbours peek-and-cut at the edges,
+   but keep overflow-y visible so the card shadow and hover-lift are not clipped. */
+.showcase:not(.gallery) .showcase-track{
+  display: block; position: relative;
+  height: calc(clamp(360px, 50cqw, 600px) * 0.6875);
+  margin: 24px 0; padding: 0;
+  overflow-x: clip; overflow-y: visible;
+  scroll-snap-type: none; cursor: default;
+}
+.showcase:not(.gallery) .showcase-track::before,
+.showcase:not(.gallery) .showcase-track::after{ display: none; }
+.showcase:not(.gallery) .showcase-card{
+  position: absolute; top: 50%; left: 50%;
+  width: clamp(360px, 50cqw, 600px); flex: none;
+  scroll-snap-align: none; opacity: 0;
+  transform: translate(-50%, -50%) scale(.7);
+  will-change: transform, opacity;
+  transition: transform .55s var(--ease-soft), opacity .45s ease;
+}
+
+/* Inner radius is concentric with the frame: frame radius (26) − padding (14) = 12,
+   so the translucent frame glass keeps a uniform band and never bulges into the corners. */
+.showcase-screen{ position: absolute; inset: 14px; border-radius: 12px; overflow: hidden; }
 .showcase-screen > .placeholder-cover{ width: 100%; height: 100%; aspect-ratio: auto; border-radius: inherit; }
 .showcase-screen > img{ width: 100%; height: 100%; object-fit: cover; display: block; border-radius: inherit; }
 .showcase-tag{ position: absolute; top: 22px; left: 22px; z-index: 2; padding: 6px 12px; border-radius: 999px;
@@ -1028,6 +1074,8 @@ body.nav-locked{ overflow: hidden; }
   .portfolio-head, .portfolio-bubbles { padding: 0 5vw; }
   .showcase-track { padding: 24px 0; }
   .showcase-card { flex-basis: clamp(260px, 86vw, 460px); }
+  .showcase:not(.gallery) .showcase-track { height: calc(clamp(260px, 86vw, 460px) * 0.6875); padding: 0; }
+  .showcase:not(.gallery) .showcase-card { width: clamp(260px, 86vw, 460px); }
   .portfolio-meta-strip { grid-template-columns: 1fr 1fr; }
 
   .sub-grid { grid-template-columns: repeat(2, 1fr); }

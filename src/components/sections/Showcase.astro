@@ -21,7 +21,7 @@ const t = getT(lang);
 ---
 <div class="showcase" data-showcase data-category={category}>
 
-  <div class="showcase-track" data-carousel role="region" aria-roledescription="carousel" tabindex="0">
+  <div class="showcase-track" data-carousel="loop" role="region" aria-roledescription="carousel" tabindex="0">
     {items.map((item) => {
       const hue = hueFromSlug(item.data.slug);
       const cover = item.data.cover.startsWith('placeholder:') ? item.data.cover : `placeholder:hue=${hue}`;
