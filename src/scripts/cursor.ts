@@ -1,5 +1,9 @@
 type CursorMode = 'link' | 'media' | 'drag' | null;
 
+const RING_LABEL_FONT = '9.5px';
+const RING_LABEL_FONT_LONG = '8px';
+const RING_LABEL_LONG_THRESHOLD = 10;
+
 const SHOULD_DISABLE = (): boolean => {
   if (typeof window === 'undefined') return true;
   const coarse = window.matchMedia('(pointer: coarse)').matches;
@@ -42,8 +46,16 @@ const applyMode = (ringEl: HTMLDivElement, dotEl: HTMLDivElement, mode: CursorMo
     rs.background = 'transparent';
     rs.border = '1.5px solid var(--c-ink)';
   }
-  // eslint-disable-next-line no-param-reassign
-  ringEl.textContent = (mode === 'media' && label) ? label : '';
+  if (mode === 'media' && label) {
+    // eslint-disable-next-line no-param-reassign
+    ringEl.textContent = label;
+    // long labels get a smaller type size so they never reach the ring edge
+    rs.fontSize = label.length > RING_LABEL_LONG_THRESHOLD ? RING_LABEL_FONT_LONG : RING_LABEL_FONT;
+  } else {
+    // eslint-disable-next-line no-param-reassign
+    ringEl.textContent = '';
+    rs.fontSize = '';
+  }
   const ds = dotEl.style;
   ds.opacity = mode === null ? '1' : '0';
 };

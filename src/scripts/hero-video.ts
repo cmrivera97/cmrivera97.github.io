@@ -1,7 +1,7 @@
 const BASE = import.meta.env.BASE_URL;
 const SRC = {
-  h: { dark: `${BASE}video/hero-h-dark.mp4`, light: `${BASE}video/hero-h-light.mp4` },
-  v: { dark: `${BASE}video/hero-v-dark.mp4`, light: `${BASE}video/hero-v-light.mp4` },
+  h: `${BASE}video/hero-h-dark.mp4`,
+  v: `${BASE}video/hero-v-dark.mp4`,
 };
 
 export const initHeroVideo = (): void => {
@@ -12,11 +12,10 @@ export const initHeroVideo = (): void => {
 
   const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
+  // Hero is always the dark "Medusa" cut regardless of theme; only orientation varies.
   const pick = (): void => {
-    const dark = document.documentElement.dataset.theme === 'dark';
     const orient: 'h' | 'v' = window.matchMedia('(max-width: 768px)').matches ? 'v' : 'h';
-    const theme: 'dark' | 'light' = dark ? 'dark' : 'light';
-    const next = SRC[orient][theme];
+    const next = SRC[orient];
     if (!video.src.endsWith(next)) {
       video.src = next;
       video.poster = next.replace('.mp4', '-poster.jpg');
@@ -26,7 +25,6 @@ export const initHeroVideo = (): void => {
 
   pick();
   window.matchMedia('(max-width: 768px)').addEventListener('change', pick);
-  document.addEventListener('themechange', pick);
 
   if (reduce) { video.removeAttribute('autoplay'); video.pause(); }
 

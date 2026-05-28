@@ -67,8 +67,6 @@ export const initBubbleSelector = (root?: ParentNode): void => {
       if (explore) {
         const href = explore.getAttribute('href') ?? '';
         explore.setAttribute('href', href.replace(/[^/]+\/$/, `${categorySlug}/`));
-        const exploreLabel = section.querySelector<HTMLElement>('[data-explore-label]');
-        if (exploreLabel) exploreLabel.textContent = label;
       }
       const projects = readProjects(section, categorySlug);
       setMeta(section, projects[0]);

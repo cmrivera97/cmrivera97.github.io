@@ -21,7 +21,7 @@ const t = getT(lang);
 ---
 <div class="showcase" data-showcase data-category={category}>
 
-  <div class="showcase-track" data-carousel role="region" aria-roledescription="carousel" tabindex="0">
+  <div class="showcase-track" data-carousel="loop" role="region" aria-roledescription="carousel" tabindex="0">
     {items.map((item) => {
       const hue = hueFromSlug(item.data.slug);
       const cover = item.data.cover.startsWith('placeholder:') ? item.data.cover : `placeholder:hue=${hue}`;
@@ -36,7 +36,7 @@ const t = getT(lang);
         >
           <div class="showcase-frame">
             <div class="showcase-tag">{categoryLabel}</div>
-            <div class="showcase-screen"><Placeholder cover={cover} glyph="◆" label={item.data.studio} /></div>
+            <div class="showcase-screen"><Placeholder cover={cover} glyph="◆" /></div>
             <div class="showcase-meta">
               <div class="showcase-meta-grad">
                 <span class="showcase-card-title">{item.data.title[lang]}</span>
@@ -58,19 +58,21 @@ const t = getT(lang);
       data-cursor="link"
       aria-label={t('showcase.prev')}
     >←</button>
-    <div class="showcase-dots" role="tablist" aria-label="Project">
-      {items.map((_, i) => (
-        <button
-          type="button"
-          class:list={['showcase-dot', { active: i === 0 }]}
-          data-dot
-          data-index={i}
-          data-no-splash
-          data-cursor="link"
-          aria-label={`${i + 1}`}
-        ></button>
-      ))}
-    </div>
+    {items.length > 1 && (
+      <div class="showcase-dots" role="tablist" aria-label="Project">
+        {items.map((_, i) => (
+          <button
+            type="button"
+            class:list={['showcase-dot', { active: i === 0 }]}
+            data-dot
+            data-index={i}
+            data-no-splash
+            data-cursor="link"
+            aria-label={`${i + 1}`}
+          ></button>
+        ))}
+      </div>
+    )}
     <button
       type="button"
       class="btn btn-glass showcase-arrow"

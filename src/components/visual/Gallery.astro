@@ -65,19 +65,21 @@ if (project.data.gallery.length > 0) {
       data-cursor="link"
       aria-label={t('detail.prev')}
     >←</button>
-    <div class="showcase-dots" role="tablist" aria-label="Image">
-      {slides.map((_, i) => (
-        <button
-          type="button"
-          class:list={['showcase-dot', { active: i === 0 }]}
-          data-dot
-          data-index={i}
-          data-no-splash
-          data-cursor="link"
-          aria-label={`${i + 1}`}
-        ></button>
-      ))}
-    </div>
+    {slides.length > 1 && (
+      <div class="showcase-dots" role="tablist" aria-label="Image">
+        {slides.map((_, i) => (
+          <button
+            type="button"
+            class:list={['showcase-dot', { active: i === 0 }]}
+            data-dot
+            data-index={i}
+            data-no-splash
+            data-cursor="link"
+            aria-label={`${i + 1}`}
+          ></button>
+        ))}
+      </div>
+    )}
     <button
       type="button"
       class="btn btn-glass showcase-arrow"
