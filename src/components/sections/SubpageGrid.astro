@@ -4,6 +4,7 @@ import { getCollection, type CollectionEntry } from 'astro:content';
 import { localizedHref } from '../../utils/localizedHref';
 import { hueFromSlug } from '../../utils/slug-hash';
 import CardPlaceholder from '../visual/CardPlaceholder.astro';
+import { withBase } from '../../utils/withBase';
 import { getT, type Lang } from '../../i18n/getT';
 
 interface Props {
@@ -46,12 +47,15 @@ const email = t('contact.email');
   <div class="sub-grid">
     {projects.map((p) => {
       const hue = hueFromSlug(p.data.slug);
-      const cover = p.data.cover.startsWith('placeholder:') ? p.data.cover : `placeholder:hue=${hue}`;
+      const { cover } = p.data;
       return (
         <a class="sub-card"
            href={localizedHref(lang, `/${category.data.kind}/${category.data.slug}/${p.data.slug}/`)}
            data-cursor="media" data-cursor-label={category.data.label[lang]}>
-          <CardPlaceholder cover={cover} glyph="◆" />
+          {cover
+            ? <img class="sub-card-img" src={withBase(cover)} alt={p.data.title[lang]} loading="lazy" decoding="async" />
+            : <CardPlaceholder hue={hue} glyph="◆" />
+          }
           <span class="sub-tag">{p.data.title[lang]}</span>
         </a>
       );
@@ -83,3 +87,13 @@ const email = t('contact.email');
     <a href={`mailto:${email}`} data-cursor="link">{t('contact.ctaCopy')}</a>
   </div>
 </section>
+
+<style>
+  .sub-card-img {
+    aspect-ratio: 4 / 5;
+    width: 100%;
+    border-radius: var(--radius-sm);
+    object-fit: cover;
+    display: block;
+  }
+</style>
