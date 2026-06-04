@@ -5,6 +5,7 @@ import { getT, type Lang } from '../../i18n/getT';
 import { hueFromSlug } from '../../utils/slug-hash';
 import { localizedHref } from '../../utils/localizedHref';
 import Placeholder from '../visual/Placeholder.astro';
+import { withBase } from '../../utils/withBase';
 
 interface Props {
   items: CollectionEntry<'projects'>[];
@@ -24,7 +25,7 @@ const t = getT(lang);
   <div class="showcase-track" data-carousel="loop" role="region" aria-roledescription="carousel" tabindex="0">
     {items.map((item) => {
       const hue = hueFromSlug(item.data.slug);
-      const cover = item.data.cover.startsWith('placeholder:') ? item.data.cover : `placeholder:hue=${hue}`;
+      const { cover } = item.data;
       return (
         <a
           class="showcase-card"
@@ -36,7 +37,12 @@ const t = getT(lang);
         >
           <div class="showcase-frame">
             <div class="showcase-tag">{categoryLabel}</div>
-            <div class="showcase-screen"><Placeholder cover={cover} glyph="◆" /></div>
+            <div class="showcase-screen">
+              {cover
+                ? <img src={withBase(cover)} alt={item.data.title[lang]} loading="lazy" decoding="async" />
+                : <Placeholder hue={hue} glyph="◆" />
+              }
+            </div>
             <div class="showcase-meta">
               <div class="showcase-meta-grad">
                 <span class="showcase-card-title">{item.data.title[lang]}</span>

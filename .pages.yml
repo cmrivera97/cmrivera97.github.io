@@ -1,0 +1,62 @@
+media:
+  input: public/images
+  output: /images
+  categories: [image, video]
+  extensions: [jpg, jpeg, png, webp, avif, mp4]
+
+components:
+  langString:
+    type: object
+    label: Bilingual text
+    fields:
+      - { name: en, label: English, type: string }
+      - { name: es, label: Español, type: string }
+
+content:
+  - name: projects
+    label: Projects
+    type: collection
+    path: src/content/projects
+    subfolders: true
+    format: json
+    view:
+      layout: tree
+      primary: title.en
+      fields: [title.en, kind, category, year]
+    fields:
+      - { name: slug, label: Slug, type: string, required: true }
+      - { name: kind, label: Kind, type: select, required: true, options: { values: [design, artwork] } }
+      - { name: category, label: Category slug, type: string, required: true }
+      - { name: title, label: Title, component: langString, required: true }
+      - { name: subtitle, label: Subtitle, component: langString, required: true }
+      - { name: overview, label: Overview, component: langString }
+      - { name: studio, label: Studio, type: string, required: true }
+      - { name: role, label: Role, component: langString, required: true }
+      - { name: sectors, label: Sectors, type: string, list: true }
+      - { name: year, label: Year, type: number, required: true }
+      - { name: cover, label: Cover image, type: image }
+      - name: gallery
+        label: Gallery
+        type: object
+        list: true
+        fields:
+          - { name: src, label: File, type: file, required: true }
+          - { name: alt, label: Alt text, component: langString, required: true }
+          - { name: kind, label: Type, type: select, required: true, options: { values: [image, video] } }
+
+  - name: categories
+    label: Categories
+    type: collection
+    path: src/content/categories
+    subfolders: true
+    format: json
+    view:
+      layout: tree
+      primary: label.en
+      fields: [label.en, kind]
+    fields:
+      - { name: slug, label: Slug, type: string, required: true }
+      - { name: kind, label: Kind, type: select, required: true, options: { values: [design, artwork] } }
+      - { name: label, label: Label, component: langString, required: true }
+      - { name: blurb, label: Blurb, component: langString, required: true }
+      - { name: sisterCategories, label: Sister categories (slugs), type: string, list: true }

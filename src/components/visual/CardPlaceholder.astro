@@ -1,17 +1,10 @@
 ---
 interface Props {
-  cover: string;
+  hue: number;
   glyph?: string;
 }
 
-const { cover, glyph = '◆' } = Astro.props;
-
-const parseHue = (uri: string): number => {
-  const match = /^placeholder:hue=(\d+)$/.exec(uri);
-  return match ? Number.parseInt(match[1] ?? '240', 10) : 240;
-};
-
-const hue = parseHue(cover);
+const { hue, glyph = '◆' } = Astro.props;
 const bg = `linear-gradient(135deg, oklch(78% 0.14 ${hue}) 0%, oklch(58% 0.17 ${(hue + 25) % 360}) 100%)`;
 ---
 <div class="card-placeholder" style={`background: ${bg};`}>

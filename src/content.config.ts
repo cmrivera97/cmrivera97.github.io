@@ -42,7 +42,7 @@ const projects = defineCollection({
     role: langString,
     sectors: z.array(z.string()),
     year: z.number().int(),
-    cover: z.string(),
+    cover: z.string().optional(),
     gallery: z.array(galleryItem),
   }),
 });

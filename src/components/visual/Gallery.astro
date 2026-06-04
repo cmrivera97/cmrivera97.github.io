@@ -4,6 +4,7 @@ import type { CollectionEntry } from 'astro:content';
 import { getT, type Lang } from '../../i18n/getT';
 import { hueFromSlug } from '../../utils/slug-hash';
 import Placeholder from './Placeholder.astro';
+import { withBase } from '../../utils/withBase';
 
 interface Props {
   project: CollectionEntry<'projects'>;
@@ -47,8 +48,8 @@ if (project.data.gallery.length > 0) {
         <div class="showcase-frame">
           <div class="showcase-screen">
             {s.kind === 'image'
-              ? <img src={s.src} alt={s.alt} loading="lazy" decoding="async" />
-              : <Placeholder cover={`placeholder:hue=${s.hue}`} glyph="◆" />
+              ? <img src={withBase(s.src)} alt={s.alt} loading="lazy" decoding="async" />
+              : <Placeholder hue={s.hue} glyph="◆" />
             }
           </div>
         </div>
