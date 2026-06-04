@@ -1,0 +1,28 @@
+{
+  "slug": "puente",
+  "kind": "design",
+  "category": "ai-designs",
+  "title": {
+    "en": "Puente",
+    "es": "Puente"
+  },
+  "subtitle": {
+    "en": "Hybrid AI + photo work",
+    "es": "Trabajo híbrido IA + foto"
+  },
+  "overview": {
+    "en": "Puente — Hybrid AI + photo work. This case study walks through the brief, the process, and the final outcome of the work.",
+    "es": "Puente — Trabajo híbrido IA + foto. Este caso recorre el encargo, el proceso y el resultado final del trabajo."
+  },
+  "studio": "Independent",
+  "role": {
+    "en": "Art Director",
+    "es": "Art Director"
+  },
+  "sectors": [
+    "hybrid",
+    "experimental"
+  ],
+  "year": 2025,
+  "gallery": []
+}

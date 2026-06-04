@@ -1,0 +1,27 @@
+{
+  "slug": "menu-fonda",
+  "kind": "design",
+  "category": "print",
+  "title": {
+    "en": "Fonda Menu",
+    "es": "Menú Fonda"
+  },
+  "subtitle": {
+    "en": "Restaurant menu system",
+    "es": "Sistema de menús de restaurante"
+  },
+  "overview": {
+    "en": "Fonda Menu — Restaurant menu system. This case study walks through the brief, the process, and the final outcome of the work.",
+    "es": "Menú Fonda — Sistema de menús de restaurante. Este caso recorre el encargo, el proceso y el resultado final del trabajo."
+  },
+  "studio": "Independent",
+  "role": {
+    "en": "Designer",
+    "es": "Designer"
+  },
+  "sectors": [
+    "food"
+  ],
+  "year": 2024,
+  "gallery": []
+}

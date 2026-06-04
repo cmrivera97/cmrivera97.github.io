@@ -1,0 +1,24 @@
+---
+// layouts
+import BaseLayout from '../../layouts/BaseLayout.astro';
+// components
+import Hero from '../../components/sections/Hero.astro';
+import Marquee from '../../components/visual/Marquee.astro';
+import PortfolioSection from '../../components/sections/PortfolioSection.astro';
+import Contact from '../../components/sections/Contact.astro';
+// i18n
+import { getT } from '../../i18n/getT';
+
+const lang = 'es' as const;
+const t = getT(lang);
+const marqueeItems = ['Marca', 'Editorial', 'Dibujo', 'Ilustración', 'UI', 'Identidad', 'Impresión', 'Fotografía'];
+---
+<BaseLayout title={t('site.title')} description={t('site.description')} lang={lang}>
+  <Hero lang={lang} />
+  <Marquee items={marqueeItems} sep="✦" speedSec={32} />
+  <PortfolioSection kind="design" lang={lang} />
+  <Marquee items={marqueeItems} sep="✦" speedSec={28} />
+  <PortfolioSection kind="artwork" lang={lang} />
+  <Marquee items={marqueeItems} sep="✦" speedSec={36} />
+  <Contact lang={lang} />
+</BaseLayout>

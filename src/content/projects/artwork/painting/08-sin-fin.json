@@ -1,0 +1,27 @@
+{
+  "slug": "sin-fin",
+  "kind": "artwork",
+  "category": "painting",
+  "title": {
+    "en": "Sin Fin",
+    "es": "Sin Fin"
+  },
+  "subtitle": {
+    "en": "Abstract acrylic series",
+    "es": "Serie abstracta en acrílico"
+  },
+  "overview": {
+    "en": "Sin Fin — Abstract acrylic series. This case study walks through the brief, the process, and the final outcome of the work.",
+    "es": "Sin Fin — Serie abstracta en acrílico. Este caso recorre el encargo, el proceso y el resultado final del trabajo."
+  },
+  "studio": "Independent",
+  "role": {
+    "en": "Artist",
+    "es": "Artist"
+  },
+  "sectors": [
+    "abstract"
+  ],
+  "year": 2025,
+  "gallery": []
+}

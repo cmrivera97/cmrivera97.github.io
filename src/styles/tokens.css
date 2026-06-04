@@ -1,0 +1,65 @@
+:root {
+  /* --c-accent passes WCAG AA on dark backgrounds only (6.48:1 on #0c0e1c).
+     On light bg (#f4f6fc) contrast is 2.74:1 — do NOT use as text color
+     on light surfaces, and pair with a contrast-boundary technique
+     (e.g. an outer light box-shadow) when used for focus rings on
+     light cards. The hex is locked from the design handoff. */
+  --c-accent: #7A8FF7;
+  --c-ink: #34363f;
+  --c-ink-soft: rgba(52, 54, 63, 0.7);
+  --c-ink-faint: rgba(52, 54, 63, 0.45);
+  --c-bg: #f4f6fc;
+  --c-bg2: #e7ecfa;
+  --c-bg-elev: #ffffff;
+  --c-line: rgba(52, 54, 63, 0.12);
+  --c-glass: rgba(255, 255, 255, 0.5);
+  --c-glass-border: rgba(255, 255, 255, 0.7);
+  --shadow-glass: 0 1px 0 rgba(255,255,255,.8) inset, 0 18px 50px -12px rgba(80,100,180,.22);
+  --accent-grad: linear-gradient(135deg, var(--c-accent) 0%, oklch(60% .2 280) 100%);
+
+  --font-body: 'Montserrat', system-ui, sans-serif;
+  --font-display: 'Fraunces', Georgia, serif;
+  --font-name: 'Jost', 'Montserrat', sans-serif;
+  --font-script: 'Caveat', cursive;
+
+  --radius-sm: 6px;
+  --radius-md: 14px;
+  --radius-lg: 24px;
+  --radius-pill: 999px;
+
+  --motion-fast: 180ms;
+  --motion-base: 280ms;
+  --motion-slow: 520ms;
+  --ease-standard: cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+:root[data-theme='dark'] {
+  --c-ink: #e6e7ee;
+  --c-ink-soft: rgba(240, 242, 252, 0.7);
+  --c-ink-faint: rgba(240, 242, 252, 0.45);
+  --c-bg: #0c0e1c;
+  --c-bg2: #14172a;
+  --c-bg-elev: #14172a;
+  --c-line: rgba(230, 231, 238, 0.12);
+  --c-glass: rgba(255, 255, 255, 0.06);
+  --c-glass-border: rgba(255, 255, 255, 0.12);
+  --shadow-glass: 0 1px 0 rgba(255,255,255,.08) inset, 0 18px 50px -12px rgba(0,0,0,.5);
+}
+
+/* motion */
+:root {
+  --motion-cursor-lerp: 0.18;
+  --motion-splash-duration: 900ms;
+  --ease-soft: cubic-bezier(.2,.8,.2,1);
+  --motion-reveal-duration: 480ms;
+  --motion-reveal-distance: 24px;
+  --motion-reveal-mask-duration: 700ms;
+  --motion-marquee-default: 32s;
+  --motion-drift-baseline: 14s;
+
+  --c-splash-1: var(--c-accent);
+  --c-splash-2: #A8B5FA;
+  --c-splash-3: #D4DCFF;
+  --c-splash-4: #C5B8FF;
+  --c-splash-5: #9F8CFF;
+}

@@ -1,0 +1,63 @@
+---
+// i18n
+import { getT, type Lang } from '../../i18n/getT';
+
+interface Props {
+  lang: Lang;
+}
+
+const { lang } = Astro.props;
+const t = getT(lang);
+const base = import.meta.env.BASE_URL;
+---
+<div class="lang-toggle" role="group" aria-label={t('lang.toggle')} data-lang-current={lang} data-lang-base={base}>
+  <button type="button" data-lang-button="en" aria-pressed={lang === 'en'} data-cursor="link">EN</button>
+  <button type="button" data-lang-button="es" aria-pressed={lang === 'es'} data-cursor="link">ES</button>
+</div>
+
+<script>
+  import { initLangToggle } from '../../scripts/lang';
+
+  document.querySelectorAll<HTMLElement>('.lang-toggle').forEach((root) => {
+    const current = root.dataset.langCurrent === 'es' ? 'es' : 'en';
+    const base = root.dataset.langBase ?? '/';
+    initLangToggle(root, base, current);
+  });
+</script>
+
+<style>
+  .lang-toggle {
+    display: inline-flex;
+    padding: 3px;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, .55);
+    border: .5px solid var(--c-glass-border);
+    backdrop-filter: blur(20px) saturate(160%);
+    -webkit-backdrop-filter: blur(20px) saturate(160%);
+    box-shadow: 0 1px 0 rgba(255, 255, 255, .7) inset, 0 6px 18px -6px rgba(80, 100, 180, .18);
+    font-family: var(--font-body);
+    font-size: 0.7rem;
+    letter-spacing: 0.08em;
+  }
+  :global(:root[data-theme='dark']) .lang-toggle {
+    background: rgba(255, 255, 255, .06);
+    border-color: rgba(255, 255, 255, .12);
+  }
+  .lang-toggle button {
+    border: 0;
+    background: transparent;
+    padding: 6px 12px;
+    border-radius: 999px;
+    color: var(--c-ink-soft);
+    cursor: pointer;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: .06em;
+    font-family: inherit;
+    transition: all .2s;
+  }
+  .lang-toggle button[aria-pressed='true'] {
+    background: var(--c-ink);
+    color: var(--c-bg);
+  }
+</style>

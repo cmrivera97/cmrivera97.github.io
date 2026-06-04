@@ -1,0 +1,28 @@
+{
+  "slug": "archivo",
+  "kind": "design",
+  "category": "ui-design",
+  "title": {
+    "en": "Archivo",
+    "es": "Archivo"
+  },
+  "subtitle": {
+    "en": "Personal archive interface",
+    "es": "Interfaz de archivo personal"
+  },
+  "overview": {
+    "en": "Archivo — Personal archive interface. This case study walks through the brief, the process, and the final outcome of the work.",
+    "es": "Archivo — Interfaz de archivo personal. Este caso recorre el encargo, el proceso y el resultado final del trabajo."
+  },
+  "studio": "Independent",
+  "role": {
+    "en": "Designer",
+    "es": "Designer"
+  },
+  "sectors": [
+    "app",
+    "personal"
+  ],
+  "year": 2025,
+  "gallery": []
+}

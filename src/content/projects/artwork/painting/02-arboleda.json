@@ -1,0 +1,28 @@
+{
+  "slug": "arboleda",
+  "kind": "artwork",
+  "category": "painting",
+  "title": {
+    "en": "Arboleda",
+    "es": "Arboleda"
+  },
+  "subtitle": {
+    "en": "Acrylic forest series",
+    "es": "Serie de bosques en acrílico"
+  },
+  "overview": {
+    "en": "Arboleda — Acrylic forest series. This case study walks through the brief, the process, and the final outcome of the work.",
+    "es": "Arboleda — Serie de bosques en acrílico. Este caso recorre el encargo, el proceso y el resultado final del trabajo."
+  },
+  "studio": "Independent",
+  "role": {
+    "en": "Artist",
+    "es": "Artist"
+  },
+  "sectors": [
+    "acrylic",
+    "landscape"
+  ],
+  "year": 2024,
+  "gallery": []
+}

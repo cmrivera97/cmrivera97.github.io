@@ -1,0 +1,27 @@
+{
+  "slug": "ediciones-pera",
+  "kind": "design",
+  "category": "print",
+  "title": {
+    "en": "Ediciones Pera",
+    "es": "Ediciones Pera"
+  },
+  "subtitle": {
+    "en": "Catalog series",
+    "es": "Serie de catálogos"
+  },
+  "overview": {
+    "en": "Ediciones Pera — Catalog series. This case study walks through the brief, the process, and the final outcome of the work.",
+    "es": "Ediciones Pera — Serie de catálogos. Este caso recorre el encargo, el proceso y el resultado final del trabajo."
+  },
+  "studio": "Independent",
+  "role": {
+    "en": "Designer",
+    "es": "Designer"
+  },
+  "sectors": [
+    "publishing"
+  ],
+  "year": 2024,
+  "gallery": []
+}

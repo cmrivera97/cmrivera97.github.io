@@ -1,0 +1,27 @@
+{
+  "slug": "verano-largo",
+  "kind": "artwork",
+  "category": "photography",
+  "title": {
+    "en": "Long Summer",
+    "es": "Verano Largo"
+  },
+  "subtitle": {
+    "en": "Summer travel notes",
+    "es": "Notas de viaje de verano"
+  },
+  "overview": {
+    "en": "Long Summer — Summer travel notes. This case study walks through the brief, the process, and the final outcome of the work.",
+    "es": "Verano Largo — Notas de viaje de verano. Este caso recorre el encargo, el proceso y el resultado final del trabajo."
+  },
+  "studio": "Independent",
+  "role": {
+    "en": "Photographer",
+    "es": "Photographer"
+  },
+  "sectors": [
+    "travel"
+  ],
+  "year": 2024,
+  "gallery": []
+}

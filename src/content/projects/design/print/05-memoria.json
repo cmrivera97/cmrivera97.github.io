@@ -1,0 +1,27 @@
+{
+  "slug": "memoria",
+  "kind": "design",
+  "category": "print",
+  "title": {
+    "en": "Memoria",
+    "es": "Memoria"
+  },
+  "subtitle": {
+    "en": "Annual report layout",
+    "es": "Maquetación de informe anual"
+  },
+  "overview": {
+    "en": "Memoria — Annual report layout. This case study walks through the brief, the process, and the final outcome of the work.",
+    "es": "Memoria — Maquetación de informe anual. Este caso recorre el encargo, el proceso y el resultado final del trabajo."
+  },
+  "studio": "Independent",
+  "role": {
+    "en": "Designer",
+    "es": "Designer"
+  },
+  "sectors": [
+    "institutional"
+  ],
+  "year": 2025,
+  "gallery": []
+}

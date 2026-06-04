@@ -1,0 +1,112 @@
+---
+// packages
+import { getCollection } from 'astro:content';
+
+// utils + i18n
+import { localizedHref } from '../../utils/localizedHref';
+import { getT, type Lang } from '../../i18n/getT';
+// components
+import LangToggle from './LangToggle.astro';
+import ThemeToggle from './ThemeToggle.astro';
+
+interface Props {
+  lang: Lang;
+}
+
+const { lang } = Astro.props;
+const t = getT(lang);
+
+const DESIGN_ORDER = ['ui-design', 'social-media', 'branding', 'ai-designs', 'print', 'illustration'];
+const ART_ORDER = ['drawing', 'painting', 'photography'];
+
+const allCategories = await getCollection('categories');
+const catMap = new Map(allCategories.map((c) => [c.data.slug, c.data]));
+
+const designCats = DESIGN_ORDER.map((slug) => catMap.get(slug)).filter((c): c is NonNullable<typeof c> => c !== undefined);
+const artCats = ART_ORDER.map((slug) => catMap.get(slug)).filter((c): c is NonNullable<typeof c> => c !== undefined);
+
+const { pathname } = Astro.url;
+const homeActive = pathname === localizedHref(lang, '/');
+const designActive = pathname.includes('/design');
+const artworkActive = pathname.includes('/artwork');
+---
+
+<header class="site-header">
+  <button class="nav-burger" type="button" aria-label="Menu" aria-expanded="false"
+    aria-controls="nav-center" data-nav-burger data-cursor="link">
+    <span></span><span></span><span></span>
+  </button>
+  <a class="brand" href={localizedHref(lang, '/')} data-cursor="link">
+    <span>Carolina</span>
+    <span class="brand-last">Rivera</span>
+    <span class="dot"></span>
+  </a>
+
+  <nav class="nav-center" id="nav-center" aria-label={t('nav.home')}>
+    <a
+      class:list={['nav-link', { active: homeActive }]}
+      href={localizedHref(lang, '/')}
+      data-cursor="link"
+    >{t('nav.home')}</a>
+
+    <a
+      class:list={['nav-link', { active: designActive }]}
+      href={`${localizedHref(lang, '/')}#design`}
+      data-mega="design"
+      aria-haspopup="true"
+      aria-expanded="false"
+      aria-controls="mega-design"
+      data-cursor="link"
+    >{t('nav.design')}<span aria-hidden="true">▾</span></a>
+
+    <a
+      class:list={['nav-link', { active: artworkActive }]}
+      href={`${localizedHref(lang, '/')}#artwork`}
+      data-mega="artwork"
+      aria-haspopup="true"
+      aria-expanded="false"
+      aria-controls="mega-artwork"
+      data-cursor="link"
+    >{t('nav.artwork')}<span aria-hidden="true">▾</span></a>
+
+    <a
+      class="nav-link"
+      href={`${localizedHref(lang, '/')}#contact`}
+      data-cursor="link"
+    >{t('nav.contact')}</a>
+  </nav>
+
+  <div class="nav-right">
+    <LangToggle lang={lang} />
+    <ThemeToggle lang={lang} />
+  </div>
+</header>
+
+<div class="mega" id="mega-design" data-mega-panel="design">
+  <div class="mega-grid">
+    {designCats.map((c, i) => (
+      <a class="mega-item" href={localizedHref(lang, `/design/${c.slug}/`)} data-cursor="link">
+        <span class="mega-num">{String(i + 1).padStart(2, '0')}</span>
+        <span class="mega-label"><span class="num">{String(i + 1).padStart(2, '0')}</span>{c.label[lang]}</span>
+        <span class="mega-blurb">{c.blurb[lang]}</span>
+      </a>
+    ))}
+  </div>
+</div>
+
+<div class="mega" id="mega-artwork" data-mega-panel="artwork">
+  <div class="mega-grid">
+    {artCats.map((c, i) => (
+      <a class="mega-item" href={localizedHref(lang, `/artwork/${c.slug}/`)} data-cursor="link">
+        <span class="mega-num">{String(i + 1).padStart(2, '0')}</span>
+        <span class="mega-label"><span class="num">{String(i + 1).padStart(2, '0')}</span>{c.label[lang]}</span>
+        <span class="mega-blurb">{c.blurb[lang]}</span>
+      </a>
+    ))}
+  </div>
+</div>
+
+<script>
+  import { initMegaMenu } from '../../scripts/mega-menu';
+  initMegaMenu();
+</script>

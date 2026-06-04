@@ -1,0 +1,98 @@
+---
+import type { CollectionEntry } from 'astro:content';
+
+import { getT, type Lang } from '../../i18n/getT';
+import { hueFromSlug } from '../../utils/slug-hash';
+import { localizedHref } from '../../utils/localizedHref';
+import Placeholder from '../visual/Placeholder.astro';
+import { withBase } from '../../utils/withBase';
+
+interface Props {
+  items: CollectionEntry<'projects'>[];
+  lang: Lang;
+  category: string;
+  categoryLabel: string;
+  kind: 'design' | 'artwork';
+}
+
+const {
+  items, lang, category, categoryLabel, kind,
+} = Astro.props;
+const t = getT(lang);
+---
+<div class="showcase" data-showcase data-category={category}>
+
+  <div class="showcase-track" data-carousel="loop" role="region" aria-roledescription="carousel" tabindex="0">
+    {items.map((item) => {
+      const hue = hueFromSlug(item.data.slug);
+      const { cover } = item.data;
+      return (
+        <a
+          class="showcase-card"
+          data-slug={item.data.slug}
+          data-category={category}
+          href={localizedHref(lang, `/${kind}/${category}/${item.data.slug}/`)}
+          data-cursor="media"
+          data-cursor-label={categoryLabel}
+        >
+          <div class="showcase-frame">
+            <div class="showcase-tag">{categoryLabel}</div>
+            <div class="showcase-screen">
+              {cover
+                ? <img src={withBase(cover)} alt={item.data.title[lang]} loading="lazy" decoding="async" />
+                : <Placeholder hue={hue} glyph="◆" />
+              }
+            </div>
+            <div class="showcase-meta">
+              <div class="showcase-meta-grad">
+                <span class="showcase-card-title">{item.data.title[lang]}</span>
+                <span class="showcase-card-sub">{item.data.studio} · {item.data.role[lang]}</span>
+              </div>
+            </div>
+          </div>
+        </a>
+      );
+    })}
+  </div>
+
+  <div class="showcase-nav">
+    <button
+      type="button"
+      class="btn btn-glass showcase-arrow"
+      data-carousel-arrow="prev"
+      data-no-splash
+      data-cursor="link"
+      aria-label={t('showcase.prev')}
+    >←</button>
+    {items.length > 1 && (
+      <div class="showcase-dots" role="tablist" aria-label="Project">
+        {items.map((_, i) => (
+          <button
+            type="button"
+            class:list={['showcase-dot', { active: i === 0 }]}
+            data-dot
+            data-index={i}
+            data-no-splash
+            data-cursor="link"
+            aria-label={`${i + 1}`}
+          ></button>
+        ))}
+      </div>
+    )}
+    <button
+      type="button"
+      class="btn btn-glass showcase-arrow"
+      data-carousel-arrow="next"
+      data-no-splash
+      data-cursor="link"
+      aria-label={t('showcase.next')}
+    >→</button>
+  </div>
+
+</div>
+
+<script>
+  import { initCarousel } from '../../scripts/carousel';
+
+  initCarousel();
+</script>

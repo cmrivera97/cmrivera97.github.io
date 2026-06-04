@@ -1,0 +1,39 @@
+---
+// packages
+import { getCollection, getEntry } from 'astro:content';
+
+// layouts
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+// components
+import SubpageGrid from '../../../components/sections/SubpageGrid.astro';
+// i18n
+import { getT } from '../../../i18n/getT';
+
+export async function getStaticPaths() {
+  const all = await getCollection('categories', ({ data }) => data.kind === 'artwork');
+  return all.map((entry) => ({
+    params: { category: entry.data.slug },
+    props: { categorySlug: entry.data.slug },
+  }));
+}
+
+interface Props {
+  categorySlug: string;
+}
+
+const { categorySlug }: Props = Astro.props;
+const lang = 'es' as const;
+const t = getT(lang);
+const category = await getEntry('categories', categorySlug);
+
+if (!category) {
+  throw new Error(`Missing artwork category entry: ${categorySlug}`);
+}
+
+const label = category.data.label[lang];
+const blurb = category.data.blurb[lang];
+const pageTitle = `${label} · ${t('site.title')}`;
+---
+<BaseLayout title={pageTitle} description={blurb} lang={lang}>
+  <SubpageGrid category={category} lang={lang} />
+</BaseLayout>

@@ -1,0 +1,27 @@
+{
+  "slug": "mapa",
+  "kind": "artwork",
+  "category": "drawing",
+  "title": {
+    "en": "Mapa",
+    "es": "Mapa"
+  },
+  "subtitle": {
+    "en": "Imaginary cartography",
+    "es": "Cartografía imaginaria"
+  },
+  "overview": {
+    "en": "Mapa — Imaginary cartography. This case study walks through the brief, the process, and the final outcome of the work.",
+    "es": "Mapa — Cartografía imaginaria. Este caso recorre el encargo, el proceso y el resultado final del trabajo."
+  },
+  "studio": "Independent",
+  "role": {
+    "en": "Artist",
+    "es": "Artist"
+  },
+  "sectors": [
+    "cartography"
+  ],
+  "year": 2024,
+  "gallery": []
+}

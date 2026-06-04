@@ -1,0 +1,28 @@
+{
+  "slug": "cuaderno-azul",
+  "kind": "artwork",
+  "category": "drawing",
+  "title": {
+    "en": "Blue Notebook",
+    "es": "Cuaderno Azul"
+  },
+  "subtitle": {
+    "en": "Daily ink studies",
+    "es": "Estudios diarios a tinta"
+  },
+  "overview": {
+    "en": "Blue Notebook — Daily ink studies. This case study walks through the brief, the process, and the final outcome of the work.",
+    "es": "Cuaderno Azul — Estudios diarios a tinta. Este caso recorre el encargo, el proceso y el resultado final del trabajo."
+  },
+  "studio": "Independent",
+  "role": {
+    "en": "Artist",
+    "es": "Artist"
+  },
+  "sectors": [
+    "ink",
+    "study"
+  ],
+  "year": 2025,
+  "gallery": []
+}

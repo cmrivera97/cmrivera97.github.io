@@ -1,0 +1,10 @@
+{
+  "slug": "ui-design",
+  "kind": "design",
+  "label": { "en": "UI Design", "es": "Diseño UI" },
+  "blurb": {
+    "en": "Product surfaces and interactive systems that stay out of the user's way.",
+    "es": "Productos digitales y sistemas interactivos que no estorban al usuario."
+  },
+  "sisterCategories": ["branding", "print", "social-media"]
+}

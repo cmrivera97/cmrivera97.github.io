@@ -1,0 +1,27 @@
+{
+  "slug": "naufragio",
+  "kind": "artwork",
+  "category": "drawing",
+  "title": {
+    "en": "Naufragio",
+    "es": "Naufragio"
+  },
+  "subtitle": {
+    "en": "Mixed-media seascapes",
+    "es": "Marinas en técnica mixta"
+  },
+  "overview": {
+    "en": "Naufragio — Mixed-media seascapes. This case study walks through the brief, the process, and the final outcome of the work.",
+    "es": "Naufragio — Marinas en técnica mixta. Este caso recorre el encargo, el proceso y el resultado final del trabajo."
+  },
+  "studio": "Independent",
+  "role": {
+    "en": "Artist",
+    "es": "Artist"
+  },
+  "sectors": [
+    "mixed-media"
+  ],
+  "year": 2025,
+  "gallery": []
+}

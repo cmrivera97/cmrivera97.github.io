@@ -1,0 +1,28 @@
+{
+  "slug": "cocina",
+  "kind": "artwork",
+  "category": "photography",
+  "title": {
+    "en": "Cocina",
+    "es": "Cocina"
+  },
+  "subtitle": {
+    "en": "Quiet kitchen still-lifes",
+    "es": "Naturalezas muertas tranquilas de cocina"
+  },
+  "overview": {
+    "en": "Cocina — Quiet kitchen still-lifes. This case study walks through the brief, the process, and the final outcome of the work.",
+    "es": "Cocina — Naturalezas muertas tranquilas de cocina. Este caso recorre el encargo, el proceso y el resultado final del trabajo."
+  },
+  "studio": "Independent",
+  "role": {
+    "en": "Photographer",
+    "es": "Photographer"
+  },
+  "sectors": [
+    "still-life",
+    "domestic"
+  ],
+  "year": 2025,
+  "gallery": []
+}

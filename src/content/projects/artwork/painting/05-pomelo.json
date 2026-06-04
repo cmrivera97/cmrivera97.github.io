@@ -1,0 +1,27 @@
+{
+  "slug": "pomelo",
+  "kind": "artwork",
+  "category": "painting",
+  "title": {
+    "en": "Pomelo",
+    "es": "Pomelo"
+  },
+  "subtitle": {
+    "en": "Still-life pomelo studies",
+    "es": "Naturalezas muertas con pomelo"
+  },
+  "overview": {
+    "en": "Pomelo — Still-life pomelo studies. This case study walks through the brief, the process, and the final outcome of the work.",
+    "es": "Pomelo — Naturalezas muertas con pomelo. Este caso recorre el encargo, el proceso y el resultado final del trabajo."
+  },
+  "studio": "Independent",
+  "role": {
+    "en": "Artist",
+    "es": "Artist"
+  },
+  "sectors": [
+    "still-life"
+  ],
+  "year": 2024,
+  "gallery": []
+}

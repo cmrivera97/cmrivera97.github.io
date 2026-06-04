@@ -1,0 +1,99 @@
+---
+import { getCollection, type CollectionEntry } from 'astro:content';
+
+import { localizedHref } from '../../utils/localizedHref';
+import { hueFromSlug } from '../../utils/slug-hash';
+import CardPlaceholder from '../visual/CardPlaceholder.astro';
+import { withBase } from '../../utils/withBase';
+import { getT, type Lang } from '../../i18n/getT';
+
+interface Props {
+  category: CollectionEntry<'categories'>;
+  lang: Lang;
+}
+
+const { category, lang } = Astro.props;
+const t = getT(lang);
+
+const PAGE_SIZE = 8;
+const allCategoryProjects = await getCollection('projects', ({ data }) => (
+  data.kind === category.data.kind && data.category === category.data.slug
+));
+const projects = allCategoryProjects.slice(0, PAGE_SIZE);
+const pageCount = Math.ceil(allCategoryProjects.length / PAGE_SIZE);
+
+const sisterCategories = await Promise.all(
+  category.data.sisterCategories.map(async (slug) => {
+    const all = await getCollection('categories', ({ data }) => data.slug === slug);
+    return all[0];
+  }),
+);
+const sisters = sisterCategories.filter((c): c is CollectionEntry<'categories'> => Boolean(c));
+
+const kindLabel = category.data.kind === 'design' ? t('nav.design') : t('nav.artwork');
+const homeHref = localizedHref(lang, '/');
+const email = t('contact.email');
+---
+<section class="subpage">
+  <a class="subpage-back" href={homeHref} data-cursor="link">← {t('subpage.back')} {kindLabel}</a>
+
+  <div class="subpage-head">
+    <h1 class="subpage-heading">{category.data.label[lang]}</h1>
+    <div class="subpage-rule-1"></div>
+    <div class="subpage-rule-2"></div>
+    <p class="subpage-blurb">{category.data.blurb[lang]}</p>
+  </div>
+
+  <div class="sub-grid">
+    {projects.map((p) => {
+      const hue = hueFromSlug(p.data.slug);
+      const { cover } = p.data;
+      return (
+        <a class="sub-card"
+           href={localizedHref(lang, `/${category.data.kind}/${category.data.slug}/${p.data.slug}/`)}
+           data-cursor="media" data-cursor-label={category.data.label[lang]}>
+          {cover
+            ? <img class="sub-card-img" src={withBase(cover)} alt={p.data.title[lang]} loading="lazy" decoding="async" />
+            : <CardPlaceholder hue={hue} glyph="◆" />
+          }
+          <span class="sub-tag">{p.data.title[lang]}</span>
+        </a>
+      );
+    })}
+  </div>
+
+  {pageCount > 1 && (
+    <div class="subpage-pagination">
+      <button type="button" class="btn btn-glass subpage-page-arrow" aria-label={t('detail.prev')} data-no-splash data-cursor="link">←</button>
+      <span class="subpage-page-count">1 · · · {pageCount}</span>
+      <button type="button" class="btn btn-glass subpage-page-arrow" aria-label={t('detail.next')} data-no-splash data-cursor="link">→</button>
+    </div>
+  )}
+
+  <p class="subpage-related-label">{t('subpage.relatedCategories')}</p>
+  <nav class="subpage-sister-bubbles">
+    {sisters.map((s) => {
+      const href = s.data.kind === 'design'
+        ? localizedHref(lang, `/design/${s.data.slug}`)
+        : localizedHref(lang, `/artwork/${s.data.slug}`);
+      return (
+        <a class="bubble" href={href} data-cursor="link">{s.data.label[lang]}</a>
+      );
+    })}
+  </nav>
+
+  <div class="subpage-footer-email">
+    <span>{email}</span>
+    <a href={`mailto:${email}`} data-cursor="link">{t('contact.ctaCopy')}</a>
+  </div>
+</section>
+
+<style>
+  .sub-card-img {
+    aspect-ratio: 4 / 5;
+    width: 100%;
+    border-radius: var(--radius-sm);
+    object-fit: cover;
+    display: block;
+  }
+</style>

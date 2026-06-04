@@ -1,0 +1,27 @@
+{
+  "slug": "azul-tarde",
+  "kind": "artwork",
+  "category": "painting",
+  "title": {
+    "en": "Tarde Azul",
+    "es": "Tarde Azul"
+  },
+  "subtitle": {
+    "en": "Watercolor afternoons",
+    "es": "Tardes en acuarela"
+  },
+  "overview": {
+    "en": "Tarde Azul — Watercolor afternoons. This case study walks through the brief, the process, and the final outcome of the work.",
+    "es": "Tarde Azul — Tardes en acuarela. Este caso recorre el encargo, el proceso y el resultado final del trabajo."
+  },
+  "studio": "Independent",
+  "role": {
+    "en": "Artist",
+    "es": "Artist"
+  },
+  "sectors": [
+    "watercolor"
+  ],
+  "year": 2025,
+  "gallery": []
+}

@@ -1,0 +1,48 @@
+---
+import { localizedHref } from '../../utils/localizedHref';
+import { getT, type Lang } from '../../i18n/getT';
+
+interface Props { lang: Lang; }
+const { lang } = Astro.props;
+const t = getT(lang);
+---
+<section class="hero-stage">
+  <video
+    class="hero-video"
+    data-hero-video
+    data-parallax="0.07"
+    data-parallax-scale="1.16"
+    autoplay muted loop playsinline preload="metadata"
+    poster={`${import.meta.env.BASE_URL}video/hero-h-dark-poster.jpg`}
+  ></video>
+  <div class="hero-scrim" aria-hidden="true"></div>
+
+  <div class="hero-content">
+    <div class="hero-toprow">
+      <span class="hero-since" data-reveal>{t('hero.since')}</span>
+      <span class="eyebrow hero-eyebrow" data-reveal data-reveal-delay="80">{t('hero.eyebrow')}</span>
+      <span class="hero-location" data-reveal data-reveal-delay="160">{t('hero.location')}</span>
+    </div>
+
+    <h1 class="hero-title" aria-label={`${t('home.name.first')} ${t('home.name.last')}`}>
+      <span class="hero-first hero-letters">{t('home.name.first')}</span>
+      <span class="hero-rivera-wrap"><span class="hero-last">{t('home.name.last')}</span></span>
+    </h1>
+
+    <p class="hero-lede" data-reveal data-reveal-delay="650">{t('hero.lede')}</p>
+
+    <div class="hero-ctas" data-reveal data-reveal-delay="800">
+      <a class="btn btn-primary" href={`${localizedHref(lang, '/')}#design`} data-cursor="link">{t('hero.cta1')} →</a>
+      <a class="btn btn-glass" href={`${localizedHref(lang, '/')}#contact`} data-cursor="link">{t('hero.cta2')}</a>
+    </div>
+  </div>
+
+  <div class="hero-scrollhint" aria-hidden="true">
+    <span class="hero-scrollhint-line"></span>{t('hero.scrollHint')}
+  </div>
+</section>
+
+<script>
+  import { initHeroVideo } from '../../scripts/hero-video';
+  initHeroVideo();
+</script>

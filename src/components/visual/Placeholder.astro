@@ -1,0 +1,19 @@
+---
+interface Props {
+  hue: number;
+  glyph?: string;
+  label?: string;
+}
+
+const { hue, glyph = '◆', label } = Astro.props;
+const bg = `linear-gradient(135deg, oklch(82% 0.12 ${hue}) 0%, oklch(62% 0.15 ${(hue + 30) % 360}) 100%)`;
+---
+<div class="placeholder-cover" style={`--placeholder-bg: ${bg};`}>
+  <div class="placeholder-chrome">
+    <span class="placeholder-dot"></span>
+    <span class="placeholder-dot"></span>
+    <span class="placeholder-dot"></span>
+  </div>
+  <div class="placeholder-glyph">{glyph}</div>
+  {label && <div class="placeholder-label">{label}</div>}
+</div>

@@ -1,0 +1,27 @@
+{
+  "slug": "tianguis",
+  "kind": "artwork",
+  "category": "photography",
+  "title": {
+    "en": "Tianguis",
+    "es": "Tianguis"
+  },
+  "subtitle": {
+    "en": "Open-market photo essay",
+    "es": "Ensayo fotográfico de tianguis"
+  },
+  "overview": {
+    "en": "Tianguis — Open-market photo essay. This case study walks through the brief, the process, and the final outcome of the work.",
+    "es": "Tianguis — Ensayo fotográfico de tianguis. Este caso recorre el encargo, el proceso y el resultado final del trabajo."
+  },
+  "studio": "Independent",
+  "role": {
+    "en": "Photographer",
+    "es": "Photographer"
+  },
+  "sectors": [
+    "documentary"
+  ],
+  "year": 2024,
+  "gallery": []
+}

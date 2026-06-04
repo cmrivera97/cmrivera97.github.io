@@ -1,0 +1,27 @@
+{
+  "slug": "manos",
+  "kind": "artwork",
+  "category": "drawing",
+  "title": {
+    "en": "Hands",
+    "es": "Manos"
+  },
+  "subtitle": {
+    "en": "Pencil portrait series",
+    "es": "Serie de retratos a lápiz"
+  },
+  "overview": {
+    "en": "Hands — Pencil portrait series. This case study walks through the brief, the process, and the final outcome of the work.",
+    "es": "Manos — Serie de retratos a lápiz. Este caso recorre el encargo, el proceso y el resultado final del trabajo."
+  },
+  "studio": "Independent",
+  "role": {
+    "en": "Artist",
+    "es": "Artist"
+  },
+  "sectors": [
+    "portrait"
+  ],
+  "year": 2024,
+  "gallery": []
+}

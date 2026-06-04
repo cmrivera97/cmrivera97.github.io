@@ -1,0 +1,10 @@
+{
+  "slug": "illustration",
+  "kind": "design",
+  "label": { "en": "Illustration", "es": "Ilustración" },
+  "blurb": {
+    "en": "Editorial and brand illustration with a soft, considered hand.",
+    "es": "Ilustración editorial y de marca con trazo cuidado."
+  },
+  "sisterCategories": ["ai-designs", "social-media", "branding"]
+}

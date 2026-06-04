@@ -1,0 +1,27 @@
+{
+  "slug": "sin-titulo-7",
+  "kind": "artwork",
+  "category": "drawing",
+  "title": {
+    "en": "Untitled No. 7",
+    "es": "Sin Título No. 7"
+  },
+  "subtitle": {
+    "en": "Abstract gesture drawings",
+    "es": "Dibujos gestuales abstractos"
+  },
+  "overview": {
+    "en": "Untitled No. 7 — Abstract gesture drawings. This case study walks through the brief, the process, and the final outcome of the work.",
+    "es": "Sin Título No. 7 — Dibujos gestuales abstractos. Este caso recorre el encargo, el proceso y el resultado final del trabajo."
+  },
+  "studio": "Independent",
+  "role": {
+    "en": "Artist",
+    "es": "Artist"
+  },
+  "sectors": [
+    "abstract"
+  ],
+  "year": 2024,
+  "gallery": []
+}

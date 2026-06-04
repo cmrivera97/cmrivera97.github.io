@@ -1,0 +1,70 @@
+---
+// i18n
+import { getT, type Lang } from '../../i18n/getT';
+
+interface Props {
+  lang: Lang;
+}
+
+const { lang } = Astro.props;
+const t = getT(lang);
+
+const socials: ReadonlyArray<{ key: string; href: string; icon: string; label: string }> = [
+  {
+    key: 'behance',
+    href: 'https://www.behance.net/',
+    icon: 'behance.svg',
+    label: 'Behance',
+  },
+  {
+    key: 'instagram',
+    href: 'https://www.instagram.com/',
+    icon: 'instagram.svg',
+    label: 'Instagram',
+  },
+  {
+    key: 'linkedin',
+    href: 'https://www.linkedin.com/',
+    icon: 'linkedin.svg',
+    label: 'LinkedIn',
+  },
+  {
+    key: 'whatsapp',
+    href: 'https://wa.me/',
+    icon: 'whatsapp.svg',
+    label: 'WhatsApp',
+  },
+];
+---
+<footer class="site-footer">
+  <p><small>© {new Date().getFullYear()} · {t('home.name.first')} {t('home.name.last')}</small></p>
+  <ul role="list" class="socials">
+    {socials.map((item) => (
+      <li>
+        <a href={item.href} aria-label={item.label} rel="noopener noreferrer" target="_blank" data-cursor="link">
+          <img src={`${import.meta.env.BASE_URL}icons/${item.icon}`} alt="" width="20" height="20" />
+        </a>
+      </li>
+    ))}
+  </ul>
+</footer>
+
+<style>
+  .site-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.5rem;
+    border-top: 1px solid var(--c-line);
+    margin-top: 4rem;
+  }
+  .socials {
+    display: flex;
+    gap: 1rem;
+    margin: 0;
+  }
+  .socials a {
+    display: inline-flex;
+    color: var(--c-ink);
+  }
+</style>

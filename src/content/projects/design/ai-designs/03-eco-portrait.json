@@ -1,0 +1,28 @@
+{
+  "slug": "eco-portrait",
+  "kind": "design",
+  "category": "ai-designs",
+  "title": {
+    "en": "Eco Portrait",
+    "es": "Eco Retrato"
+  },
+  "subtitle": {
+    "en": "AI portraiture commission",
+    "es": "Encargo de retrato con IA"
+  },
+  "overview": {
+    "en": "Eco Portrait — AI portraiture commission. This case study walks through the brief, the process, and the final outcome of the work.",
+    "es": "Eco Retrato — Encargo de retrato con IA. Este caso recorre el encargo, el proceso y el resultado final del trabajo."
+  },
+  "studio": "Independent",
+  "role": {
+    "en": "Art Director",
+    "es": "Art Director"
+  },
+  "sectors": [
+    "portraiture",
+    "experimental"
+  ],
+  "year": 2024,
+  "gallery": []
+}

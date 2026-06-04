@@ -1,0 +1,56 @@
+---
+import { getCollection, getEntry, type CollectionEntry } from 'astro:content';
+
+import BaseLayout from '../../../../layouts/BaseLayout.astro';
+import ProjectDetail from '../../../../components/sections/ProjectDetail.astro';
+import { getT } from '../../../../i18n/getT';
+
+interface Props {
+  project: CollectionEntry<'projects'>;
+  prev: CollectionEntry<'projects'> | null;
+  next: CollectionEntry<'projects'> | null;
+}
+
+export async function getStaticPaths() {
+  const projects = await getCollection('projects', ({ data }) => data.kind === 'artwork');
+
+  const byCat = new Map<string, CollectionEntry<'projects'>[]>();
+  projects
+    .sort((a, b) => a.id.localeCompare(b.id))
+    .forEach((p) => {
+      const arr = byCat.get(p.data.category) ?? [];
+      arr.push(p);
+      byCat.set(p.data.category, arr);
+    });
+
+  const paths: {
+    params: { category: string; project: string };
+    props: Props;
+  }[] = [];
+
+  Array.from(byCat.values()).forEach((list) => {
+    list.forEach((p, i) => {
+      paths.push({
+        params: { category: p.data.category, project: p.data.slug },
+        props: {
+          project: p,
+          prev: list[i - 1] ?? null,
+          next: list[i + 1] ?? null,
+        },
+      });
+    });
+  });
+
+  return paths;
+}
+
+const lang = 'es' as const;
+const t = getT(lang);
+const { project, prev, next }: Props = Astro.props;
+const category = await getEntry('categories', project.data.category);
+if (!category) throw new Error(`Missing category: ${project.data.category}`);
+const pageTitle = `${project.data.title[lang]} · ${t('site.title')}`;
+---
+<BaseLayout title={pageTitle} description={project.data.subtitle[lang]} lang={lang}>
+  <ProjectDetail project={project} category={category} prev={prev} next={next} lang={lang} />
+</BaseLayout>

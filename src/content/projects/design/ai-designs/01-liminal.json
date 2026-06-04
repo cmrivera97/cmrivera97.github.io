@@ -1,0 +1,28 @@
+{
+  "slug": "liminal",
+  "kind": "design",
+  "category": "ai-designs",
+  "title": {
+    "en": "Liminal",
+    "es": "Liminal"
+  },
+  "subtitle": {
+    "en": "AI-assisted editorial covers",
+    "es": "Portadas editoriales asistidas por IA"
+  },
+  "overview": {
+    "en": "Liminal — AI-assisted editorial covers. This case study walks through the brief, the process, and the final outcome of the work.",
+    "es": "Liminal — Portadas editoriales asistidas por IA. Este caso recorre el encargo, el proceso y el resultado final del trabajo."
+  },
+  "studio": "Independent",
+  "role": {
+    "en": "Art Director",
+    "es": "Art Director"
+  },
+  "sectors": [
+    "publishing",
+    "experimental"
+  ],
+  "year": 2025,
+  "gallery": []
+}
