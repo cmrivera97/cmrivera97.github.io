@@ -31,20 +31,6 @@ const t = getT(lang);
     <p class="detail-sub">{project.data.subtitle[lang]}</p>
   </div>
 
-  <div class="detail-meta glass-card">
-    {[
-      [t('meta.studio'), project.data.studio],
-      [t('meta.role'), project.data.role[lang]],
-      [t('meta.sectors'), project.data.sectors.join(' · ')],
-      [t('meta.year'), String(project.data.year)],
-    ].map(([k, v]) => (
-      <div>
-        <div class="detail-meta-label">{k}</div>
-        <div class="detail-meta-value">{v}</div>
-      </div>
-    ))}
-  </div>
-
   <Gallery project={project} lang={lang} />
 
   {project.data.overview && (

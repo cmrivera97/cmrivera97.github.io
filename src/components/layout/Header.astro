@@ -16,8 +16,8 @@ interface Props {
 const { lang } = Astro.props;
 const t = getT(lang);
 
-const DESIGN_ORDER = ['ui-design', 'social-media', 'branding', 'ai-designs', 'print', 'illustration'];
-const ART_ORDER = ['drawing', 'painting', 'photography'];
+const DESIGN_ORDER = ['ai-designs', 'social-media', 'branding', 'print', 'illustration', 'ui-design'];
+const ART_ORDER = ['painting', 'drawing', 'photography'];
 
 const allCategories = await getCollection('categories');
 const catMap = new Map(allCategories.map((c) => [c.data.slug, c.data]));
@@ -36,10 +36,19 @@ const artworkActive = pathname.includes('/artwork');
     aria-controls="nav-center" data-nav-burger data-cursor="link">
     <span></span><span></span><span></span>
   </button>
-  <a class="brand" href={localizedHref(lang, '/')} data-cursor="link">
-    <span>Carolina</span>
-    <span class="brand-last">Rivera</span>
-    <span class="dot"></span>
+  <a class="brand" href={localizedHref(lang, '/')} data-cursor="link" aria-label={`${t('home.name.first')} ${t('home.name.last')}`}>
+    <img
+      class="brand-logo brand-logo-dark"
+      src={`${import.meta.env.BASE_URL}images/logo-carolina-version-dark.png`}
+      alt={`${t('home.name.first')} ${t('home.name.last')}`}
+      width="48" height="48" decoding="async"
+    />
+    <img
+      class="brand-logo brand-logo-light"
+      src={`${import.meta.env.BASE_URL}images/logo-carolina-version-light.png`}
+      alt="" aria-hidden="true"
+      width="48" height="48" decoding="async"
+    />
   </a>
 
   <nav class="nav-center" id="nav-center" aria-label={t('nav.home')}>
@@ -87,7 +96,7 @@ const artworkActive = pathname.includes('/artwork');
     {designCats.map((c, i) => (
       <a class="mega-item" href={localizedHref(lang, `/design/${c.slug}/`)} data-cursor="link">
         <span class="mega-num">{String(i + 1).padStart(2, '0')}</span>
-        <span class="mega-label"><span class="num">{String(i + 1).padStart(2, '0')}</span>{c.label[lang]}</span>
+        <span class="mega-label">{c.label[lang]}</span>
         <span class="mega-blurb">{c.blurb[lang]}</span>
       </a>
     ))}
@@ -99,7 +108,7 @@ const artworkActive = pathname.includes('/artwork');
     {artCats.map((c, i) => (
       <a class="mega-item" href={localizedHref(lang, `/artwork/${c.slug}/`)} data-cursor="link">
         <span class="mega-num">{String(i + 1).padStart(2, '0')}</span>
-        <span class="mega-label"><span class="num">{String(i + 1).padStart(2, '0')}</span>{c.label[lang]}</span>
+        <span class="mega-label">{c.label[lang]}</span>
         <span class="mega-blurb">{c.blurb[lang]}</span>
       </a>
     ))}

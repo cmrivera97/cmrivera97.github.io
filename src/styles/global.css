@@ -306,8 +306,8 @@ body.no-cursor #cursor-ring {
   z-index: 0; opacity: var(--hero-fade, 1); transform: scale(1.16); will-change: transform; }
 .hero-scrim{ position: absolute; inset: 0; z-index: 1; pointer-events: none;
   background:
-    radial-gradient(ellipse 75% 55% at 50% 48%, rgba(8, 10, 20, .35), transparent 72%),
-    linear-gradient(180deg, rgba(8, 10, 20, .35) 0%, rgba(8, 10, 20, .45) 100%); }
+    radial-gradient(ellipse 75% 55% at 50% 48%, rgba(8, 10, 20, .5), transparent 74%),
+    linear-gradient(180deg, rgba(8, 10, 20, .52) 0%, rgba(8, 10, 20, .66) 100%); }
 .hero-content{ position: relative; z-index: 2; width: 100%; text-align: center;
   transform: translateY(var(--hero-shift, 0)); }
 .hero-toprow{ display: grid; grid-template-columns: 1fr 1fr 1fr; align-items: center; margin-bottom: 30px; }
@@ -340,6 +340,49 @@ body.no-cursor #cursor-ring {
   .hero-letters, .hero-rivera-wrap{ animation: none; opacity: 1; transform: none; }
 }
 
+/* ===== Light version hero =====
+   The hero sits over the same dark video in both themes, so in light mode its text and CTAs
+   must read as light. A #03113f → transparent scrim deepens the foot of the hero and blends
+   it into the video. */
+:root[data-theme='light'] .hero-scrim{
+  background:
+    radial-gradient(ellipse 75% 55% at 50% 45%, rgba(3, 17, 63, .5), transparent 74%),
+    linear-gradient(180deg, rgba(3, 17, 63, .28) 0%, rgba(3, 17, 63, .72) 100%);
+}
+:root[data-theme='light'] .hero-first{ color: #fff; }
+:root[data-theme='light'] .hero-since,
+:root[data-theme='light'] .hero-location,
+:root[data-theme='light'] .hero-eyebrow,
+:root[data-theme='light'] .hero-scrollhint{ color: rgba(255, 255, 255, .72); }
+:root[data-theme='light'] .hero-scrollhint-line{ background: rgba(255, 255, 255, .5); }
+:root[data-theme='light'] .hero-lede{ color: rgba(255, 255, 255, .85); }
+/* "Rivera" keeps its violet gradient. */
+
+/* Primary CTA ("See the work"): white at rest, keeps the violet hover. */
+:root[data-theme='light'] .hero-ctas .btn-primary{ background: #fff; color: #0c0e1c; }
+:root[data-theme='light'] .hero-ctas .btn-primary:hover{
+  background: var(--c-accent); color: #fff;
+}
+/* "Say hello": light-grey text + outline, no fill until hover (then a grey fill). */
+:root[data-theme='light'] .hero-ctas .btn-glass{
+  background: transparent;
+  color: rgba(255, 255, 255, .85);
+  border-color: rgba(255, 255, 255, .55);
+  box-shadow: none;
+  backdrop-filter: none; -webkit-backdrop-filter: none;
+}
+:root[data-theme='light'] .hero-ctas .btn-glass:hover{
+  background: rgba(255, 255, 255, .22); color: #fff;
+}
+
+/* Light version: carousel arrows + Explore button get an explicit hover colour change
+   (the translucent default reads as no change on the light background). */
+:root[data-theme='light'] .showcase-arrow:hover,
+:root[data-theme='light'] .subpage-page-arrow:hover,
+:root[data-theme='light'] .portfolio-explore .btn:hover{
+  background: var(--c-ink); color: var(--c-bg); border-color: var(--c-ink);
+}
+
 /* ----- showcase carousel (Showcase.astro + carousel.ts) ----- */
 
 .showcase {
@@ -365,21 +408,22 @@ body.no-cursor #cursor-ring {
   box-shadow: 0 1px 0 rgba(255,255,255,.08) inset, 0 28px 60px -18px rgba(0,0,0,.6); }
 .showcase-card:hover .showcase-frame{ transform: translateY(-6px); }
 
-/* ----- Home showcase: infinite coverflow (carousel.ts → initLoopTrack) -----
+/* ----- Infinite coverflow (carousel.ts → initLoopTrack), used by the home showcase and the
+   project-detail gallery — any track marked data-carousel="loop". -----
    Cards are absolutely stacked and positioned by JS (centre highlighted, neighbours peek,
-   wraps endlessly). The gallery keeps the native-scroll rules above. Track height mirrors a
-   card's height (width × 11/16); clip horizontally so neighbours peek-and-cut at the edges,
-   but keep overflow-y visible so the card shadow and hover-lift are not clipped. */
-.showcase:not(.gallery) .showcase-track{
+   wraps endlessly). Track height mirrors a card's height (width × 11/16); clip horizontally so
+   neighbours peek-and-cut at the edges, but keep overflow-y visible so the card shadow and
+   hover-lift are not clipped. */
+.showcase-track[data-carousel='loop']{
   display: block; position: relative;
   height: calc(clamp(360px, 50cqw, 600px) * 0.6875);
   margin: 24px 0; padding: 0;
   overflow-x: clip; overflow-y: visible;
   scroll-snap-type: none; cursor: default;
 }
-.showcase:not(.gallery) .showcase-track::before,
-.showcase:not(.gallery) .showcase-track::after{ display: none; }
-.showcase:not(.gallery) .showcase-card{
+.showcase-track[data-carousel='loop']::before,
+.showcase-track[data-carousel='loop']::after{ display: none; }
+.showcase-track[data-carousel='loop'] .showcase-card{
   position: absolute; top: 50%; left: 50%;
   width: clamp(360px, 50cqw, 600px); flex: none;
   scroll-snap-align: none; opacity: 0;
@@ -547,8 +591,6 @@ body.no-cursor #cursor-ring {
 }
 .contact-lines { display: flex; flex-direction: column; gap: 14px; max-width: 540px; margin-bottom: 40px; }
 .contact-l1 { font-size: 22px; line-height: 1.4; font-weight: 500; color: var(--c-ink); }
-.contact-l2 { font-size: 17px; line-height: 1.55; color: var(--c-ink-soft); }
-.contact-l3 { font-size: 14px; line-height: 1.55; color: var(--c-ink-faint); font-style: italic; font-family: var(--font-display); }
 .contact-email-card { padding: 22px; }
 .contact-email-row { display: flex; justify-content: space-between; align-items: center; gap: 14px; }
 .contact-email-info { min-width: 0; flex: 1; }
@@ -569,6 +611,9 @@ body.no-cursor #cursor-ring {
 .contact-form { padding: 28px; display: flex; flex-direction: column; gap: 12px; }
 .contact-form-title { font-family: var(--font-display); font-style: italic; font-size: 26px; margin-bottom: 6px; color: var(--c-ink); }
 .contact-send { width: 100%; justify-content: center; margin-top: 4px; }
+.contact-send:disabled { opacity: .45; cursor: not-allowed; transform: none; box-shadow: none; }
+.contact-send:disabled:hover { background: var(--c-ink); color: var(--c-bg); transform: none; box-shadow: none; }
+.contact-form-note { margin: 8px 0 0; font-size: 12px; line-height: 1.4; text-align: center; color: var(--c-ink-faint); }
 .contact-socials { display: flex; gap: 14px; justify-content: center; margin: 22px 0 0; padding: 0; list-style: none; }
 .contact-social {
   width: 60px;
@@ -959,12 +1004,14 @@ body.no-cursor #cursor-ring {
   background: linear-gradient(180deg, rgba(244,246,252,.85), rgba(244,246,252,0));
   backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px); transition: background .3s; }
 :root[data-theme='dark'] .site-header{ background: linear-gradient(180deg, rgba(12,14,28,.85), rgba(12,14,28,0)); }
-.brand{ font-family: var(--font-display); font-style: italic; font-size: 22px; letter-spacing: -.01em;
-  color: var(--c-ink); text-decoration: none; display: inline-flex; align-items: center; gap: 8px; }
-.brand .brand-last{ font-family: var(--font-body); font-weight: 200; font-size: 14px;
-  letter-spacing: .15em; text-transform: uppercase; font-style: normal; }
-.brand .dot{ width: 6px; height: 6px; border-radius: 999px; background: var(--c-accent);
-  display: inline-block; transform: translateY(-8px); }
+.brand{ text-decoration: none; display: inline-flex; align-items: center; }
+/* Signature monogram. Two pre-coloured PNGs are swapped by theme: the near-white cut on dark,
+   the dark-grey cut on light. data-theme is set pre-paint in BaseLayout, so there is no flash. */
+.brand-logo{ height: 40px; width: auto; display: block; }
+.brand-logo-dark{ display: none; }
+.brand-logo-light{ display: block; }
+:root[data-theme='dark'] .brand-logo-dark{ display: block; }
+:root[data-theme='dark'] .brand-logo-light{ display: none; }
 .nav-center{ justify-self: center; display: flex; gap: 4px; align-items: center;
   background: rgba(255,255,255,.6); backdrop-filter: blur(28px) saturate(160%);
   -webkit-backdrop-filter: blur(28px) saturate(160%);
@@ -1006,8 +1053,6 @@ body.nav-locked{ overflow: hidden; }
 :root[data-theme='dark'] .mega-item:hover{ background: rgba(255,255,255,.06); border-color: rgba(255,255,255,.12); }
 .mega-num{ font-size: 10px; letter-spacing: .12em; text-transform: uppercase; color: var(--c-ink-faint); font-weight: 600; }
 .mega-label{ font-family: var(--font-display); font-style: italic; font-size: 22px; color: var(--c-ink); letter-spacing: -.01em; }
-.mega-label .num{ font-family: var(--font-body); font-style: normal; font-size: 11px; color: var(--c-accent);
-  margin-right: 8px; vertical-align: top; letter-spacing: .08em; font-weight: 600; }
 .mega-blurb{ font-size: 12px; color: var(--c-ink-soft); }
 
 /* === Project detail === */
@@ -1020,9 +1065,6 @@ body.nav-locked{ overflow: hidden; }
 .detail-title{ font-family: var(--font-display); font-style: italic; font-weight: 400;
   font-size: clamp(48px, 8cqw, 120px); line-height: 1; letter-spacing: -.02em; color: var(--c-ink); margin-top: 14px; }
 .detail-sub{ font-size: 17px; color: var(--c-ink-soft); margin-top: 14px; max-width: 560px; }
-.detail-meta{ display: grid; grid-template-columns: repeat(4,1fr); gap: 18px; padding: 22px; margin: 30px 0; }
-.detail-meta-label{ font-size: 10px; letter-spacing: .12em; text-transform: uppercase; color: var(--c-ink-faint); font-weight: 600; }
-.detail-meta-value{ font-size: 14px; margin-top: 6px; color: var(--c-ink); font-weight: 500; }
 .detail-overview{ max-width: 640px; margin: 40px 0; }
 .sec-sub-italic{ font-family: var(--font-display); font-style: italic; font-weight: 400; font-size: 24px; margin-bottom: 12px; color: var(--c-ink); }
 .detail-overview p{ font-size: 16px; line-height: 1.6; color: var(--c-ink-soft); }
@@ -1047,7 +1089,7 @@ body.nav-locked{ overflow: hidden; }
   .site-header { padding: 12px 16px; display: flex; align-items: center; gap: 10px; }
   .nav-burger { display: inline-flex; order: 3; }
   .brand { margin-right: auto; order: 0; }
-  .brand .brand-last { display: none; }
+  .brand-logo { height: 34px; }
   .nav-right { order: 2; }
   .nav-center {
     order: 4;
@@ -1080,7 +1122,6 @@ body.nav-locked{ overflow: hidden; }
 
   .sub-grid { grid-template-columns: repeat(2, 1fr); }
   .detail { padding-top: 96px; }
-  .detail-meta { grid-template-columns: repeat(2, 1fr); }
 }
 
 /* Small phone */

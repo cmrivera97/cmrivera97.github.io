@@ -76,7 +76,6 @@ export const initCursor = (accent: string = '#7A8FF7'): void => {
   const target = { x: -100, y: -100 };
   const dotPos = { x: -100, y: -100 };
   const ringPos = { x: -100, y: -100 };
-  const lerp = 0.18;
   let mode: CursorMode = null;
   let label = '';
 
@@ -100,10 +99,12 @@ export const initCursor = (accent: string = '#7A8FF7'): void => {
   window.addEventListener('pointermove', onMove, { passive: true });
 
   const tick = (): void => {
+    // Dot and ring both track the pointer 1:1 so there is no trailing "double cursor".
+    // The ring still animates its size/border via CSS transitions for hover states.
     dotPos.x = target.x;
     dotPos.y = target.y;
-    ringPos.x += (target.x - ringPos.x) * lerp;
-    ringPos.y += (target.y - ringPos.y) * lerp;
+    ringPos.x = target.x;
+    ringPos.y = target.y;
     dot.style.transform = `translate3d(${dotPos.x}px, ${dotPos.y}px, 0)`;
     ring.style.transform = `translate3d(${ringPos.x}px, ${ringPos.y}px, 0)`;
     window.requestAnimationFrame(tick);

@@ -16,7 +16,16 @@ const { kind, lang } = Astro.props;
 const t = getT(lang);
 const sectionId = kind === 'design' ? 'design' : 'artwork';
 
-const allCategories = await getCollection('categories', ({ data }) => data.kind === kind);
+const CATEGORY_ORDER: Record<Props['kind'], string[]> = {
+  design: ['ai-designs', 'social-media', 'branding', 'print', 'illustration', 'ui-design'],
+  artwork: ['painting', 'drawing', 'photography'],
+};
+
+const unorderedCategories = await getCollection('categories', ({ data }) => data.kind === kind);
+const order = CATEGORY_ORDER[kind];
+const allCategories = [...unorderedCategories].sort(
+  (a, b) => order.indexOf(a.data.slug) - order.indexOf(b.data.slug),
+);
 const allProjects = await getCollection('projects', ({ data }) => data.kind === kind);
 
 const initial = allCategories[0];
@@ -121,7 +130,7 @@ const title2 = kind === 'design' ? t('design.title2') : t('artwork.title2');
       data-cursor="link"
       href={localizedHref(lang, `/${kind}/${initial.data.slug}/`)}
     >
-      {t('explore')} →
+      {t('explore')}
     </a>
   </div>
 

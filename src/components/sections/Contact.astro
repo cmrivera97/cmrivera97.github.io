@@ -49,8 +49,6 @@ const socials: ReadonlyArray<{
       <h2 class="contact-heading" data-reveal>{t('contact.title')} <span class="contact-heading-it">{t('contact.titleIt')}</span></h2>
       <div class="contact-lines">
         <p class="contact-l1" data-reveal data-reveal-delay="150">{t('contact.l1')}</p>
-        <p class="contact-l2" data-reveal data-reveal-delay="250">{t('contact.l2')}</p>
-        <p class="contact-l3" data-reveal data-reveal-delay="350">{t('contact.l3')}</p>
       </div>
       <div class="glass-card contact-email-card" data-reveal data-reveal-delay="500">
         <div class="contact-email-row">
@@ -63,7 +61,6 @@ const socials: ReadonlyArray<{
         </div>
         <div class="contact-email-divider"></div>
         <div class="contact-email-meta">
-          <div><div class="contact-email-label">{t('contact.based')}</div><div class="contact-email-value">{t('contact.basedCity')}</div></div>
           <div><div class="contact-email-label">{t('contact.replyLabel')}</div><div class="contact-email-value">{t('contact.reply')}</div></div>
         </div>
       </div>
@@ -78,7 +75,8 @@ const socials: ReadonlyArray<{
         <input id="c-email" class="glass-input" type="email" name="email" required placeholder={t('contact.form.email.placeholder')} data-cursor="link" />
         <label class="sr-only" for="c-msg">{t('contact.form.message.label')}</label>
         <textarea id="c-msg" class="glass-input" name="message" rows="5" required placeholder={t('contact.form.message.placeholder')} data-cursor="link"></textarea>
-        <button type="submit" class="btn btn-primary contact-send" data-no-splash data-cursor="link">{t('contact.form.send')} →</button>
+        <button type="submit" class="btn btn-primary contact-send" disabled aria-disabled="true" data-no-splash>{t('contact.form.send')}</button>
+        <p class="contact-form-note">{t('contact.form.note')}</p>
       </form>
       <ul class="contact-socials" role="list" data-reveal data-reveal-delay="450">
         {socials.map((s) => (

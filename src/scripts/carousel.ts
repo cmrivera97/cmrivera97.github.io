@@ -29,10 +29,6 @@ const setDots = (track: HTMLElement, active: number): void => {
  * card before the first is the last one.
  * ========================================================================== */
 
-// Distance between adjacent card centres, as a fraction of card width (< 1 so neighbours
-// overlap the centre card and peek from its sides).
-const STEP_FACTOR = 0.72;
-
 // Shortest signed distance from the active card to card `i`, wrapped onto a ring.
 const ringSlot = (i: number, active: number, count: number): number => {
   let d = (i - active) % count;
@@ -41,17 +37,46 @@ const ringSlot = (i: number, active: number, count: number): number => {
   return d;
 };
 
-const slotScale = (abs: number): number => {
-  if (abs === 0) return 1;
-  if (abs === 1) return 0.84;
-  return 0.7;
+// Two visual variants share the endless-ring engine below.
+interface LoopConfig {
+  // Distance between adjacent card centres, given the card width.
+  step: (cardWidth: number) => number;
+  scale: (abs: number) => number;
+  opacity: (abs: number) => number;
+}
+
+// Project-detail gallery: tight coverflow — neighbours overlap the centre and shrink away.
+const COVERFLOW: LoopConfig = {
+  step: (w) => w * 0.72,
+  scale: (abs) => {
+    if (abs === 0) return 1;
+    if (abs === 1) return 0.84;
+    return 0.7;
+  },
+  opacity: (abs) => {
+    if (abs === 0) return 1;
+    if (abs === 1) return 0.6;
+    return 0;
+  },
 };
 
-const slotOpacity = (abs: number): number => {
-  if (abs === 0) return 1;
-  if (abs === 1) return 0.6;
-  return 0;
+// Home showcase: keep the existing card design — full-size cards sitting side by side with the
+// standard 24px gap, the centre bright and neighbours dimmed — just wrapped into an endless ring
+// so the card before the first is the last (no blank space on the left edge).
+const SHOWCASE_GAP = 24;
+const FLAT: LoopConfig = {
+  step: (w) => w + SHOWCASE_GAP,
+  scale: (abs) => (abs === 0 ? 1 : 0.92),
+  opacity: (abs) => {
+    if (abs === 0) return 1;
+    if (abs === 1) return 0.55;
+    return 0;
+  },
 };
+
+const loopConfig = (track: HTMLElement): LoopConfig => (
+  track.closest('.showcase.gallery') ? COVERFLOW : FLAT
+);
 
 const layoutLoop = (track: HTMLElement, active: number): void => {
   const cards = getCards(track);
@@ -59,13 +84,14 @@ const layoutLoop = (track: HTMLElement, active: number): void => {
   if (count === 0) return;
   const cardWidth = cards[0].offsetWidth;
   if (cardWidth === 0) return; // hidden (display:none) — re-laid out when its category shows
-  const step = cardWidth * STEP_FACTOR;
+  const cfg = loopConfig(track);
+  const step = cfg.step(cardWidth);
 
   cards.forEach((card, i) => {
     const d = ringSlot(i, active, count);
     const abs = Math.abs(d);
-    const scale = slotScale(abs);
-    const opacity = slotOpacity(abs);
+    const scale = cfg.scale(abs);
+    const opacity = cfg.opacity(abs);
     // Animate transforms only within the visible band (±2); cards wrapping across the seam
     // jump instantly while invisible so nothing slides across the whole row.
     const animate = abs <= 2;
@@ -229,9 +255,17 @@ export const initCarousel = (root?: ParentNode): void => {
   });
 
   window.addEventListener('bubble:change', () => {
-    // A formerly-hidden loop carousel is now visible: re-measure and feature the first card.
+    // A formerly-hidden carousel is now visible: re-measure and feature the first card.
+    // Loop tracks re-render via JS layout; native-scroll tracks (home showcase) had zero width
+    // while hidden, so re-centre on the first card now that the wrapper is displayed.
     tracks.forEach((track) => {
-      if (track.dataset.carousel === 'loop') renderLoop(track, 0);
+      if (track.dataset.carousel === 'loop') {
+        renderLoop(track, 0);
+      } else {
+        centerOn(track, 0);
+        setScrollActive(track, 0);
+        dispatchActive(track, 0, getCards(track)[0]?.dataset.slug ?? '');
+      }
     });
   });
 };

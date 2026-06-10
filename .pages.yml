@@ -19,6 +19,7 @@ content:
     path: src/content/projects
     subfolders: true
     format: json
+    filename: '{fields.slug}.json'
     view:
       layout: tree
       primary: title.en
@@ -50,6 +51,7 @@ content:
     path: src/content/categories
     subfolders: true
     format: json
+    filename: '{fields.slug}.json'
     view:
       layout: tree
       primary: label.en

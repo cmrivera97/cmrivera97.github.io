@@ -17,9 +17,6 @@ concurrency:
 jobs:
   build:
     runs-on: ubuntu-latest
-    env:
-      PORTFOLIO_SITE: https://jorius.github.io
-      PORTFOLIO_BASE: /portfolio-web-app-ciruela
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -30,6 +27,23 @@ jobs:
           node-version-file: .nvmrc
           cache: npm
 
+      # Derive the Pages URL + base path from the repo name so the same workflow is correct on
+      # both the project site (jorius.github.io/portfolio-web-app-ciruela, base = /<repo>) and a
+      # user/org site (cmrivera97.github.io, served at root, base = /).
+      - name: Resolve site + base
+        run: |
+          owner="${GITHUB_REPOSITORY%%/*}"
+          repo="${GITHUB_REPOSITORY#*/}"
+          owner_lc="$(echo "$owner" | tr '[:upper:]' '[:lower:]')"
+          repo_lc="$(echo "$repo" | tr '[:upper:]' '[:lower:]')"
+          if [ "$repo_lc" = "${owner_lc}.github.io" ]; then
+            echo "PORTFOLIO_SITE=https://${owner_lc}.github.io" >> "$GITHUB_ENV"
+            echo "PORTFOLIO_BASE=/" >> "$GITHUB_ENV"
+          else
+            echo "PORTFOLIO_SITE=https://${owner_lc}.github.io" >> "$GITHUB_ENV"
+            echo "PORTFOLIO_BASE=/${repo}" >> "$GITHUB_ENV"
+          fi
+
       - name: Install dependencies
         run: npm ci
 
@@ -38,6 +52,13 @@ jobs:
 
       - name: Typecheck
         run: npm run typecheck
+
+      # Switches the repo's Pages source to "GitHub Actions" on first run (legacy/Jekyll → workflow),
+      # using the workflow's own token — no manual Settings change or admin API access needed.
+      - name: Configure Pages
+        uses: actions/configure-pages@v5
+        with:
+          enablement: true
 
       - name: Build
         run: npm run build

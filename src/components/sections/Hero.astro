@@ -13,7 +13,7 @@ const t = getT(lang);
     data-parallax="0.07"
     data-parallax-scale="1.16"
     autoplay muted loop playsinline preload="metadata"
-    poster={`${import.meta.env.BASE_URL}video/hero-h-dark-poster.jpg`}
+    poster={`${import.meta.env.BASE_URL}video/d2-poster.jpg`}
   ></video>
   <div class="hero-scrim" aria-hidden="true"></div>
 
@@ -21,7 +21,6 @@ const t = getT(lang);
     <div class="hero-toprow">
       <span class="hero-since" data-reveal>{t('hero.since')}</span>
       <span class="eyebrow hero-eyebrow" data-reveal data-reveal-delay="80">{t('hero.eyebrow')}</span>
-      <span class="hero-location" data-reveal data-reveal-delay="160">{t('hero.location')}</span>
     </div>
 
     <h1 class="hero-title" aria-label={`${t('home.name.first')} ${t('home.name.last')}`}>
@@ -32,7 +31,7 @@ const t = getT(lang);
     <p class="hero-lede" data-reveal data-reveal-delay="650">{t('hero.lede')}</p>
 
     <div class="hero-ctas" data-reveal data-reveal-delay="800">
-      <a class="btn btn-primary" href={`${localizedHref(lang, '/')}#design`} data-cursor="link">{t('hero.cta1')} →</a>
+      <a class="btn btn-primary" href={`${localizedHref(lang, '/')}#design`} data-cursor="link">{t('hero.cta1')}</a>
       <a class="btn btn-glass" href={`${localizedHref(lang, '/')}#contact`} data-cursor="link">{t('hero.cta2')}</a>
     </div>
   </div>
@@ -44,5 +43,7 @@ const t = getT(lang);
 
 <script>
   import { initHeroVideo } from '../../scripts/hero-video';
+  import { initHeroSnap } from '../../scripts/hero-snap';
   initHeroVideo();
+  initHeroSnap();
 </script>

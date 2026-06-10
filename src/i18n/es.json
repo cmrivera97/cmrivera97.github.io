@@ -21,7 +21,6 @@
     "cta2": "Saludar",
     "since": "Práctica independiente — desde 2019",
     "eyebrow": "Diseñadora Gráfica · Artista Visual",
-    "location": "Bogotá · COL",
     "lede": "Creando marcas, identidades y objetos silenciosos — entre la página, la pantalla y el lienzo.",
     "scrollHint": "desliza"
   },
@@ -45,12 +44,8 @@
     "title": "Hagamos",
     "titleIt": "algo",
     "l1": "Disponible para encargos, colaboraciones y la ocasional idea imposible.",
-    "l2": "Trabajo con estudios, fundadores y artistas en identidad, editorial y producto digital.",
-    "l3": "Disponible desde mayo 2026 — escribe antes de que se llene el calendario.",
     "emailLabel": "Email",
     "copy": "Copiar",
-    "based": "Basada en",
-    "basedCity": "Bogotá, COL",
     "replyLabel": "Respuesta",
     "reply": "Respondo en 48h",
     "send": "Envía un mensaje",
@@ -61,7 +56,8 @@
       "email": { "label": "Correo", "placeholder": "tu@ejemplo.com" },
       "message": { "label": "Cuéntame", "placeholder": "¿En qué estás trabajando?" },
       "send": "Enviar mensaje",
-      "copied": "Copiado"
+      "copied": "Copiado",
+      "note": "La mensajería directa se está configurando — escríbeme por correo mientras tanto."
     }
   },
   "theme": {

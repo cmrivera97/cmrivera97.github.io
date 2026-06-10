@@ -1,6 +1,6 @@
 const BASE = import.meta.env.BASE_URL;
 const SRC = {
-  h: `${BASE}video/hero-h-dark.mp4`,
+  h: `${BASE}video/d2.mp4`,
   v: `${BASE}video/hero-v-dark.mp4`,
 };
 

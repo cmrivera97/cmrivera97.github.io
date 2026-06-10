@@ -21,7 +21,6 @@
     "cta2": "Say hello",
     "since": "Independent practice — since 2019",
     "eyebrow": "Graphic Designer · Visual Artist",
-    "location": "Bogotá · COL",
     "lede": "Crafting brands, identities, and quiet objects — somewhere between the page, the screen, and the canvas.",
     "scrollHint": "scroll"
   },
@@ -45,12 +44,8 @@
     "title": "Let's make",
     "titleIt": "something",
     "l1": "Available for commissions, collaborations, and the occasional impossible idea.",
-    "l2": "I work with studios, founders, and artists across identity, editorial, and digital product.",
-    "l3": "Open from May 2026 — write me before the calendar fills.",
     "emailLabel": "Email",
     "copy": "Copy",
-    "based": "Based in",
-    "basedCity": "Bogotá, COL",
     "replyLabel": "Reply",
     "reply": "Reply within 48h",
     "send": "Send a message",
@@ -61,7 +56,8 @@
       "email": { "label": "Email", "placeholder": "you@example.com" },
       "message": { "label": "Tell me about it", "placeholder": "What are you working on?" },
       "send": "Send message",
-      "copied": "Copied"
+      "copied": "Copied",
+      "note": "Direct messaging is being set up — please email me in the meantime."
     }
   },
   "theme": {
