@@ -22,5 +22,8 @@
   "sectors": [
     "Social Media"
   ],
-  "year": 0
+  "year": 2026,
+  "gallery": [
+    {}
+  ]
 }
