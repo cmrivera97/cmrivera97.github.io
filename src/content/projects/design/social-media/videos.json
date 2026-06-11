@@ -20,7 +20,27 @@
     "es": "Dirección de Arte y Diseño"
   },
   "sectors": [
-    "Video"
+    "Video",
+    "Social Media"
   ],
-  "year": 0
+  "year": 2026,
+  "cover": "/images/portada reels y videos.jpg",
+  "gallery": [
+    {
+      "src": "/images/H1-Black-Days-Self.mp4",
+      "alt": {
+        "en": "Self",
+        "es": "Self"
+      },
+      "kind": "video"
+    },
+    {
+      "src": "/images/Black Days self (1).mp4",
+      "alt": {
+        "en": "Black Days Animation",
+        "es": "Animación Black Days"
+      },
+      "kind": "video"
+    }
+  ]
 }
