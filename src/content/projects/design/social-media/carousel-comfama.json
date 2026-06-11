@@ -1,0 +1,77 @@
+{
+  "slug": "carousel-comfama",
+  "kind": "design",
+  "category": "social-media",
+  "title": {
+    "en": "Comfama",
+    "es": "Comfama"
+  },
+  "subtitle": {
+    "en": "Carousel for Instagram",
+    "es": "Carrusel para Instagram"
+  },
+  "overview": {
+    "en": "Carousel-style post announcing the launch of a new book by Comfama",
+    "es": "Post tipo carrusel para comunicar el lanzamiento de un nuevo libro dentro de la empresa Comfama"
+  },
+  "studio": "Independent",
+  "role": {
+    "en": "Designer",
+    "es": "Diseñador"
+  },
+  "sectors": [
+    "Social Media"
+  ],
+  "year": 2025,
+  "cover": "/images/Piezas Convocatoria Comfama_Mesa de trabajo 1 copia.jpg",
+  "gallery": [
+    {
+      "src": "/images/Piezas Convocatoria Comfama_Mesa de trabajo 1 copia-1.jpg",
+      "alt": {
+        "en": "01",
+        "es": "01"
+      },
+      "kind": "image"
+    },
+    {
+      "src": "/images/Piezas Convocatoria Comfama_Mesa de trabajo 1 copia 2.jpg",
+      "alt": {
+        "en": "02",
+        "es": "02"
+      },
+      "kind": "image"
+    },
+    {
+      "src": "/images/Piezas Convocatoria Comfama_Mesa de trabajo 1 copia 4.jpg",
+      "alt": {
+        "en": "03",
+        "es": "03"
+      },
+      "kind": "image"
+    },
+    {
+      "src": "/images/Piezas Convocatoria Comfama_Mesa de trabajo 1 copia 3.jpg",
+      "alt": {
+        "en": "04",
+        "es": "04"
+      },
+      "kind": "image"
+    },
+    {
+      "src": "/images/Piezas Convocatoria Comfama_Mesa de trabajo 1 copia 5.jpg",
+      "alt": {
+        "en": "05",
+        "es": "05"
+      },
+      "kind": "image"
+    },
+    {
+      "src": "/images/Piezas Convocatoria Comfama_Mesa de trabajo 1 copia 6.jpg",
+      "alt": {
+        "en": "06",
+        "es": "06"
+      },
+      "kind": "image"
+    }
+  ]
+}
