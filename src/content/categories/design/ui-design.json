@@ -1,10 +1,17 @@
 {
   "slug": "ui-design",
   "kind": "design",
-  "label": { "en": "UI Design", "es": "Diseño UI" },
-  "blurb": {
-    "en": "Product surfaces and interactive systems that stay out of the user's way.",
-    "es": "Productos digitales y sistemas interactivos que no estorban al usuario."
+  "label": {
+    "en": "UI Design",
+    "es": "Diseño UI"
   },
-  "sisterCategories": ["branding", "print", "social-media"]
+  "blurb": {
+    "en": "Product surfaces and interactive systems",
+    "es": "Productos digitales y sistemas interactivos "
+  },
+  "sisterCategories": [
+    "branding",
+    "print",
+    "social-media"
+  ]
 }
