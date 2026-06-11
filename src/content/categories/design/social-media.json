@@ -1,10 +1,17 @@
 {
   "slug": "social-media",
   "kind": "design",
-  "label": { "en": "Social Media", "es": "Redes Sociales" },
-  "blurb": {
-    "en": "Editorial templates, campaign assets, and motion-ready content for social channels.",
-    "es": "Plantillas editoriales, piezas de campaña y contenido para redes sociales."
+  "label": {
+    "en": "Social Media",
+    "es": "Redes Sociales"
   },
-  "sisterCategories": ["branding", "illustration", "ai-designs"]
+  "blurb": {
+    "en": "Templates, campaign assets, and motion-ready content for social channels.",
+    "es": "Plantilla, piezas de campaña y contenido para redes sociales."
+  },
+  "sisterCategories": [
+    "branding",
+    "illustration",
+    "ai-designs"
+  ]
 }
