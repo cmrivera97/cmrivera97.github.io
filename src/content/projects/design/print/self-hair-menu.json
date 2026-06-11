@@ -1,0 +1,93 @@
+{
+  "slug": "self-hair-menu",
+  "kind": "design",
+  "category": "print",
+  "title": {
+    "en": "Hair Menu",
+    "es": "Menú Capilares"
+  },
+  "subtitle": {
+    "en": "Self Catalog",
+    "es": "Catálogo Self "
+  },
+  "overview": {
+    "en": "Product catalog for promoting hair care treatments.",
+    "es": "Catálogo de productos para promoción de terapias capilares."
+  },
+  "studio": "Self",
+  "role": {
+    "en": "Designer",
+    "es": "Diseñador"
+  },
+  "sectors": [
+    "publishing"
+  ],
+  "year": 2026,
+  "cover": "/images/Self  Hair Menu_page-0001.jpg",
+  "gallery": [
+    {
+      "src": "/images/Self  Hair Menu_page-0001-1.jpg",
+      "alt": {
+        "en": "Cover",
+        "es": "Portada"
+      },
+      "kind": "image"
+    },
+    {
+      "src": "/images/Self  Hair Menu_page-0002.jpg",
+      "alt": {
+        "en": "02",
+        "es": "02"
+      },
+      "kind": "image"
+    },
+    {
+      "src": "/images/Self  Hair Menu_page-0003.jpg",
+      "alt": {
+        "en": "03",
+        "es": "03"
+      },
+      "kind": "image"
+    },
+    {
+      "src": "/images/Self  Hair Menu_page-0004.jpg",
+      "alt": {
+        "en": "04",
+        "es": "04"
+      },
+      "kind": "image"
+    },
+    {
+      "src": "/images/Self  Hair Menu_page-0005.jpg",
+      "alt": {
+        "en": "05",
+        "es": "05"
+      },
+      "kind": "image"
+    },
+    {
+      "src": "/images/Self  Hair Menu_page-0006.jpg",
+      "alt": {
+        "en": "06",
+        "es": "06"
+      },
+      "kind": "image"
+    },
+    {
+      "src": "/images/Self  Hair Menu_page-0007.jpg",
+      "alt": {
+        "en": "07",
+        "es": "07"
+      },
+      "kind": "image"
+    },
+    {
+      "src": "/images/Self  Hair Menu_page-0008.jpg",
+      "alt": {
+        "en": "08",
+        "es": "08"
+      },
+      "kind": "image"
+    }
+  ]
+}
