@@ -1,0 +1,85 @@
+{
+  "slug": "stories-instagram",
+  "kind": "design",
+  "category": "social-media",
+  "title": {
+    "en": "Stories",
+    "es": "Historias"
+  },
+  "subtitle": {
+    "en": "Ideas for Instagram",
+    "es": "Ideas para Instagram"
+  },
+  "overview": {
+    "en": "Stories created for different needs and campaigns",
+    "es": "Historias creadas para diferentes necesidades y campañas"
+  },
+  "studio": "Pasteur",
+  "role": {
+    "en": "Designer",
+    "es": "Diseñador"
+  },
+  "sectors": [
+    "Social Media"
+  ],
+  "year": 2026,
+  "cover": "/images/SM 3 (1).jpg",
+  "gallery": [
+    {
+      "src": "/images/SM 3 (2).jpg",
+      "alt": {
+        "en": "Lupus",
+        "es": "Lupus"
+      },
+      "kind": "image"
+    },
+    {
+      "src": "/images/SM 4 (1).jpg",
+      "alt": {
+        "en": "America Cup",
+        "es": "Copa America"
+      },
+      "kind": "image"
+    },
+    {
+      "src": "/images/ML042026 Auxiliar_Bases Hist.jpg",
+      "alt": {
+        "en": "Makeup Locura",
+        "es": "Makeup Locura"
+      },
+      "kind": "image"
+    },
+    {
+      "src": "/images/Historia-dia-contra-la-depresión-2026.jpg",
+      "alt": {
+        "en": "Depression Awareness Day",
+        "es": "Día contra la depresión"
+      },
+      "kind": "image"
+    },
+    {
+      "src": "/images/Dymatyze-banner-dunkin-sin-dcto.jpg",
+      "alt": {
+        "en": "Protein",
+        "es": "Proteina"
+      },
+      "kind": "image"
+    },
+    {
+      "src": "/images/CD092025-Amor y Amistad-Campaña dulces-Imágen general-historia 2.jpg",
+      "alt": {
+        "en": "Candy's Campaign",
+        "es": "Campaña de dulces"
+      },
+      "kind": "image"
+    },
+    {
+      "src": "/images/052026TF-Distribuidora-Teleferia-Junio.jpg",
+      "alt": {
+        "en": "Festival",
+        "es": "Festival"
+      },
+      "kind": "image"
+    }
+  ]
+}
