@@ -1,0 +1,94 @@
+{
+  "slug": "kit-wellness-hys",
+  "kind": "design",
+  "category": "print",
+  "title": {
+    "en": "Wellness Kit",
+    "es": "Kit de Bienestar"
+  },
+  "subtitle": {
+    "en": "Creation and concept",
+    "es": "Creación y concepto"
+  },
+  "overview": {
+    "en": "Graphic proposal for the Psychology Department at Pasteur. An initiative that originated within the Hablemos y Sanemos team. The concept was inspired by the idea of a journey—a journey toward well-being—and other projects designed to strengthen the department’s visual identity.",
+    "es": "Propuesta gráfica para el área de psicología de Pasteur. Una iniciativa que nació en el equipo de Hablemos y Sanemos. El concepto nació de la idea de viaje, un viaje al bienestar y otros proyectos para afianzar la línea visual del área."
+  },
+  "studio": "Hablemos & Sanemos",
+  "role": {
+    "en": "Art Director",
+    "es": "Dirección de Arte"
+  },
+  "sectors": [
+    "Branding",
+    "Print"
+  ],
+  "year": 2025,
+  "cover": "/images/KIT.jpeg",
+  "gallery": [
+    {
+      "src": "/images/mapa.jpg",
+      "alt": {
+        "en": "Map",
+        "es": "Mapa"
+      },
+      "kind": "image"
+    },
+    {
+      "src": "/images/02. Mapa- Kit de Bienestar_page-0001.jpg",
+      "alt": {
+        "en": "Map 2",
+        "es": "Mapa 2"
+      },
+      "kind": "image"
+    },
+    {
+      "src": "/images/02. Mapa- Kit de Bienestar_page-0002.jpg",
+      "alt": {
+        "en": "Map (Back view)",
+        "es": "Mapa (Vista de retiro)"
+      },
+      "kind": "image"
+    },
+    {
+      "src": "/images/02. Mapa- Kit de Bienestar_page-0009.jpg",
+      "alt": {
+        "en": "Stickers Map",
+        "es": "Stickers de Mapa"
+      },
+      "kind": "image"
+    },
+    {
+      "src": "/images/06. Separador de libro- Kit de bienestar_Tiro.jpg",
+      "alt": {
+        "en": "Bookmark",
+        "es": "Separador de libros"
+      },
+      "kind": "image"
+    },
+    {
+      "src": "/images/B1 (2).jpg",
+      "alt": {
+        "en": "Box Design",
+        "es": "Diseño de Caja"
+      },
+      "kind": "image"
+    },
+    {
+      "src": "/images/B1 (1).jpg",
+      "alt": {
+        "en": "Flag",
+        "es": "Pendón Hablemos y Sanemos"
+      },
+      "kind": "image"
+    },
+    {
+      "src": "/images/B1 (3).jpg",
+      "alt": {
+        "en": "Card",
+        "es": "Tarjeta de Presentación"
+      },
+      "kind": "image"
+    }
+  ]
+}
