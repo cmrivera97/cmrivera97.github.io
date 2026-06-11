@@ -1,0 +1,54 @@
+{
+  "slug": "financial-content",
+  "kind": "design",
+  "category": "social-media",
+  "title": {
+    "en": "Edge Clear",
+    "es": "Edge Clear"
+  },
+  "subtitle": {
+    "en": "Social Media Content",
+    "es": "Contenido para diferentes redes sociales"
+  },
+  "overview": {
+    "en": "Promotion of new cryptocurrencies for Edge Clear",
+    "es": "Promoción de nuevas monedas Crypto para el empresa Edge Clear"
+  },
+  "studio": "Independent",
+  "role": {
+    "en": "Designer",
+    "es": "Diseñador"
+  },
+  "sectors": [
+    "Branding",
+    "Social Media"
+  ],
+  "year": 2025,
+  "cover": "/images/02-04-2025-Instagram-Post-EdgeClear-Carolina-Rivera.jpg",
+  "gallery": [
+    {
+      "src": "/images/02-04-2025-Instagram-Post-EdgeClear-Carolina-Rivera-1.jpg",
+      "alt": {
+        "en": "Post",
+        "es": "Post"
+      },
+      "kind": "image"
+    },
+    {
+      "src": "/images/02-04-2025-Story-EdgeClear-Carolina-Rivera.jpg",
+      "alt": {
+        "en": "Story",
+        "es": "Historia Instagram"
+      },
+      "kind": "image"
+    },
+    {
+      "src": "/images/02-04-2025-FB-X-LI-EdgeClear-Carolina-Rivera.jpg",
+      "alt": {
+        "en": "LinkedIn",
+        "es": "LinkedIn Post"
+      },
+      "kind": "image"
+    }
+  ]
+}
