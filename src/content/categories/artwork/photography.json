@@ -1,10 +1,16 @@
 {
   "slug": "photography",
   "kind": "artwork",
-  "label": { "en": "Photography", "es": "Fotografía" },
-  "blurb": {
-    "en": "Quiet observations from travel, studio, and the everyday.",
-    "es": "Observaciones tranquilas desde el viaje, el estudio y lo cotidiano."
+  "label": {
+    "en": "Photography",
+    "es": "Fotografía"
   },
-  "sisterCategories": ["drawing", "painting"]
+  "blurb": {
+    "en": "Observations from travel, studio, and the everyday.",
+    "es": "Observaciones desde el viaje, el estudio y lo cotidiano."
+  },
+  "sisterCategories": [
+    "drawing",
+    "painting"
+  ]
 }
