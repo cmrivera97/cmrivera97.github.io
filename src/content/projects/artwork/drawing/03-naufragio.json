@@ -1,18 +1,18 @@
 {
-  "slug": "naufragio",
+  "slug": "animals",
   "kind": "artwork",
   "category": "drawing",
   "title": {
-    "en": "Naufragio",
-    "es": "Naufragio"
+    "en": "Animals",
+    "es": "Animales"
   },
   "subtitle": {
-    "en": "Mixed-media seascapes",
-    "es": "Marinas en técnica mixta"
+    "en": "Technical Surveys ",
+    "es": "Exploraciones técnicas "
   },
   "overview": {
-    "en": "Naufragio — Mixed-media seascapes. This case study walks through the brief, the process, and the final outcome of the work.",
-    "es": "Naufragio — Marinas en técnica mixta. Este caso recorre el encargo, el proceso y el resultado final del trabajo."
+    "en": "A return to traditional pencil and ink drawing to explore anatomy and the forms of nature—this time, the beauty of animals",
+    "es": "Reencuentro con el lapiz y tintas de forma análoga para explorar anatomía y formas de la naturaleza, en esta ocasión, la belleza de los animales"
   },
   "studio": "Independent",
   "role": {
@@ -22,6 +22,24 @@
   "sectors": [
     "mixed-media"
   ],
-  "year": 2025,
-  "gallery": []
+  "year": 2024,
+  "cover": "/images/AA (5).jpg",
+  "gallery": [
+    {
+      "src": "/images/AA (5)-1.jpg",
+      "alt": {
+        "en": "Toucan",
+        "es": "Tucán"
+      },
+      "kind": "image"
+    },
+    {
+      "src": "/images/escarabajo.jpg",
+      "alt": {
+        "en": "Beetle",
+        "es": "Escarabajo, lineas"
+      },
+      "kind": "image"
+    }
+  ]
 }
