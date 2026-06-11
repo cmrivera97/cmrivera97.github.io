@@ -1,27 +1,62 @@
 {
-  "slug": "casa-libro",
+  "slug": "campaign-mothers-day-printed",
   "kind": "design",
   "category": "print",
   "title": {
-    "en": "Casa Libro",
-    "es": "Casa Libro"
+    "en": "Mamá Te Cuida",
+    "es": "Mamá Te Cuida"
   },
   "subtitle": {
-    "en": "Independent press identity",
-    "es": "Identidad de editorial independiente"
+    "en": "Campaign Design and Display",
+    "es": "Diagramación y exhibición de campaña"
   },
   "overview": {
-    "en": "Casa Libro — Independent press identity. This case study walks through the brief, the process, and the final outcome of the work.",
-    "es": "Casa Libro — Identidad de editorial independiente. Este caso recorre el encargo, el proceso y el resultado final del trabajo."
+    "en": "Creating printed parts based on a pre-existing design",
+    "es": "Creación de piezas impresas a partir de un diseño previo"
   },
-  "studio": "Independent",
+  "studio": "Pasteur",
   "role": {
-    "en": "Designer",
-    "es": "Designer"
+    "en": "Print Designer",
+    "es": "Diseñadora de Impresión"
   },
   "sectors": [
-    "publishing"
+    "publishing",
+    "POP Material"
   ],
-  "year": 2024,
-  "gallery": []
+  "year": 2026,
+  "cover": "/images/escaleras.jpeg",
+  "gallery": [
+    {
+      "src": "/images/escaleras-1.jpeg",
+      "alt": {
+        "en": "Stairs",
+        "es": "Escaleras"
+      },
+      "kind": "image"
+    },
+    {
+      "src": "/images/espejos.jpeg",
+      "alt": {
+        "en": "Mirrors",
+        "es": "Espejos"
+      },
+      "kind": "image"
+    },
+    {
+      "src": "/images/Rotonda 4.jpeg",
+      "alt": {
+        "en": "Roundabout at the Shopping Center",
+        "es": "Rotonda en Centro Comercial"
+      },
+      "kind": "image"
+    },
+    {
+      "src": "/images/Rotonda 2.jpeg",
+      "alt": {
+        "en": "Roundabout at the Shopping Center ",
+        "es": "Rotonda en Centro Comercial"
+      },
+      "kind": "image"
+    }
+  ]
 }
