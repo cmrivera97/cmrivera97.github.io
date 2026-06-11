@@ -1,20 +1,16 @@
 {
-  "slug": "almanaque-2025",
+  "slug": "box-design",
   "kind": "design",
   "category": "print",
   "title": {
-    "en": "Almanaque 2025",
-    "es": "Almanaque 2025"
+    "en": "PR Box Design",
+    "es": "Diseño de PR Box"
   },
   "subtitle": {
-    "en": "Yearly almanac design",
-    "es": "Diseño de almanaque anual"
+    "en": "Box Design for Influencers",
+    "es": "Diseño de cajas para influenciadores"
   },
-  "overview": {
-    "en": "Almanaque 2025 — Yearly almanac design. This case study walks through the brief, the process, and the final outcome of the work.",
-    "es": "Almanaque 2025 — Diseño de almanaque anual. Este caso recorre el encargo, el proceso y el resultado final del trabajo."
-  },
-  "studio": "Independent",
+  "studio": "Pasteur",
   "role": {
     "en": "Designer",
     "es": "Designer"
@@ -23,5 +19,31 @@
     "publishing"
   ],
   "year": 2025,
-  "gallery": []
+  "cover": "/images/PYO 1.jpg",
+  "gallery": [
+    {
+      "src": "/images/PYO 1-1.jpg",
+      "alt": {
+        "en": "Box 1",
+        "es": "Diseño 1"
+      },
+      "kind": "image"
+    },
+    {
+      "src": "/images/2 inside.jpg",
+      "alt": {
+        "en": "Box 1 Inside",
+        "es": "Diseño 1 Interior"
+      },
+      "kind": "image"
+    },
+    {
+      "src": "/images/Caja Cuerpo Sano- Mockup 1.jpg",
+      "alt": {
+        "en": "Cuerpo sano- Design",
+        "es": "Cuerpo sano- Diseño"
+      },
+      "kind": "image"
+    }
+  ]
 }
