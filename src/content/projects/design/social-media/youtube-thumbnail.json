@@ -1,0 +1,45 @@
+{
+  "slug": "youtube-thumbnail",
+  "kind": "design",
+  "category": "social-media",
+  "title": {
+    "en": "Thumbnails",
+    "es": "Miniaturas"
+  },
+  "subtitle": {
+    "en": "YouTube Covers",
+    "es": "Portadas de Youtube"
+  },
+  "overview": {
+    "en": "Cover designs (video thumbnails) for different YouTube audiences",
+    "es": "Diseños de portadas (miniaturas de videos) para diferentes públicos de Youtube"
+  },
+  "studio": "Independent",
+  "role": {
+    "en": "Designer",
+    "es": "Diseñadora"
+  },
+  "sectors": [
+    "Social Media"
+  ],
+  "year": 2025,
+  "cover": "/images/01. Recipe Thumbnail Design.jpg",
+  "gallery": [
+    {
+      "src": "/images/01. Recipe Thumbnail Design-1.jpg",
+      "alt": {
+        "en": "Tech Area",
+        "es": "Área de tecnología"
+      },
+      "kind": "image"
+    },
+    {
+      "src": "/images/02. Tech Destruction Thumbnail Design.jpg",
+      "alt": {
+        "en": "Recipe",
+        "es": "Receta"
+      },
+      "kind": "image"
+    }
+  ]
+}
