@@ -1,0 +1,26 @@
+{
+  "slug": "videos",
+  "kind": "design",
+  "category": "social-media",
+  "title": {
+    "en": "Videos ",
+    "es": "Videos "
+  },
+  "subtitle": {
+    "en": "Reels-Stories-Content",
+    "es": "Reels, historias y contenido"
+  },
+  "overview": {
+    "en": "Content for Reels, animated stories, and other social media formats",
+    "es": "Contenido de Reels, historias animadas y otros formatos para redes sociales"
+  },
+  "studio": "Multiple",
+  "role": {
+    "en": "Art Director - Designer",
+    "es": "Dirección de Arte y Diseño"
+  },
+  "sectors": [
+    "Video"
+  ],
+  "year": 0
+}
