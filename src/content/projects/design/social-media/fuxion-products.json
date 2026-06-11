@@ -1,0 +1,77 @@
+{
+  "slug": "fuxion-products",
+  "kind": "design",
+  "category": "social-media",
+  "title": {
+    "en": "Fuxion Carousel",
+    "es": "Carrusel Fuxion"
+  },
+  "subtitle": {
+    "en": "Content for Instagram",
+    "es": "Contenido para Instagram"
+  },
+  "overview": {
+    "en": "Organic carousel to highlight product benefits",
+    "es": "Carrusel orgánico para comunicar beneficios de productos"
+  },
+  "studio": "Cuerpo Sano",
+  "role": {
+    "en": "Designer",
+    "es": "Diseñador"
+  },
+  "sectors": [
+    "Social Media"
+  ],
+  "year": 2026,
+  "cover": "/images/Carrusel-fuxion--PORTADA-1.jpg",
+  "gallery": [
+    {
+      "src": "/images/Carrusel-fuxion--PORTADA-1-1.jpg",
+      "alt": {
+        "en": "01",
+        "es": "01"
+      },
+      "kind": "image"
+    },
+    {
+      "src": "/images/Carrusel fuxion-02.jpg",
+      "alt": {
+        "en": "02",
+        "es": "02"
+      },
+      "kind": "image"
+    },
+    {
+      "src": "/images/Carrusel fuxion-03.jpg",
+      "alt": {
+        "en": "03",
+        "es": "03"
+      },
+      "kind": "image"
+    },
+    {
+      "src": "/images/Carrusel fuxion-04.jpg",
+      "alt": {
+        "en": "04",
+        "es": "04"
+      },
+      "kind": "image"
+    },
+    {
+      "src": "/images/Carrusel fuxion-05.jpg",
+      "alt": {
+        "en": "05",
+        "es": "05"
+      },
+      "kind": "image"
+    },
+    {
+      "src": "/images/Carrusel fuxion-06.jpg",
+      "alt": {
+        "en": "06",
+        "es": "06"
+      },
+      "kind": "image"
+    }
+  ]
+}
