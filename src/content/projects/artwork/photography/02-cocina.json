@@ -1,18 +1,14 @@
 {
-  "slug": "cocina",
+  "slug": "urban",
   "kind": "artwork",
   "category": "photography",
   "title": {
-    "en": "Cocina",
-    "es": "Cocina"
+    "en": "Urban",
+    "es": "Urbano"
   },
   "subtitle": {
-    "en": "Quiet kitchen still-lifes",
-    "es": "Naturalezas muertas tranquilas de cocina"
-  },
-  "overview": {
-    "en": "Cocina — Quiet kitchen still-lifes. This case study walks through the brief, the process, and the final outcome of the work.",
-    "es": "Cocina — Naturalezas muertas tranquilas de cocina. Este caso recorre el encargo, el proceso y el resultado final del trabajo."
+    "en": "Street Photo",
+    "es": "Fotografía por las calles de Colombia"
   },
   "studio": "Independent",
   "role": {
@@ -20,9 +16,35 @@
     "es": "Photographer"
   },
   "sectors": [
-    "still-life",
-    "domestic"
+    "architecture",
+    "urban"
   ],
-  "year": 2025,
-  "gallery": []
+  "year": 2024,
+  "cover": "/images/P (4).jpg",
+  "gallery": [
+    {
+      "src": "/images/P (4)-1.jpg",
+      "alt": {
+        "en": "01",
+        "es": "01"
+      },
+      "kind": "image"
+    },
+    {
+      "src": "/images/1-1.jpg",
+      "alt": {
+        "en": "02",
+        "es": "02"
+      },
+      "kind": "image"
+    },
+    {
+      "src": "/images/P (19).jpg",
+      "alt": {
+        "en": "03",
+        "es": "03"
+      },
+      "kind": "image"
+    }
+  ]
 }
