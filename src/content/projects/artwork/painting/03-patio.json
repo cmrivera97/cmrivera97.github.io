@@ -1,18 +1,18 @@
 {
-  "slug": "patio",
+  "slug": "Pets",
   "kind": "artwork",
   "category": "painting",
   "title": {
-    "en": "Patio",
-    "es": "Patio"
+    "en": "Pets",
+    "es": "Mascotas"
   },
   "subtitle": {
-    "en": "Domestic interior paintings",
-    "es": "Pinturas de interiores domésticos"
+    "en": "Custom paintings of various pets",
+    "es": "Pinturas por encargo de mascotas diversas"
   },
   "overview": {
-    "en": "Patio — Domestic interior paintings. This case study walks through the brief, the process, and the final outcome of the work.",
-    "es": "Patio — Pinturas de interiores domésticos. Este caso recorre el encargo, el proceso y el resultado final del trabajo."
+    "en": "Paintings showing the final finish of some commissioned works",
+    "es": "Pinturas con acabado final de algunos encargos pictóricos"
   },
   "studio": "Independent",
   "role": {
@@ -20,8 +20,34 @@
     "es": "Artist"
   },
   "sectors": [
-    "interior"
+    "Nature"
   ],
-  "year": 2025,
-  "gallery": []
+  "year": 2026,
+  "cover": "/images/pets-01.jpg",
+  "gallery": [
+    {
+      "src": "/images/pets-01-1.jpg",
+      "alt": {
+        "en": "Tita",
+        "es": "Tita"
+      },
+      "kind": "image"
+    },
+    {
+      "src": "/images/pets-02.jpg",
+      "alt": {
+        "en": "Paco",
+        "es": "Paco"
+      },
+      "kind": "image"
+    },
+    {
+      "src": "/images/pets-03.jpg",
+      "alt": {
+        "en": "Milan",
+        "es": "Milan"
+      },
+      "kind": "image"
+    }
+  ]
 }
