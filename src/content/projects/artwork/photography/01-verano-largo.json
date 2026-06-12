@@ -1,18 +1,18 @@
 {
-  "slug": "verano-largo",
+  "slug": "comercial",
   "kind": "artwork",
   "category": "photography",
   "title": {
-    "en": "Long Summer",
-    "es": "Verano Largo"
+    "en": "Comercial Ideas",
+    "es": "Photografía comercial"
   },
   "subtitle": {
-    "en": "Summer travel notes",
-    "es": "Notas de viaje de verano"
+    "en": "Ideas or concepts created to promote products",
+    "es": "Ideas o conceptos creados para promocionar productos"
   },
   "overview": {
-    "en": "Long Summer — Summer travel notes. This case study walks through the brief, the process, and the final outcome of the work.",
-    "es": "Verano Largo — Notas de viaje de verano. Este caso recorre el encargo, el proceso y el resultado final del trabajo."
+    "en": "A variety of ideas and different concepts ",
+    "es": "Ideas diversas y diferentes conceptos "
   },
   "studio": "Independent",
   "role": {
@@ -20,8 +20,26 @@
     "es": "Photographer"
   },
   "sectors": [
-    "travel"
+    "Product"
   ],
   "year": 2024,
-  "gallery": []
+  "cover": "/images/PYO 2 (1).jpg",
+  "gallery": [
+    {
+      "src": "/images/PYO 2 (1)-1.jpg",
+      "alt": {
+        "en": "Idea for Durex",
+        "es": "Idea para Durex"
+      },
+      "kind": "image"
+    },
+    {
+      "src": "/images/PYO 2 (2).jpg",
+      "alt": {
+        "en": "Idea for Durex",
+        "es": "Idea para Durex"
+      },
+      "kind": "image"
+    }
+  ]
 }
