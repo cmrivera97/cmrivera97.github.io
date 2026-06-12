@@ -1,0 +1,26 @@
+{
+  "slug": "ui-design",
+  "kind": "design",
+  "category": "ui-design",
+  "title": {
+    "en": "UI Design",
+    "es": "Diseño UI"
+  },
+  "subtitle": {
+    "en": "Design",
+    "es": "Design"
+  },
+  "overview": {
+    "en": "Design",
+    "es": "Design"
+  },
+  "studio": "Independent",
+  "role": {
+    "en": "Designer",
+    "es": "Diseñador"
+  },
+  "sectors": [
+    "UI"
+  ],
+  "year": 2026
+}
