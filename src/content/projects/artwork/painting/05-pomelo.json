@@ -1,18 +1,18 @@
 {
-  "slug": "pomelo",
+  "slug": "nature",
   "kind": "artwork",
   "category": "painting",
   "title": {
-    "en": "Pomelo",
-    "es": "Pomelo"
+    "en": "Nature",
+    "es": "Naturaleza"
   },
   "subtitle": {
     "en": "Still-life pomelo studies",
-    "es": "Naturalezas muertas con pomelo"
+    "es": "Naturaleza, fauna y flora "
   },
   "overview": {
-    "en": "Pomelo — Still-life pomelo studies. This case study walks through the brief, the process, and the final outcome of the work.",
-    "es": "Pomelo — Naturalezas muertas con pomelo. Este caso recorre el encargo, el proceso y el resultado final del trabajo."
+    "en": "Nature in my country, depicted using various techniques such as oil, gouache, and watercolor",
+    "es": "Naturaleza presente en mi país, hecha en diferentes técnicas como: óleo, gouache y acuarela"
   },
   "studio": "Independent",
   "role": {
@@ -20,8 +20,34 @@
     "es": "Artist"
   },
   "sectors": [
-    "still-life"
+    "Nature"
   ],
-  "year": 2024,
-  "gallery": []
+  "year": 2026,
+  "cover": "/images/jellyfish.jpg",
+  "gallery": [
+    {
+      "src": "/images/jellyfish-1.jpg",
+      "alt": {
+        "en": "Jellyfish in watercolor ",
+        "es": "Medusa en acuarela "
+      },
+      "kind": "image"
+    },
+    {
+      "src": "/images/IMG_9511.jpg",
+      "alt": {
+        "en": "Macaws",
+        "es": "Guacamayas"
+      },
+      "kind": "image"
+    },
+    {
+      "src": "/images/páramo.jpg",
+      "alt": {
+        "en": "Moorland",
+        "es": "Páramo"
+      },
+      "kind": "image"
+    }
+  ]
 }
