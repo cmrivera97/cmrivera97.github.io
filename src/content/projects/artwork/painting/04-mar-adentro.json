@@ -1,18 +1,18 @@
 {
-  "slug": "mar-adentro",
+  "slug": "cats",
   "kind": "artwork",
   "category": "painting",
   "title": {
-    "en": "Mar Adentro",
-    "es": "Mar Adentro"
+    "en": "Cats",
+    "es": "Gatos"
   },
   "subtitle": {
-    "en": "Seascape oils",
-    "es": "Marinas en óleo"
+    "en": "Oil portraits of pets (cats)",
+    "es": "Retratos al óleo de mascotas (gatos)"
   },
   "overview": {
-    "en": "Mar Adentro — Seascape oils. This case study walks through the brief, the process, and the final outcome of the work.",
-    "es": "Mar Adentro — Marinas en óleo. Este caso recorre el encargo, el proceso y el resultado final del trabajo."
+    "en": "For the love of them, my cats ",
+    "es": "Por amor a ellos, mis gatos "
   },
   "studio": "Independent",
   "role": {
@@ -21,8 +21,42 @@
   },
   "sectors": [
     "oil",
-    "seascape"
+    "Nature"
   ],
   "year": 2025,
-  "gallery": []
+  "cover": "/images/cats-03.jpg",
+  "gallery": [
+    {
+      "src": "/images/cats-01.jpg",
+      "alt": {
+        "en": "Toji",
+        "es": "Toji"
+      },
+      "kind": "image"
+    },
+    {
+      "src": "/images/cats-02.jpg",
+      "alt": {
+        "en": "Gaso",
+        "es": "Gaso"
+      },
+      "kind": "image"
+    },
+    {
+      "src": "/images/cats-03-1.jpg",
+      "alt": {
+        "en": "Cohete",
+        "es": "Cohete"
+      },
+      "kind": "image"
+    },
+    {
+      "src": "/images/cats-04.jpg",
+      "alt": {
+        "en": "Pancho",
+        "es": "Pancho"
+      },
+      "kind": "image"
+    }
+  ]
 }
