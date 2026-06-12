@@ -1,0 +1,65 @@
+{
+  "slug": "cocora-landscape",
+  "kind": "artwork",
+  "category": "photography",
+  "title": {
+    "en": "Cocora Valley",
+    "es": "Valle del Cocora"
+  },
+  "subtitle": {
+    "en": "Tour of the valley",
+    "es": "Recorrido por el valle"
+  },
+  "studio": "Independent",
+  "role": {
+    "en": "Photographer",
+    "es": "Fotógrafa"
+  },
+  "sectors": [
+    "Nature"
+  ],
+  "year": 2023,
+  "cover": "/images/P (6).jpg",
+  "gallery": [
+    {
+      "src": "/images/P (6)-1.jpg",
+      "alt": {
+        "en": "01",
+        "es": "01"
+      },
+      "kind": "image"
+    },
+    {
+      "src": "/images/P (8).jpg",
+      "alt": {
+        "en": "02",
+        "es": "02"
+      },
+      "kind": "image"
+    },
+    {
+      "src": "/images/P (10).jpg",
+      "alt": {
+        "en": "03",
+        "es": "03"
+      },
+      "kind": "image"
+    },
+    {
+      "src": "/images/P (11).jpg",
+      "alt": {
+        "en": "04",
+        "es": "04"
+      },
+      "kind": "image"
+    },
+    {
+      "src": "/images/P (13).jpg",
+      "alt": {
+        "en": "05",
+        "es": "05"
+      },
+      "kind": "image"
+    }
+  ]
+}
