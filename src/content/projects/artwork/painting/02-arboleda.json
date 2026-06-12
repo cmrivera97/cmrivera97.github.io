@@ -1,18 +1,18 @@
 {
-  "slug": "arboleda",
+  "slug": "watercolor-tarot",
   "kind": "artwork",
   "category": "painting",
   "title": {
-    "en": "Arboleda",
-    "es": "Arboleda"
+    "en": "Tarot",
+    "es": "Tarot"
   },
   "subtitle": {
-    "en": "Acrylic forest series",
-    "es": "Serie de bosques en acrílico"
+    "en": "Watercolor painting",
+    "es": "Creación en acuarela"
   },
   "overview": {
-    "en": "Arboleda — Acrylic forest series. This case study walks through the brief, the process, and the final outcome of the work.",
-    "es": "Arboleda — Serie de bosques en acrílico. Este caso recorre el encargo, el proceso y el resultado final del trabajo."
+    "en": "A watercolor project exploring marine life and its esoteric connection to the tarot and its core concepts",
+    "es": "Proyecto de creación en acuarela sobre vida marina y la unión esotérica con el tarot y sus principales conceptos"
   },
   "studio": "Independent",
   "role": {
@@ -20,9 +20,59 @@
     "es": "Artist"
   },
   "sectors": [
-    "acrylic",
-    "landscape"
+    "watercolor",
+    "animals"
   ],
-  "year": 2024,
-  "gallery": []
+  "year": 2025,
+  "cover": "/images/MT 16.jpg",
+  "gallery": [
+    {
+      "src": "/images/MT 1.jpg",
+      "alt": {
+        "en": "box",
+        "es": "caja"
+      },
+      "kind": "image"
+    },
+    {
+      "src": "/images/MT 5.jpg",
+      "alt": {
+        "en": "complete tarot",
+        "es": "tarot completo"
+      },
+      "kind": "image"
+    },
+    {
+      "src": "/images/MT 6.jpg",
+      "alt": {
+        "en": "book",
+        "es": "libro"
+      },
+      "kind": "image"
+    },
+    {
+      "src": "/images/MT 11.jpg",
+      "alt": {
+        "en": "printed and original",
+        "es": "impreso y original"
+      },
+      "kind": "image"
+    },
+    {
+      "src": "/images/MT 8.jpg",
+      "alt": {
+        "en": "some cards",
+        "es": "algunas cartas"
+      },
+      "kind": "image"
+    },
+    {
+      "src": "/images/MT 14.jpg",
+      "alt": {
+        "en": "02",
+        "es": "02"
+      },
+      "kind": "image"
+    }
+  ]
 }
