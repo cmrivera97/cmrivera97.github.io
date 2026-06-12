@@ -1,18 +1,18 @@
 {
-  "slug": "caminos",
+  "slug": "blue-bird",
   "kind": "artwork",
   "category": "painting",
   "title": {
-    "en": "Caminos",
-    "es": "Caminos"
+    "en": "Blue Bird",
+    "es": "Pájaro azul"
   },
   "subtitle": {
-    "en": "Landscape oil series",
-    "es": "Serie de paisajes en óleo"
+    "en": "Oil on acrylic sheet",
+    "es": "Óleo sobre lámina de acrílico"
   },
   "overview": {
-    "en": "Caminos — Landscape oil series. This case study walks through the brief, the process, and the final outcome of the work.",
-    "es": "Caminos — Serie de paisajes en óleo. Este caso recorre el encargo, el proceso y el resultado final del trabajo."
+    "en": "A work-in-progress series featuring animals in shades of blue",
+    "es": "Serie en proceso de animales en tonos azúles"
   },
   "studio": "Independent",
   "role": {
@@ -21,8 +21,26 @@
   },
   "sectors": [
     "oil",
-    "landscape"
+    "Nature"
   ],
   "year": 2025,
-  "gallery": []
+  "cover": "/images/BB (1)-1.jpg",
+  "gallery": [
+    {
+      "src": "/images/BB (1)-2.jpg",
+      "alt": {
+        "en": "Bird",
+        "es": "Pájaro"
+      },
+      "kind": "image"
+    },
+    {
+      "src": "/images/BB (3).jpg",
+      "alt": {
+        "en": "Book mockup",
+        "es": "Montaje de libro"
+      },
+      "kind": "image"
+    }
+  ]
 }
