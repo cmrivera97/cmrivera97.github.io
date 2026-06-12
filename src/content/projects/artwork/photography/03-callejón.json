@@ -1,18 +1,18 @@
 {
-  "slug": "callejón",
+  "slug": "nature",
   "kind": "artwork",
   "category": "photography",
   "title": {
-    "en": "Callejón",
-    "es": "Callejón"
+    "en": "Landscapes",
+    "es": "Paisajes"
   },
   "subtitle": {
-    "en": "Street photography in CDMX",
-    "es": "Fotografía de calle en CDMX"
+    "en": "Nature photography in Colombia",
+    "es": "Fotografía de naturaleza en Colombia"
   },
   "overview": {
-    "en": "Callejón — Street photography in CDMX. This case study walks through the brief, the process, and the final outcome of the work.",
-    "es": "Callejón — Fotografía de calle en CDMX. Este caso recorre el encargo, el proceso y el resultado final del trabajo."
+    "en": "Photography as a travel journal and a way of observing the surroundings",
+    "es": "Fotografía como bitácora de viaje y forma de observación del entorno"
   },
   "studio": "Independent",
   "role": {
@@ -20,8 +20,58 @@
     "es": "Photographer"
   },
   "sectors": [
-    "street"
+    "Nature"
   ],
   "year": 2025,
-  "gallery": []
+  "cover": "/images/P (29).jpg",
+  "gallery": [
+    {
+      "src": "/images/P (29)-1.jpg",
+      "alt": {
+        "en": "01",
+        "es": "01"
+      },
+      "kind": "image"
+    },
+    {
+      "src": "/images/P (27).jpg",
+      "alt": {
+        "en": "02",
+        "es": "02"
+      },
+      "kind": "image"
+    },
+    {
+      "src": "/images/P (14).jpg",
+      "alt": {
+        "en": "03",
+        "es": "03"
+      },
+      "kind": "image"
+    },
+    {
+      "src": "/images/sunset.jpg",
+      "alt": {
+        "en": "04",
+        "es": "04"
+      },
+      "kind": "image"
+    },
+    {
+      "src": "/images/P (31).jpg",
+      "alt": {
+        "en": "05",
+        "es": "05"
+      },
+      "kind": "image"
+    },
+    {
+      "src": "/images/P (15).jpg",
+      "alt": {
+        "en": "06",
+        "es": "06"
+      },
+      "kind": "image"
+    }
+  ]
 }
