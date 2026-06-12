@@ -1,18 +1,18 @@
 {
-  "slug": "ventanas",
+  "slug": "portrait",
   "kind": "artwork",
   "category": "drawing",
   "title": {
-    "en": "Ventanas",
-    "es": "Ventanas"
+    "en": "Portraits",
+    "es": "Retratos"
   },
   "subtitle": {
-    "en": "Window-light pencil studies",
-    "es": "Estudios de luz de ventana a lápiz"
+    "en": "People and concept",
+    "es": "Personas y conceptos"
   },
   "overview": {
-    "en": "Ventanas — Window-light pencil studies. This case study walks through the brief, the process, and the final outcome of the work.",
-    "es": "Ventanas — Estudios de luz de ventana a lápiz. Este caso recorre el encargo, el proceso y el resultado final del trabajo."
+    "en": "Anatomy studies and more. This case study covers the commission, the process, and the final result of the work.",
+    "es": "Estudios de anatomía y más. Este caso recorre el encargo, el proceso y el resultado final del trabajo."
   },
   "studio": "Independent",
   "role": {
@@ -23,5 +23,39 @@
     "study"
   ],
   "year": 2025,
-  "gallery": []
+  "cover": "/images/AA (3).jpg",
+  "gallery": [
+    {
+      "src": "/images/AA (3)-1.jpg",
+      "alt": {
+        "en": "Gluttony",
+        "es": "Gula"
+      },
+      "kind": "image"
+    },
+    {
+      "src": "/images/AA (4).jpg",
+      "alt": {
+        "en": "Men 1",
+        "es": "Men 1"
+      },
+      "kind": "image"
+    },
+    {
+      "src": "/images/desnudo.jpg",
+      "alt": {
+        "en": "Nude",
+        "es": "Desnudo"
+      },
+      "kind": "image"
+    },
+    {
+      "src": "/images/dibujo -4.jpg",
+      "alt": {
+        "en": "Uncle",
+        "es": "Tío"
+      },
+      "kind": "image"
+    }
+  ]
 }
