@@ -1,0 +1,77 @@
+{
+  "slug": "conceptual-ideas",
+  "kind": "artwork",
+  "category": "photography",
+  "title": {
+    "en": "Conceptual",
+    "es": "Conceptual"
+  },
+  "subtitle": {
+    "en": "Abstract ideas",
+    "es": "Ideas abstractas"
+  },
+  "overview": {
+    "en": "Different concepts, ideas, and perspectives",
+    "es": "Conceptos, ideas y visiones diferentes"
+  },
+  "studio": "Independent",
+  "role": {
+    "en": "Photographer",
+    "es": "Fotógrafa"
+  },
+  "sectors": [
+    "Abstract"
+  ],
+  "year": 2023,
+  "cover": "/images/P (20).jpg",
+  "gallery": [
+    {
+      "src": "/images/P (20)-1.jpg",
+      "alt": {
+        "en": "01",
+        "es": "01"
+      },
+      "kind": "image"
+    },
+    {
+      "src": "/images/P (7).jpg",
+      "alt": {
+        "en": "02",
+        "es": "02"
+      },
+      "kind": "image"
+    },
+    {
+      "src": "/images/P (28).jpg",
+      "alt": {
+        "en": "03",
+        "es": "03"
+      },
+      "kind": "image"
+    },
+    {
+      "src": "/images/P (18).jpg",
+      "alt": {
+        "en": "04",
+        "es": "04"
+      },
+      "kind": "image"
+    },
+    {
+      "src": "/images/P (33).jpg",
+      "alt": {
+        "en": "05",
+        "es": "05"
+      },
+      "kind": "image"
+    },
+    {
+      "src": "/images/P (32).jpg",
+      "alt": {
+        "en": "06",
+        "es": "06"
+      },
+      "kind": "image"
+    }
+  ]
+}
