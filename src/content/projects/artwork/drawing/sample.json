@@ -1,18 +1,18 @@
 {
-  "slug": "sample",
+  "slug": "places-sketch",
   "kind": "artwork",
   "category": "drawing",
   "title": {
-    "en": "Sample Drawing",
-    "es": "Dibujo de Muestra"
+    "en": "Drawing of Places",
+    "es": "Dibujos de lugares"
   },
   "subtitle": {
-    "en": "Placeholder sketch",
-    "es": "Boceto placeholder"
+    "en": "Sketches and lines ",
+    "es": "Bocetos y  líneas "
   },
   "overview": {
-    "en": "Sample Drawing — Placeholder sketch. This case study walks through the brief, the process, and the final outcome of the work.",
-    "es": "Dibujo de Muestra — Boceto placeholder. Este caso recorre el encargo, el proceso y el resultado final del trabajo."
+    "en": "Various drawings, from the initial sketch and exploratory stages to the final result—sometimes...",
+    "es": "Dibujos varios desde el boceto, lo exploratorio y el resultado final, algunas veces..."
   },
   "studio": "Independent",
   "role": {
@@ -20,9 +20,18 @@
     "es": "Artista"
   },
   "sectors": [
-    "placeholder"
+    "Draw"
   ],
-  "year": 2026,
-  "cover": "/placeholder-cover.svg",
-  "gallery": []
+  "year": 2025,
+  "cover": "/images/1 (2).jpg",
+  "gallery": [
+    {
+      "src": "/images/1 (2)-1.jpg",
+      "alt": {
+        "en": "Airport",
+        "es": "Aeropuerto"
+      },
+      "kind": "image"
+    }
+  ]
 }
