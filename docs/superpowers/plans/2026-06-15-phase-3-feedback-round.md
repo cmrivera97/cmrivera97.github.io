@@ -2,7 +2,7 @@
 
 > **For agentic workers:** REQUIRED SUB-SKILL: Use superpowers:subagent-driven-development (recommended) or superpowers:executing-plans to implement this plan task-by-task. Steps use checkbox (`- [ ]`) syntax for tracking.
 
-**Goal:** Apply the feedback items from the second `feedback.pdf` ("Observaciones Website CaroPortfolio — DARK MODE", 4 pages, 11 items) to the Astro portfolio — hero video/scroll, carousel selectability, preview spacing, detail-image fit, two text edits, and dark-mode button colour parity.
+**Goal:** Apply the feedback items from the second `feedback.pdf` ("Observaciones Website CaroPortfolio — DARK MODE", 4 pages, 11 items) to the Astro portfolio — hero video/scroll, carousel selectability, preview spacing, detail-image fit, two text edits, and dark-mode button colour parity. Plus an out-of-band request: **remove the `ui-design` design category** (Carolina deleted it in pagescms.org and it can't be recreated — Task 7).
 
 **Architecture:** Astro 6 static site, plain CSS with design tokens (`src/styles/`), TypeScript hydration scripts (`src/scripts/`), bilingual content in `src/content/**` + `src/i18n/{en,es}.json`. Most changes are CSS, content/i18n, and small script edits. No unit-test framework exists; this is a visual frontend project, so **verification = `npm run typecheck && npm run lint && npm run build` all clean, plus a manual visual check in `npm run dev`** for the visually-driven items (2, 3, 4, 11). All work lands on branch `feature/phase-3-feedback-round`, one commit per task, **committed locally only — the user handles all pushes / the PR.**
 
@@ -126,6 +126,19 @@ The wheel handler `preventDefault()`s then fires one `scrollIntoView({behavior:'
 - [ ] **Step 1:** Inspect `npm run dev`; if previews touch the frame/viewport edge, add/raise the inset minimally (don't regress the rounded-corner work from phase 2).
 - [ ] **Verify:** build + visual check, light + dark.
 - [ ] **Commit:** `Restore margin around showcase previews` *(only if a change is needed)*
+
+## Task 7: Remove the `ui-design` design category (out-of-band request)
+
+> Carolina deleted the `ui-design` section in pagescms.org and it cannot be recreated. The category has **no projects**, so removing it drops an empty bubble and a dead `/design/ui-design/` subpage. `Header.astro:25` and `PortfolioSection`/`SubpageGrid` all filter unknown slugs, so this is safe; we remove every live reference for cleanliness.
+
+**Files:** delete `src/content/categories/design/ui-design.json`; edit `src/components/sections/PortfolioSection.astro:20`, `src/components/layout/Header.astro:19`, `src/content/categories/design/branding.json`, `src/content/categories/design/print.json`. *(Historical mentions in `docs/` and the un-run `scripts/seed-placeholders.mjs` are left as-is — no site impact.)*
+
+- [ ] **Step 1:** `git rm src/content/categories/design/ui-design.json`.
+- [ ] **Step 2:** Remove `'ui-design'` from the `design` array in `PortfolioSection.astro:20`.
+- [ ] **Step 3:** Remove `'ui-design'` from `DESIGN_ORDER` in `Header.astro:19`.
+- [ ] **Step 4:** Remove `"ui-design"` from `sisterCategories` in `branding.json` and `print.json`.
+- [ ] **Verify:** `npm run typecheck && npm run lint && npm run build`; confirm no `ui-design` bubble on the home design section, no `/design/ui-design/` in `dist/`, and the mega-menu + sister bubbles no longer list it.
+- [ ] **Commit:** `Remove ui-design category from the design section`
 
 ---
 
