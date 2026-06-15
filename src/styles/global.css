@@ -383,6 +383,14 @@ body.no-cursor #cursor-ring {
   background: var(--c-ink); color: var(--c-bg); border-color: var(--c-ink);
 }
 
+/* Dark mode gets the same explicit hover colour flip (item 11): the translucent
+   default reads as no change, so mirror the light-mode treatment. */
+:root[data-theme='dark'] .showcase-arrow:hover,
+:root[data-theme='dark'] .subpage-page-arrow:hover,
+:root[data-theme='dark'] .portfolio-explore .btn:hover{
+  background: var(--c-ink); color: var(--c-bg); border-color: var(--c-ink);
+}
+
 /* ----- showcase carousel (Showcase.astro + carousel.ts) ----- */
 
 .showcase {
@@ -1070,7 +1078,11 @@ body.nav-locked{ overflow: hidden; }
 .detail-overview p{ font-size: 16px; line-height: 1.6; color: var(--c-ink-soft); }
 .detail-prevnext{ display: flex; justify-content: space-between; gap: 16px; margin-top: 60px; flex-wrap: wrap; }
 .gallery{ margin: 24px 0; container-type: inline-size; }
-.gallery .showcase-screen img{ width: 100%; height: 100%; object-fit: cover; }
+/* Detail ("vista final") gallery: fit the whole image — never crop. A faint backdrop
+   reads cleanly behind any letterboxing on portrait/landscape mismatches. */
+.gallery .showcase-screen{ background: rgba(0,0,0,.04); }
+:root[data-theme='dark'] .gallery .showcase-screen{ background: rgba(255,255,255,.04); }
+.gallery .showcase-screen img{ width: 100%; height: 100%; object-fit: contain; }
 .gallery .showcase-card{ flex-basis: clamp(520px, 80cqw, 920px); }
 .gallery .showcase-frame{ aspect-ratio: auto; }
 
