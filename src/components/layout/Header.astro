@@ -16,7 +16,7 @@ interface Props {
 const { lang } = Astro.props;
 const t = getT(lang);
 
-const DESIGN_ORDER = ['ai-designs', 'social-media', 'branding', 'print', 'illustration', 'ui-design'];
+const DESIGN_ORDER = ['ai-designs', 'social-media', 'branding', 'print', 'illustration'];
 const ART_ORDER = ['painting', 'drawing', 'photography'];
 
 const allCategories = await getCollection('categories');
