@@ -39,19 +39,19 @@ Under the heading **"Observaciones Website CaroPortfolio — DARK MODE":**
 | 3 | Keep some margin in the previews | Code (verify/tweak) | `src/styles/global.css` showcase |
 | 4 | Don't crop images in final view; fit content | Code | `src/styles/global.css` `.gallery … img` |
 | 5 | Allow clicking non-front carousel cards to select | Code | `src/scripts/carousel.ts` |
-| 6 | Show content in the general category view | **NEEDS CLARIFICATION** | live UI |
-| 7 | Change hero tagline text | Code | `src/i18n/{en,es}.json` `hero.lede` |
-| 8 | Delete *this* text | **NEEDS CLARIFICATION** (which element?) | screenshot-annotated |
-| 9 | Change painting blurb text | Code | `src/content/categories/artwork/painting.json` |
-| 10 | Remove "tranquila" in photography | **Likely already done** | not present in current content |
+| 6 | Show content in the general category view | **SKIPPED** (Carolina, 2026-06-15) | live UI |
+| 7 | Change hero tagline text | Done | `src/i18n/{en,es}.json` `hero.lede` |
+| 8 | Delete *this* text → the hero "since 2019" line | Done | `Hero.astro` + `hero.since` i18n keys |
+| 9 | Change painting blurb text | Done | `src/content/categories/artwork/painting.json` |
+| 10 | Remove "tranquila" in photography | **SKIPPED — already resolved** (Carolina, 2026-06-15) | not present in current content |
 | 11 | Dark-mode button colour change like light | Code | `src/styles/global.css` dark hover rules |
 
 ### Blocked / clarification items — detail
 
 - **Item 1 (video):** `public/video/d2.mp4`, `hero-h-dark.mp4`, `hero-v-dark.mp4` are all ~132–133 bytes — placeholder stubs, not real MP4s. The markup (`autoplay muted loop playsinline`, `src/components/sections/Hero.astro:10-17`) and `src/scripts/hero-video.ts` are correct; nothing plays because there is no real footage. **Resolution: Carolina must supply the real MP4 files** (same names, in `public/video/`). No code change fixes this. Posters render as a static fallback meanwhile.
-- **Item 6:** "Show content in the general category view" is ambiguous. The category subpage (`SubpageGrid.astro`) already renders project cards with covers or abstract placeholders; the home portfolio sections show one category's showcase at a time. Need Carolina to point at the exact view + what's missing before changing layout.
-- **Item 8:** "Delete this text" references a specific element circled in the PDF screenshot. The PDF image layer can't be rendered in this environment (text layer only), so the target element is unknown. **Resolution: ask which text** (candidates near the page-3 edits: hero `since` line, hero `eyebrow`, `scrollHint`, or a portfolio eyebrow).
-- **Item 10:** grep across the repo finds **no "tranquila"** in `src/content/**` — only in `scripts/seed-placeholders.mjs` (the un-run seeder) and `docs/`. The live photography content (e.g. `02-cocina.json`) no longer uses it. Treat as already satisfied pending Carolina's confirmation against the deployed build she reviewed.
+- **Item 6 — SKIPPED:** Carolina chose to skip this on 2026-06-15. Revisit if she pins down the exact view + missing content later.
+- **Item 8 — DONE:** Carolina confirmed (2026-06-15) the circled text is the hero **"since 2019"** line. Removed the `.hero-since` span from `Hero.astro` and the now-unused `hero.since` keys from `en.json`/`es.json`. (Orphaned `.hero-since` CSS left in place — harmless, shares rules with the already-unused `.hero-location`.)
+- **Item 10 — SKIPPED (already resolved):** grep finds **no "tranquila"** in `src/content/**` — only in `scripts/seed-placeholders.mjs` (the un-run seeder) and `docs/`. Carolina confirmed it was already removed in earlier content edits.
 
 ---
 
