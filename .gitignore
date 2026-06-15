@@ -23,3 +23,6 @@ npm-debug.log*
 *.tsbuildinfo
 .cache/
 .superpowers/
+
+# review feedback (kept local, never tracked)
+feedback.pdf
