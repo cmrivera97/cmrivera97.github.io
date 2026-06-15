@@ -21,12 +21,33 @@ export const initHeroSnap = (): void => {
   // True only while the hero still fills the viewport (page essentially at the top).
   const atTop = (): boolean => window.scrollY <= 8;
 
+  // Fast-but-continuous easing. A self-driven rAF tween (instead of native
+  // `scrollIntoView({behavior:'smooth'})`) guarantees one uninterrupted glide to the
+  // first section across browsers — Carolina reported the native version felt "cortado".
+  const easeInOutCubic = (t: number): number => (
+    t < 0.5 ? 4 * t * t * t : 1 - ((-2 * t + 2) ** 3) / 2
+  );
+  const SNAP_DURATION = 620;
+
   const snapToProjects = (): void => {
     if (animating || !atTop()) return;
     animating = true;
-    target.scrollIntoView({ behavior: reduced ? 'auto' : 'smooth', block: 'start' });
-    // Release once the smooth scroll has settled so normal scrolling resumes below the fold.
-    window.setTimeout(() => { animating = false; }, reduced ? 60 : 720);
+    if (reduced) {
+      target.scrollIntoView({ behavior: 'auto', block: 'start' });
+      window.setTimeout(() => { animating = false; }, 60);
+      return;
+    }
+    const startY = window.scrollY;
+    const distance = target.getBoundingClientRect().top;
+    let startTime: number | null = null;
+    const tick = (now: number): void => {
+      if (startTime === null) startTime = now;
+      const progress = Math.min(1, (now - startTime) / SNAP_DURATION);
+      window.scrollTo(0, startY + distance * easeInOutCubic(progress));
+      if (progress < 1) requestAnimationFrame(tick);
+      else animating = false;
+    };
+    requestAnimationFrame(tick);
   };
 
   window.addEventListener('wheel', (e: WheelEvent) => {
