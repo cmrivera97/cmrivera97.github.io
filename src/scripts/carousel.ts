@@ -102,7 +102,8 @@ const layoutLoop = (track: HTMLElement, active: number): void => {
     card.style.transform = `translate(-50%, -50%) translateX(${(d * step).toFixed(1)}px) scale(${scale})`;
     card.style.opacity = String(opacity);
     card.style.zIndex = String(30 - abs * 10);
-    card.style.pointerEvents = abs === 0 ? 'auto' : 'none';
+    // Centre card and its immediate neighbours are clickable; a side click selects it (below).
+    card.style.pointerEvents = abs <= 1 ? 'auto' : 'none';
     card.dataset.active = d === 0 ? 'true' : 'false';
     card.setAttribute('aria-hidden', d === 0 ? 'false' : 'true');
     card.tabIndex = d === 0 ? 0 : -1;
@@ -134,6 +135,18 @@ const initLoopTrack = (track: HTMLElement): void => {
       dot.addEventListener('click', () => goTo(Number(dot.dataset.index)));
     });
   }
+
+  // Click a visible side card to bring it to centre instead of following its link.
+  // Capture phase so we intercept before the card's own navigation; the active card
+  // is left alone so a second click opens the project.
+  track.addEventListener('click', (e: MouseEvent) => {
+    const card = (e.target as Element | null)?.closest<HTMLElement>('.showcase-card');
+    if (!card) return;
+    const index = getCards(track).indexOf(card);
+    if (index < 0 || index === getActive()) return;
+    e.preventDefault();
+    goTo(index);
+  }, true);
 
   track.addEventListener('keydown', (e: KeyboardEvent) => {
     if (e.key === 'ArrowLeft' || e.key === 'ArrowRight') {
