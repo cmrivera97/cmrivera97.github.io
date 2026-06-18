@@ -310,7 +310,7 @@ body.no-cursor #cursor-ring {
     linear-gradient(180deg, rgba(8, 10, 20, .52) 0%, rgba(8, 10, 20, .66) 100%); }
 .hero-content{ position: relative; z-index: 2; width: 100%; text-align: center;
   transform: translateY(var(--hero-shift, 0)); }
-.hero-toprow{ display: grid; grid-template-columns: 1fr 1fr 1fr; align-items: center; margin-bottom: 30px; }
+.hero-toprow{ display: flex; justify-content: center; align-items: center; margin-bottom: 30px; }
 .hero-since{ text-align: left; }
 .hero-since, .hero-location{ font-size: 11px; letter-spacing: .1em; text-transform: uppercase;
   color: var(--c-ink-faint); font-weight: 600; }
