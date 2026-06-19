@@ -15,14 +15,15 @@ const { project, lang } = Astro.props;
 const t = getT(lang);
 const hue = hueFromSlug(project.data.slug);
 
+type MediaSlide = { kind: 'image' | 'video'; key: string; src: string; alt: string };
 type Slide =
-  | { kind: 'image'; key: string; src: string; alt: string }
+  | MediaSlide
   | { kind: 'placeholder'; key: string; hue: number };
 
 let slides: Slide[];
 if (project.data.gallery.length > 0) {
-  slides = project.data.gallery.map((item, i) => ({
-    kind: 'image' as const,
+  slides = project.data.gallery.map((item, i): Slide => ({
+    kind: item.kind,
     key: `${project.data.slug}-${i}`,
     src: item.src,
     alt: item.alt[lang],
@@ -47,10 +48,17 @@ if (project.data.gallery.length > 0) {
       <div class="showcase-card" data-slug={s.key}>
         <div class="showcase-frame">
           <div class="showcase-screen">
-            {s.kind === 'image'
-              ? <img src={withBase(s.src)} alt={s.alt} loading="lazy" decoding="async" />
-              : <Placeholder hue={s.hue} glyph="◆" />
-            }
+            {s.kind === 'placeholder' && <Placeholder hue={s.hue} glyph="◆" />}
+            {s.kind === 'image' && (
+              <img src={withBase(s.src)} alt={s.alt} loading="lazy" decoding="async" />
+            )}
+            {s.kind === 'video' && (
+              <video
+                src={withBase(s.src)}
+                autoplay muted loop playsinline preload="metadata"
+                aria-label={s.alt}
+              ></video>
+            )}
           </div>
         </div>
       </div>
