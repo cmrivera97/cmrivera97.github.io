@@ -19,12 +19,6 @@ const {
 const t = getT(lang);
 ---
 <section class="detail">
-  <a
-    class="btn btn-glass detail-back"
-    href={localizedHref(lang, `/${project.data.kind}/${category.data.slug}/`)}
-    data-cursor="link"
-  >← {t('detail.back')} {category.data.label[lang]}</a>
-
   <div class="detail-head">
     <span class="showcase-tag detail-tag">{category.data.label[lang]}</span>
     <h1 class="detail-title">{project.data.title[lang]}</h1>

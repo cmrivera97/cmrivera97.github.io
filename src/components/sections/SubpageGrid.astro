@@ -30,13 +30,9 @@ const sisterCategories = await Promise.all(
 );
 const sisters = sisterCategories.filter((c): c is CollectionEntry<'categories'> => Boolean(c));
 
-const kindLabel = category.data.kind === 'design' ? t('nav.design') : t('nav.artwork');
-const homeHref = localizedHref(lang, '/');
 const email = t('contact.email');
 ---
 <section class="subpage">
-  <a class="subpage-back" href={homeHref} data-cursor="link">← {t('subpage.back')} {kindLabel}</a>
-
   <div class="subpage-head">
     <h1 class="subpage-heading">{category.data.label[lang]}</h1>
     <div class="subpage-rule-1"></div>
