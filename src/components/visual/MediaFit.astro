@@ -1,0 +1,21 @@
+---
+/**
+ * Contain-fit image with a blurred backdrop of the same image.
+ * The whole image is shown (no crop) and the leftover space is filled by a soft blurred
+ * zoom of the same source, so labeled preview tiles keep a uniform size with no dead bars.
+ * Used by the home showcase and the category grid; the detail gallery hugs images instead.
+ */
+import { withBase } from '../../utils/withBase';
+
+interface Props {
+  src: string;
+  alt: string;
+}
+
+const { src, alt } = Astro.props;
+const url = withBase(src);
+---
+<span class="media-fit">
+  <img class="media-fit-bg" src={url} alt="" aria-hidden="true" loading="lazy" decoding="async" />
+  <img class="media-fit-fg" src={url} alt={alt} loading="lazy" decoding="async" />
+</span>

@@ -5,7 +5,7 @@ import { getT, type Lang } from '../../i18n/getT';
 import { hueFromSlug } from '../../utils/slug-hash';
 import { localizedHref } from '../../utils/localizedHref';
 import Placeholder from '../visual/Placeholder.astro';
-import { withBase } from '../../utils/withBase';
+import MediaFit from '../visual/MediaFit.astro';
 
 interface Props {
   items: CollectionEntry<'projects'>[];
@@ -39,7 +39,7 @@ const t = getT(lang);
             <div class="showcase-tag">{categoryLabel}</div>
             <div class="showcase-screen">
               {cover
-                ? <img src={withBase(cover)} alt={item.data.title[lang]} loading="lazy" decoding="async" />
+                ? <MediaFit src={cover} alt={item.data.title[lang]} />
                 : <Placeholder hue={hue} glyph="◆" />
               }
             </div>

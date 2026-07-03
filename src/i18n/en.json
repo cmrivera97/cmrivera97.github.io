@@ -89,6 +89,8 @@
     "back": "Back to",
     "overview": "Overview",
     "prev": "Previous",
-    "next": "Next"
+    "next": "Next",
+    "close": "Close",
+    "expand": "View full screen"
   }
 }

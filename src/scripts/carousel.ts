@@ -82,7 +82,9 @@ const layoutLoop = (track: HTMLElement, active: number): void => {
   const cards = getCards(track);
   const count = cards.length;
   if (count === 0) return;
-  const cardWidth = cards[0].offsetWidth;
+  // Measure the centred card: the image-hugging gallery gives each card its image's width, so
+  // the coverflow spacing must follow whichever card is currently featured (not a fixed card 0).
+  const cardWidth = (cards[active] ?? cards[0]).offsetWidth;
   if (cardWidth === 0) return; // hidden (display:none) — re-laid out when its category shows
   const cfg = loopConfig(track);
   const step = cfg.step(cardWidth);
@@ -173,6 +175,17 @@ const initLoopTrack = (track: HTMLElement): void => {
     if (resizeTimer) clearTimeout(resizeTimer);
     resizeTimer = setTimeout(() => layoutLoop(track, getActive()), 120);
   }, { passive: true });
+
+  // Image-hugging gallery cards size to their media, whose intrinsic dimensions are only known
+  // after load; re-run the layout as each arrives so the width-derived coverflow step is correct.
+  track.querySelectorAll<HTMLImageElement | HTMLVideoElement>('img, video').forEach((m) => {
+    const relayout = (): void => layoutLoop(track, getActive());
+    if (m instanceof HTMLImageElement) {
+      if (!m.complete) m.addEventListener('load', relayout, { once: true });
+    } else {
+      m.addEventListener('loadedmetadata', relayout, { once: true });
+    }
+  });
 
   renderLoop(track, 0);
 };

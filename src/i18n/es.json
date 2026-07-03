@@ -89,6 +89,8 @@
     "back": "Volver a",
     "overview": "Resumen",
     "prev": "Anterior",
-    "next": "Siguiente"
+    "next": "Siguiente",
+    "close": "Cerrar",
+    "expand": "Ver en pantalla completa"
   }
 }

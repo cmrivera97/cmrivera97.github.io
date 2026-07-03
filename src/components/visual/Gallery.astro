@@ -100,8 +100,53 @@ if (project.data.gallery.length > 0) {
   </div>
 </div>
 
+<div
+  class="lightbox"
+  data-lightbox
+  hidden
+  aria-hidden="true"
+  role="dialog"
+  aria-modal="true"
+  aria-label={project.data.title[lang]}
+>
+  <div class="lightbox-backdrop" data-lb-backdrop></div>
+  <button
+    type="button"
+    class="lightbox-btn lightbox-close"
+    data-lb-close
+    data-no-splash
+    data-cursor="link"
+    aria-label={t('detail.close')}
+  >×</button>
+  <button
+    type="button"
+    class="lightbox-btn lightbox-prev"
+    data-lb-prev
+    data-no-splash
+    data-cursor="link"
+    aria-label={t('detail.prev')}
+  >‹</button>
+  <figure class="lightbox-figure">
+    <div class="lightbox-media" data-lb-media></div>
+    <figcaption class="lightbox-caption">
+      <span data-lb-caption></span>
+      <span class="lightbox-count" data-lb-count></span>
+    </figcaption>
+  </figure>
+  <button
+    type="button"
+    class="lightbox-btn lightbox-next"
+    data-lb-next
+    data-no-splash
+    data-cursor="link"
+    aria-label={t('detail.next')}
+  >›</button>
+</div>
+
 <script>
   import { initCarousel } from '../../scripts/carousel';
+  import { initLightbox } from '../../scripts/lightbox';
 
   initCarousel();
+  initLightbox();
 </script>
