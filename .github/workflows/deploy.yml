@@ -20,12 +20,10 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-        with:
-          # Pull real bytes for Git-LFS-tracked hero videos (public/video/*.mp4).
-          # Without this, only the ~130-byte LFS pointer is checked out, astro copies
-          # that pointer into dist/, and GitHub Pages serves it instead of the video —
-          # which is why the hero video never plays in production.
-          lfs: true
+        # NOTE: lfs: true was removed — the hero-video LFS objects are not present in the repo's
+        # LFS store, so fetching them fails the whole build. Until the hero videos are taken out
+        # of LFS (or LFS is repaired), the build uses the plain checkout (LFS files come through as
+        # pointers, as they did before). Hero video therefore stays a static poster in production.
 
       - name: Setup Node
         uses: actions/setup-node@v4
