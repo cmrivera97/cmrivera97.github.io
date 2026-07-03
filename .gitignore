@@ -26,3 +26,4 @@ npm-debug.log*
 
 # review feedback (kept local, never tracked)
 feedback.pdf
+*.pdf
