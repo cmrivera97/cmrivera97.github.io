@@ -44,11 +44,13 @@ A scan of all 39 projects / 196 media refs found no other broken/missing/mismatc
 for portrait or landscape. `carousel.ts` now derives the coverflow step from the **centred** card
 (cards vary in width) and re-lays out once each image's real dimensions load.
 
-## Item 2b — Preview tiles: contain + blurred backdrop (DONE)
+## Item 2b — Preview tiles: contain + blurred backdrop (DONE, category only)
 
 New `MediaFit.astro` renders the whole image (`contain`) over a soft blurred zoom of the same
-image, so labeled tiles (home `Showcase`, category `SubpageGrid`) stop cropping while staying
-uniform and keeping their title/tag overlays. The detail gallery does not use it (it hugs instead).
+image, so labeled tiles stop cropping while staying uniform and keeping their title/tag overlays.
+Applied to the **category grid** (`SubpageGrid`). The **home showcase carousel** was reverted at
+the user's request to its original fixed cover-cropped cards. The detail gallery does not use
+`MediaFit` (it hugs instead).
 
 ## Item 3 — Full-screen lightbox (DONE)
 
