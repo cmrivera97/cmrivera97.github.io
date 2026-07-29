@@ -1,0 +1,46 @@
+{
+  "slug": "mailing-design",
+  "kind": "design",
+  "category": "ui-design",
+  "title": {
+    "en": "Comfama Mailing",
+    "es": "Mailing Comfama"
+  },
+  "subtitle": {
+    "en": "Design for an event of Comfama",
+    "es": "Diseño para un evento inaugural de Comfama"
+  },
+  "studio": "Comfama",
+  "role": {
+    "en": "Designer",
+    "es": "Diseñadora"
+  },
+  "year": 2025,
+  "cover": "/images/mailing-comfama_01.jpg",
+  "gallery": [
+    {
+      "src": "/images/mailing-comfama_01-1.jpg",
+      "alt": {
+        "en": "Main info",
+        "es": "Información principal"
+      },
+      "kind": "image"
+    },
+    {
+      "src": "/images/mailing-comfama_02.jpg",
+      "alt": {
+        "en": "Book info",
+        "es": "Información de lanzamiento"
+      },
+      "kind": "image"
+    },
+    {
+      "src": "/images/mailing-comfama_03.jpg",
+      "alt": {
+        "en": "03",
+        "es": "03"
+      },
+      "kind": "image"
+    }
+  ]
+}
