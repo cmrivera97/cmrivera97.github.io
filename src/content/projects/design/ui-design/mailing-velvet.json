@@ -1,0 +1,62 @@
+{
+  "slug": "mailing-velvet",
+  "kind": "design",
+  "category": "ui-design",
+  "title": {
+    "en": "Mailing Velvet ",
+    "es": "Mailing Velvet"
+  },
+  "subtitle": {
+    "en": "Design Concept",
+    "es": "Idea de Mailing"
+  },
+  "studio": "Velvet",
+  "role": {
+    "en": "Designer",
+    "es": "Diseñadora"
+  },
+  "year": 2025,
+  "cover": "/images/03.jpg",
+  "gallery": [
+    {
+      "src": "/images/01-0000.jpg",
+      "alt": {
+        "en": "1",
+        "es": "1"
+      },
+      "kind": "image"
+    },
+    {
+      "src": "/images/02-0000.jpg",
+      "alt": {
+        "en": "2",
+        "es": "2"
+      },
+      "kind": "image"
+    },
+    {
+      "src": "/images/03-1.jpg",
+      "alt": {
+        "en": "3",
+        "es": "3"
+      },
+      "kind": "image"
+    },
+    {
+      "src": "/images/04.jpg",
+      "alt": {
+        "en": "4",
+        "es": "4"
+      },
+      "kind": "image"
+    },
+    {
+      "src": "/images/05.jpg",
+      "alt": {
+        "en": "5",
+        "es": "5"
+      },
+      "kind": "image"
+    }
+  ]
+}
