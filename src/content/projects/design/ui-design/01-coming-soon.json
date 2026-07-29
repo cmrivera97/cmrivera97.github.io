@@ -1,18 +1,18 @@
 {
-  "slug": "ui-design-coming-soon",
+  "slug": "website",
   "kind": "design",
   "category": "ui-design",
   "title": {
-    "en": "Coming soon",
-    "es": "Próximamente"
+    "en": "Website Desig",
+    "es": "Diseño de Sitio Web"
   },
   "subtitle": {
-    "en": "First UI Design case study",
-    "es": "Primer caso de Diseño UI"
+    "en": "First UI Design study for a personal portfolio",
+    "es": "Primer estudio de Diseño UI para un portafolio de desarrollo de software"
   },
   "overview": {
-    "en": "Placeholder entry. Edit it in Pages CMS — title, subtitle, cover and gallery — to publish the first UI Design project.",
-    "es": "Entrada de marcador de posición. Edítala en Pages CMS — título, subtítulo, portada y galería — para publicar el primer proyecto de Diseño UI."
+    "en": "Web design for a personal portfolio created in Figma as an applied UI design project",
+    "es": "Diseño de página web para portafolio personal creado en Figma como proyecto de Diseño UI aplicable"
   },
   "studio": "Independent",
   "role": {
@@ -23,6 +23,72 @@
     "Product",
     "Digital"
   ],
-  "year": 2026,
-  "gallery": []
+  "year": 2025,
+  "cover": "/images/WEBSITE-JOSE-PARTS_02.jpg",
+  "gallery": [
+    {
+      "src": "/images/WEBSITE-JOSE-PARTS_01.jpg",
+      "alt": {
+        "en": "Home",
+        "es": "home"
+      },
+      "kind": "image"
+    },
+    {
+      "src": "/images/WEBSITE-JOSE-PARTS_02-1.jpg",
+      "alt": {
+        "en": "Services",
+        "es": "Servicios"
+      },
+      "kind": "image"
+    },
+    {
+      "src": "/images/WEBSITE-JOSE-PARTS_03.jpg",
+      "alt": {
+        "en": "Experience",
+        "es": "Experiencia"
+      },
+      "kind": "image"
+    },
+    {
+      "src": "/images/WEBSITE-JOSE-PARTS_05.jpg",
+      "alt": {
+        "en": "Profile",
+        "es": "Perfil"
+      },
+      "kind": "image"
+    },
+    {
+      "src": "/images/WEBSITE-JOSE-PARTS_06.jpg",
+      "alt": {
+        "en": "Portfolio",
+        "es": "Portafolio"
+      },
+      "kind": "image"
+    },
+    {
+      "src": "/images/WEBSITE-JOSE-PARTS_07.jpg",
+      "alt": {
+        "en": "Testimonial",
+        "es": "Testimonios"
+      },
+      "kind": "image"
+    },
+    {
+      "src": "/images/WEBSITE-JOSE-PARTS_08.jpg",
+      "alt": {
+        "en": "Blog",
+        "es": "Blog"
+      },
+      "kind": "image"
+    },
+    {
+      "src": "/images/WEBSITE-JOSE-PARTS_09.jpg",
+      "alt": {
+        "en": "Contact",
+        "es": "Contacto"
+      },
+      "kind": "image"
+    }
+  ]
 }
