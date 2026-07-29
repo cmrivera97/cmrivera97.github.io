@@ -1,0 +1,28 @@
+{
+  "slug": "ui-design-coming-soon",
+  "kind": "design",
+  "category": "ui-design",
+  "title": {
+    "en": "Coming soon",
+    "es": "Próximamente"
+  },
+  "subtitle": {
+    "en": "First UI Design case study",
+    "es": "Primer caso de Diseño UI"
+  },
+  "overview": {
+    "en": "Placeholder entry. Edit it in Pages CMS — title, subtitle, cover and gallery — to publish the first UI Design project.",
+    "es": "Entrada de marcador de posición. Edítala en Pages CMS — título, subtítulo, portada y galería — para publicar el primer proyecto de Diseño UI."
+  },
+  "studio": "Independent",
+  "role": {
+    "en": "Art Director",
+    "es": "Dirección de Arte"
+  },
+  "sectors": [
+    "Product",
+    "Digital"
+  ],
+  "year": 2026,
+  "gallery": []
+}
