@@ -1,0 +1,41 @@
+{
+  "slug": "mailing-pasteur",
+  "kind": "design",
+  "category": "ui-design",
+  "title": {
+    "en": "Mailings Pasteur",
+    "es": "Diseños Email para Pasteur"
+  },
+  "subtitle": {
+    "en": "Design concepts",
+    "es": "Conceptos creados para promociones"
+  },
+  "studio": "Pasteur",
+  "role": {
+    "en": "Designer",
+    "es": "Diseñadora"
+  },
+  "sectors": [
+    "Advertising"
+  ],
+  "year": 2025,
+  "cover": "/images/mailing 1 dermofest.jpg",
+  "gallery": [
+    {
+      "src": "/images/Cupón-compras-01.jpg",
+      "alt": {
+        "en": "1",
+        "es": "1"
+      },
+      "kind": "image"
+    },
+    {
+      "src": "/images/mailing 1 dermofest-1.jpg",
+      "alt": {
+        "en": "2",
+        "es": "2"
+      },
+      "kind": "image"
+    }
+  ]
+}
